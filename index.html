@@ -531,9 +531,10 @@
             <p>Support local endangered species through our special Nova Scotia designs</p>
             
             <div class="designs-container">
+                <!-- وال -->
                 <div class="design-box">
                     <div class="animal-image">
-                        <img src="https://images.unsplash.com/photo-1574871619176-67c887c369c7?w=400&h=300&fit=crop" alt="North Atlantic Right Whale" onerror="handleImageError(this)">
+                        <img src="https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg" alt="North Atlantic Right Whale" onerror="handleImageError(this)">
                     </div>
                     <div class="design-title">North Atlantic Right Whale</div>
                     <div class="design-description">The North Atlantic Right Whale is one of the world's most endangered large whale species.</div>
@@ -563,9 +564,10 @@
                     <button class="help-button" onclick="showHelpInfo('whale')">How can I help save whales?</button>
                 </div>
                 
+                <!-- سیاه گوش -->
                 <div class="design-box">
                     <div class="animal-image">
-                        <img src="https://images.unsplash.com/photo-1564889953123-f18976bb38a3?w=400&h=300&fit=crop" alt="Canada Lynx" onerror="handleImageError(this)">
+                        <img src="https://th.bing.com/th/id/R.464a22421f263c1707af3a14eebab0b5?rik=g7bFplMK4QLgng&pid=ImgRaw&r=0" alt="Canada Lynx" onerror="handleImageError(this)">
                     </div>
                     <div class="design-title">Canada Lynx</div>
                     <div class="design-description">The Canada Lynx is a threatened species in Nova Scotia forests.</div>
@@ -595,9 +597,10 @@
                     <button class="help-button" onclick="showHelpInfo('lynx')">How can I help save lynx?</button>
                 </div>
                 
+                <!-- لاک پشت -->
                 <div class="design-box">
                     <div class="animal-image">
-                        <img src="https://images.unsplash.com/photo-1599159340399-64d76513d1a2?w=400&h=300&fit=crop" alt="Leatherback Sea Turtle" onerror="handleImageError(this)">
+                        <img src="https://cdn.provincetownindependent.org/2025/10/Hakimi-leatherback-sea-turtles-photo-1-alive-1.jpeg" alt="Leatherback Sea Turtle" onerror="handleImageError(this)">
                     </div>
                     <div class="design-title">Leatherback Sea Turtle</div>
                     <div class="design-description">Leatherback Sea turtles are endangered ocean travelers.</div>
@@ -723,22 +726,22 @@
     <script>
         const teamMembers = ["Avin P. Langroodi", "Catherine Caliwag"];
         
-        // سیستم مدیریت عکس‌ها با لینک‌های تضمینی
+        // سیستم مدیریت عکس‌ها با لینک‌های مستقیم شما
         const imageBackups = {
             'whale': [
+                'https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg',
                 'https://images.unsplash.com/photo-1574871619176-67c887c369c7?w=400&h=300&fit=crop',
-                'https://cdn.pixabay.com/photo/2019/11/07/19/57/whale-4609077_640.jpg',
-                'https://source.unsplash.com/400x300/?whale,ocean'
+                'https://cdn.pixabay.com/photo/2019/11/07/19/57/whale-4609077_640.jpg'
             ],
             'lynx': [
+                'https://th.bing.com/th/id/R.464a22421f263c1707af3a14eebab0b5?rik=g7bFplMK4QLgng&pid=ImgRaw&r=0',
                 'https://images.unsplash.com/photo-1564889953123-f18976bb38a3?w=400&h=300&fit=crop',
-                'https://cdn.pixabay.com/photo/2017/07/24/18/57/lynx-2536664_640.jpg',
-                'https://source.unsplash.com/400x300/?lynx,wildcat'
+                'https://cdn.pixabay.com/photo/2017/07/24/18/57/lynx-2536664_640.jpg'
             ],
             'turtle': [
+                'https://cdn.provincetownindependent.org/2025/10/Hakimi-leatherback-sea-turtles-photo-1-alive-1.jpeg',
                 'https://images.unsplash.com/photo-1599159340399-64d76513d1a2?w=400&h=300&fit=crop',
-                'https://cdn.pixabay.com/photo/2016/03/05/22/18/animal-1239396_640.jpg',
-                'https://source.unsplash.com/400x300/?turtle,sea'
+                'https://cdn.pixabay.com/photo/2016/03/05/22/18/animal-1239396_640.jpg'
             ]
         };
 
@@ -746,6 +749,8 @@
         function handleImageError(img) {
             const alt = img.alt.toLowerCase();
             const parent = img.parentElement;
+            
+            console.log('Image failed to load:', img.src);
             
             // پیدا کردن بک‌آپ مناسب
             let backupUrls = [];
@@ -760,8 +765,8 @@
             
             if (nextIndex < backupUrls.length) {
                 // امتحان عکس بعدی
-                img.src = backupUrls[nextIndex];
                 console.log('Trying backup image:', backupUrls[nextIndex]);
+                img.src = backupUrls[nextIndex];
             } else {
                 // اگر همه بک‌آپ‌ها شکست خوردند
                 console.log('All backup images failed for:', alt);
@@ -778,18 +783,20 @@
 
         // وقتی صفحه لود شد
         document.addEventListener('DOMContentLoaded', function() {
-            // چک کردن عکس‌ها بعد از 3 ثانیه
+            console.log('Page loaded - checking images...');
+            
+            // چک کردن عکس‌ها بعد از 2 ثانیه
             setTimeout(() => {
                 const images = document.querySelectorAll('.animal-image img');
                 images.forEach(img => {
                     if (!img.complete || img.naturalHeight === 0) {
-                        console.log('Image failed to load:', img.src);
+                        console.log('Image not loaded:', img.src);
                         handleImageError(img);
                     } else {
                         console.log('Image loaded successfully:', img.src);
                     }
                 });
-            }, 3000);
+            }, 2000);
 
             // همچنین چک کردن وقتی هر عکس لود می‌شود
             const images = document.querySelectorAll('.animal-image img');
@@ -992,7 +999,5 @@
     </script>
 </body>
 </html>
-
-
 
 
