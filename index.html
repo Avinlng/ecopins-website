@@ -513,7 +513,7 @@
             <div class="designs-container">
                 <div class="design-box">
                     <div class="animal-image">
-                        <img src="https://images.unsplash.com/photo-1574871619176-67c887c369c7?w=400&h=300&fit=crop" alt="North Atlantic Right Whale">
+                        <img src="https://cdn.pixabay.com/photo/2019/11/07/19/57/whale-4609077_640.jpg" alt="North Atlantic Right Whale">
                     </div>
                     <div class="design-title">North Atlantic Right Whale</div>
                     <div class="design-description">The North Atlantic Right Whale is one of the world's most endangered large whale species.</div>
@@ -545,7 +545,7 @@
                 
                 <div class="design-box">
                     <div class="animal-image">
-                        <img src="https://images.unsplash.com/photo-1564889953123-f18976bb38a3?w=400&h=300&fit=crop" alt="Canada Lynx">
+                        <img src="https://cdn.pixabay.com/photo/2017/07/24/18/57/lynx-2536664_640.jpg" alt="Canada Lynx">
                     </div>
                     <div class="design-title">Canada Lynx</div>
                     <div class="design-description">The Canada Lynx is a threatened species in Nova Scotia forests.</div>
@@ -577,7 +577,7 @@
                 
                 <div class="design-box">
                     <div class="animal-image">
-                        <img src="https://images.unsplash.com/photo-1599159340399-64d76513d1a2?w=400&h=300&fit=crop" alt="Leatherback Sea Turtle">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/05/22/18/animal-1239396_640.jpg" alt="Leatherback Sea Turtle">
                     </div>
                     <div class="design-title">Leatherback Sea Turtle</div>
                     <div class="design-description">Leatherback Sea turtles are endangered ocean travelers.</div>
@@ -856,19 +856,19 @@
             
             if (winner === 'whale') {
                 resultHTML += '<h2>You are a Whale!</h2>';
-                imageUrl = 'https://images.unsplash.com/photo-1574871619176-67c887c369c7?w=400&h=300&fit=crop';
+                imageUrl = 'https://cdn.pixabay.com/photo/2019/11/07/19/57/whale-4609077_640.jpg';
                 animalName = 'Whale';
                 resultHTML += '<p>Your personality matches the North Atlantic Right Whale: Strong, graceful, and loves to travel!</p>';
                 resultHTML += '<p><strong>We recommend: Whale EcoPin</strong></p>';
             } else if (winner === 'lynx') {
                 resultHTML += '<h2>You are a Lynx!</h2>';
-                imageUrl = 'https://images.unsplash.com/photo-1564889953123-f18976bb38a3?w=400&h=300&fit=crop';
+                imageUrl = 'https://cdn.pixabay.com/photo/2017/07/24/18/57/lynx-2536664_640.jpg';
                 animalName = 'Lynx';
                 resultHTML += '<p>Your personality matches the Canada Lynx: Independent, smart, and strong!</p>';
                 resultHTML += '<p><strong>We recommend: Lynx EcoPin</strong></p>';
             } else if (winner === 'turtle') {
                 resultHTML += '<h2>You are a Turtle!</h2>';
-                imageUrl = 'https://images.unsplash.com/photo-1599159340399-64d76513d1a2?w=400&h=300&fit=crop';
+                imageUrl = 'https://cdn.pixabay.com/photo/2016/03/05/22/18/animal-1239396_640.jpg';
                 animalName = 'Turtle';
                 resultHTML += '<p>Your personality matches the Leatherback Sea Turtle: Patient, calm, and loves peace!</p>';
                 resultHTML += '<p><strong>We recommend: Turtle EcoPin</strong></p>';
@@ -904,6 +904,33 @@
             document.getElementById('quizQuestions').style.display = 'none';
             document.getElementById('quizStart').style.display = 'block';
         }
+
+        // Fix images if they don't load
+        function fixImages() {
+            const images = document.querySelectorAll('.animal-image img');
+            const backupImages = {
+                'whale': 'https://cdn.pixabay.com/photo/2019/11/07/19/57/whale-4609077_640.jpg',
+                'lynx': 'https://cdn.pixabay.com/photo/2017/07/24/18/57/lynx-2536664_640.jpg',
+                'turtle': 'https://cdn.pixabay.com/photo/2016/03/05/22/18/animal-1239396_640.jpg'
+            };
+            
+            images.forEach(img => {
+                // If image fails to load, use backup
+                img.onerror = function() {
+                    const alt = this.alt.toLowerCase();
+                    if (alt.includes('whale')) {
+                        this.src = backupImages.whale;
+                    } else if (alt.includes('lynx')) {
+                        this.src = backupImages.lynx;
+                    } else if (alt.includes('turtle')) {
+                        this.src = backupImages.turtle;
+                    }
+                };
+            });
+        }
+
+        // Call when page loads
+        document.addEventListener('DOMContentLoaded', fixImages);
     </script>
 </body>
 </html>
