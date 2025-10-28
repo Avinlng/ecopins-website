@@ -42,6 +42,8 @@ HTML_CONTENT = """
             margin: 0;
             font-weight: bold;
             background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .subtitle {
@@ -907,4 +909,5 @@ except KeyboardInterrupt:
     print("Website stopped")
 except Exception as e:
     print("Error:", e)
+
 
