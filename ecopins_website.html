@@ -407,4 +407,23 @@
                     html += '</div>';
                 }
                 
-                html += '<button class="quiz-button" onclick="showQuizResult()">See
+                html += '<button class="quiz-button" onclick="showQuizResult()">See Result</button>';
+                questionsDiv.innerHTML = html;
+            } else {
+                quizSection.style.display = 'none';
+            }
+        }
+        
+        function showQuizResult() {
+            var questionsDiv = document.getElementById('quizQuestions');
+            questionsDiv.innerHTML = '<div style="background: #ffeaa7; padding: 20px; border-radius: 10px; text-align: center;">' +
+                '<h3>You are a WHALE!</h3>' +
+                '<p>Strong, adventurous, and loves to explore new places!</p>' +
+                '<p>Get your whale pin to show your personality!</p>' +
+                '<button class="quiz-button" onclick="startQuiz()">Take Quiz Again</button>' +
+                '</div>';
+        }
+    </script>
+</body>
+</html>
+
