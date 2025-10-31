@@ -176,11 +176,15 @@
         }
 
         .VP information Technology-role {
-            background: #e74c3c;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            font-weight: bold;
         }
 
         .VP internal-role {
-            background: #9b59b6;
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
+            color: white;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -333,12 +337,12 @@
             <button class="team-button" onclick="showTeam()">Show Team</button>
             <div id="teamMembers" style="display: none; margin-top: 10px;">
                 <div class="member-card">
-                    <div class="member-name">Avin P. Langroodi <span class="role-badge VP information Technology-role">vice president </span></div>
-                    <div class="member-role">vice president </div>
+                    <div class="member-name">Avin P. Langroodi <span class="role-badge VP information Technology-role">VP Information Technology</span></div>
+                    <div class="member-role" style="color: #e74c3c; font-weight: bold;">Technology Leader & Developer</div>
                 </div>
                 <div class="member-card">
-                    <div class="member-name">Sajal Aryal <span class="role-badge VP internal-role">Designer</span></div>
-                    <div class="member-role">vice president </div>
+                    <div class="member-name">Sajal Aryal <span class="role-badge VP internal-role">VP Internal</span></div>
+                    <div class="member-role" style="color: #9b59b6; font-weight: bold;">Internal Operations & Design</div>
                 </div>
             </div>
         </div>
@@ -403,16 +407,4 @@
                     html += '</div>';
                 }
                 
-                html += '<button class="quiz-button" onclick="showQuizResult()">See Result</button>';
-                questionsDiv.innerHTML = html;
-            } else {
-                quizSection.style.display = 'none';
-            }
-        }
-        
-        function showQuizResult() {
-            alert('Based on your answers, we recommend: Whale EcoPin! This is a simple demo - real quiz would calculate your result');
-        }
-    </script>
-</body>
-</html>
+                html += '<button class="quiz-button" onclick="showQuizResult()">See
