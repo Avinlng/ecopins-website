@@ -10,7 +10,7 @@ STUDENT_NAME = "Avin P. Langroodi"
 
 
 TEAM_MEMBERS = [
-    {"name": "Avin P. Langroodi", "role": "VP information technology "},
+    {"name": "Avin P. Langroodi", "role": "VP information technology"},
     {"name": "Sajal Aryal", "role": "VP internal"}
 ]
 
@@ -949,5 +949,6 @@ except KeyboardInterrupt:
     print("Website stopped")
 except Exception as e:
     print("Error:", e)
+
 
 
