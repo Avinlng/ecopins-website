@@ -630,8 +630,3 @@ HTML_CONTENT = """
         <div class="card quiz-card">
             <h2>Personality Quiz</h2>
             <p>Which animal matches your personality? Take our quick quiz to find out!</p>
-
-
-
-
-
