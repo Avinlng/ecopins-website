@@ -11,7 +11,17 @@ STUDENT_NAME = "Avin P. Langroodi"
 
 TEAM_MEMBERS = [
     {"name": "Avin P. Langroodi", "role": "VP information technology"},
-    {"name": "Sajal Aryal", "role": "VP internal"}
+    {"name": "Sajal Aryal", "role": "VP internal"},
+    {"name": "Alden Hiltz", "role": "VP External"},
+    {"name": "Manuela Roemer", "role": "VP Production"},
+    {"name": "Louis Goossens", "role": "VP Marketing"},
+    {"name": "Henry Hiltz", "role": "VP Sales"},
+    {"name": "Dylan Davidson", "role": "VP Human Resources"},
+    {"name": "Sophia Langille", "role": "VP Corporate Social Responsibility"},
+    {"name": "Maggie Pyke", "role": "VP Finance"},
+    {"name": "Alexander Bautista", "role": "VP Environment"},
+    {"name": "Michael Aucoin", "role": "VP Health & Safety"},
+    {"name": "Lily Bray", "role": "Head of Video Production & Special Events"}
 ]
 
 HTML_CONTENT = """
@@ -313,6 +323,46 @@ HTML_CONTENT = """
         
         .VP Internal-role { 
             background: linear-gradient(45deg, #9b59b6, #8e44ad);
+        }
+        
+        .VP External-role { 
+            background: linear-gradient(45deg, #3498db, #2980b9);
+        }
+        
+        .VP Production-role { 
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+        }
+        
+        .VP Marketing-role { 
+            background: linear-gradient(45deg, #f39c12, #f1c40f);
+        }
+        
+        .VP Sales-role { 
+            background: linear-gradient(45deg, #8e44ad, #9b59b6);
+        }
+        
+        .VP Human Resources-role { 
+            background: linear-gradient(45deg, #d35400, #e67e22);
+        }
+        
+        .VP Corporate Social Responsibility-role { 
+            background: linear-gradient(45deg, #16a085, #1abc9c);
+        }
+        
+        .VP Finance-role { 
+            background: linear-gradient(45deg, #c0392b, #e74c3c);
+        }
+        
+        .VP Environment-role { 
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+        }
+        
+        .VP Health & Safety-role { 
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        }
+        
+        .Head of Video Production & Special Events-role { 
+            background: linear-gradient(45deg, #8e44ad, #9b59b6);
         }
         
         .member-card:hover {
