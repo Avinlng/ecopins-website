@@ -706,8 +706,8 @@ HTML_CONTENT = """
 
     <script>
         const teamMembers = [
-            {name: "Avin P. Langroodi", role: "CEO & Developer", roleClass: "ceo-role"},
-            {name: "Catherine Caliwag", role: "Designer & Marketing Manager", roleClass: "designer-role"}
+            {name: "Avin P. Langroodi", role: "VP information Technology", roleClass: "vice president"},
+            {name: "Catherine Caliwag", role: "VP internal", roleClass: "vice president"}
         ];
         
         function showTeamMembers() {
@@ -949,3 +949,4 @@ except KeyboardInterrupt:
     print("Website stopped")
 except Exception as e:
     print("Error:", e)
+
