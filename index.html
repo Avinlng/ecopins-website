@@ -531,7 +531,7 @@
             <p>Support local endangered species through our special Nova Scotia designs</p>
             
             <div class="designs-container">
-                <!-- وال -->
+                <!-- Whale -->
                 <div class="design-box">
                     <div class="animal-image">
                         <img src="https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg" alt="North Atlantic Right Whale" onerror="handleImageError(this)">
@@ -564,7 +564,7 @@
                     <button class="help-button" onclick="showHelpInfo('whale')">How can I help save whales?</button>
                 </div>
                 
-                <!-- سیاه گوش -->
+                <!-- Lynx -->
                 <div class="design-box">
                     <div class="animal-image">
                         <img src="https://th.bing.com/th/id/R.464a22421f263c1707af3a14eebab0b5?rik=g7bFplMK4QLgng&pid=ImgRaw&r=0" alt="Canada Lynx" onerror="handleImageError(this)">
@@ -597,7 +597,7 @@
                     <button class="help-button" onclick="showHelpInfo('lynx')">How can I help save lynx?</button>
                 </div>
                 
-                <!-- لاک پشت -->
+                <!-- Turtle -->
                 <div class="design-box">
                     <div class="animal-image">
                         <img src="https://cdn.provincetownindependent.org/2025/10/Hakimi-leatherback-sea-turtles-photo-1-alive-1.jpeg" alt="Leatherback Sea Turtle" onerror="handleImageError(this)">
@@ -724,9 +724,12 @@
     </div>
 
     <script>
-        const teamMembers = ["Avin P. Langroodi", "Catherine Caliwag"];
+        const teamMembers = [
+            {name: "Avin P. Langroodi", role: "VP information Technology", roleClass: "vice president"},
+            {name: "Sajal Aryal", role: "VP internal", roleClass: "vice president"}
+        ];
         
-        // سیستم مدیریت عکس‌ها با لینک‌های مستقیم شما
+        //image management systems 
         const imageBackups = {
             'whale': [
                 'https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg',
@@ -745,32 +748,32 @@
             ]
         };
 
-        // هندل خطای عکس
+        // Handle Error
         function handleImageError(img) {
             const alt = img.alt.toLowerCase();
             const parent = img.parentElement;
             
             console.log('Image failed to load:', img.src);
             
-            // پیدا کردن بک‌آپ مناسب
+            // Find back up
             let backupUrls = [];
             if (alt.includes('whale')) backupUrls = imageBackups.whale;
             else if (alt.includes('lynx')) backupUrls = imageBackups.lynx;
             else if (alt.includes('turtle')) backupUrls = imageBackups.turtle;
             
-            // امتحان کردن بک‌آپ‌ها
+            // try back up
             const currentSrc = img.src;
             const currentIndex = backupUrls.indexOf(currentSrc);
             const nextIndex = currentIndex + 1;
             
             if (nextIndex < backupUrls.length) {
-                // امتحان عکس بعدی
+                // try image
                 console.log('Trying backup image:', backupUrls[nextIndex]);
                 img.src = backupUrls[nextIndex];
             } else {
-                // اگر همه بک‌آپ‌ها شکست خوردند
+                // failed
                 console.log('All backup images failed for:', alt);
-                // نمایش placeholder با emoji
+                // showe placeholder with emoji
                 const placeholder = document.createElement('div');
                 placeholder.className = 'image-placeholder';
                 if (alt.includes('whale')) placeholder.textContent = '🐋 WHALE';
@@ -781,11 +784,11 @@
             }
         }
 
-        // وقتی صفحه لود شد
+        // when load
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Page loaded - checking images...');
             
-            // چک کردن عکس‌ها بعد از 2 ثانیه
+            // check
             setTimeout(() => {
                 const images = document.querySelectorAll('.animal-image img');
                 images.forEach(img => {
@@ -798,7 +801,7 @@
                 });
             }, 2000);
 
-            // همچنین چک کردن وقتی هر عکس لود می‌شود
+            // check load
             const images = document.querySelectorAll('.animal-image img');
             images.forEach(img => {
                 img.onload = function() {
@@ -999,6 +1002,7 @@
     </script>
 </body>
 </html>
+
 
 
 
