@@ -705,7 +705,7 @@
             <h2>Student Project</h2>
             <div class="student-note">
                 <p>This website was developed by students participating in the JA Company Program</p>
-                <p>We are learning web development with </strong></p>
+                <p>We are learning web development with HTML, CSS, and JavaScript</p>
                 <p>This project represents our experience with frontend web development</p>
             </div>
             <p><strong>Thank you for visiting our student project website.</strong></p>
@@ -719,7 +719,7 @@
                 <a href="mailto:avinlangroodi4@gmail.com" class="email-link">avinlangroodi4@gmail.com</a>
             </div>
             <p>JA Company Program Participant</p>
-            <p>Web Development Project </p>
+            <p>Web Development Project - HTML, CSS, JavaScript</p>
         </div>
     </div>
 
@@ -729,7 +729,7 @@
             {name: "Sajal Aryal", role: "VP Internal"}
         ];
         
-        // CORRECTED VERSION - نمایش درست اعضای تیم
+        // CORRECTED VERSION - Display team members correctly
         function showTeamMembers() {
             const container = document.getElementById('membersContainer');
             const membersList = document.getElementById('membersList');
@@ -742,8 +742,27 @@
                     setTimeout(() => {
                         const memberCard = document.createElement('div');
                         memberCard.className = 'member-card';
-                        // CORRECTION: استفاده از member.name و member.role به جای کل آبجکت
-                        memberCard.innerHTML = `<strong>${member.name}</strong><br>${member.role}`;
+                        
+                        // Create attractive color styles for each role
+                        let roleStyle = '';
+                        let nameStyle = '';
+                        
+                        if (member.role === "VP Information Technology") {
+                            roleStyle = 'background: linear-gradient(45deg, #e74c3c, #c0392b); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
+                            nameStyle = 'color: #e74c3c; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
+                        } else if (member.role === "VP Internal") {
+                            roleStyle = 'background: linear-gradient(45deg, #9b59b6, #8e44ad); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
+                            nameStyle = 'color: #9b59b6; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
+                        }
+                        
+                        // CORRECTION: Using member.name and member.role instead of the whole object
+                        memberCard.innerHTML = `
+                            <div style="${nameStyle}">${member.name}</div>
+                            <div style="${roleStyle}">${member.role}</div>
+                            <div style="margin-top: 8px; color: #7f8c8d; font-style: italic;">
+                                ${member.role === "VP Information Technology" ? "Technology Leader & Developer" : "Internal Operations & Design"}
+                            </div>
+                        `;
                         membersList.appendChild(memberCard);
                     }, index * 200);
                 });
@@ -752,7 +771,7 @@
             }
         }
         
-        //image management systems 
+        // Image management system
         const imageBackups = {
             'whale': [
                 'https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg',
@@ -771,32 +790,32 @@
             ]
         };
 
-        // Handle Error
+        // Handle Image Loading Error
         function handleImageError(img) {
             const alt = img.alt.toLowerCase();
             const parent = img.parentElement;
             
             console.log('Image failed to load:', img.src);
             
-            // Find back up
+            // Find backup images
             let backupUrls = [];
             if (alt.includes('whale')) backupUrls = imageBackups.whale;
             else if (alt.includes('lynx')) backupUrls = imageBackups.lynx;
             else if (alt.includes('turtle')) backupUrls = imageBackups.turtle;
             
-            // try back up
+            // Try backup images
             const currentSrc = img.src;
             const currentIndex = backupUrls.indexOf(currentSrc);
             const nextIndex = currentIndex + 1;
             
             if (nextIndex < backupUrls.length) {
-                // try image
+                // Try next backup image
                 console.log('Trying backup image:', backupUrls[nextIndex]);
                 img.src = backupUrls[nextIndex];
             } else {
-                // failed
+                // All backups failed
                 console.log('All backup images failed for:', alt);
-                // showe placeholder with emoji
+                // Show placeholder with emoji
                 const placeholder = document.createElement('div');
                 placeholder.className = 'image-placeholder';
                 if (alt.includes('whale')) placeholder.textContent = '🐋 WHALE';
@@ -807,11 +826,11 @@
             }
         }
 
-        // when load
+        // When page loads
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Page loaded - checking images...');
             
-            // check
+            // Check image loading status
             setTimeout(() => {
                 const images = document.querySelectorAll('.animal-image img');
                 images.forEach(img => {
@@ -824,7 +843,7 @@
                 });
             }, 2000);
 
-            // check load
+            // Check image loading
             const images = document.querySelectorAll('.animal-image img');
             images.forEach(img => {
                 img.onload = function() {
