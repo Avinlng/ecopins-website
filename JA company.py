@@ -10,8 +10,8 @@ STUDENT_NAME = "Avin P. Langroodi"
 
 
 TEAM_MEMBERS = [
-    "Avin P. Langroodi",
-    "Catherine Caliwag"
+    {"name": "Avin P. Langroodi", "role": "VP information technology "},
+    {"name": "Sajal Aryal", "role": "VP internal"}
 ]
 
 HTML_CONTENT = """
@@ -265,26 +265,54 @@ HTML_CONTENT = """
         
         .member-card {
             background: rgba(255, 255, 255, 0.8);
-            padding: 15px;
-            margin: 12px 0;
-            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
             font-weight: bold;
             color: #2c3e50;
             animation: fadeIn 0.5s ease;
             text-align: center;
             border: 2px solid transparent;
             transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        .animal-info-card {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 10px;
-            color: #2c3e50;
-            animation: fadeIn 0.5s ease;
-            border-left: 4px solid #3498db;
+        .member-info {
+            text-align: left;
+            flex-grow: 1;
         }
+        
+        .member-name {
+            font-size: 18px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .member-role {
+            font-size: 14px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .role-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #e17055, #fd79a8);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .VP information Technology-role { 
+            background: linear-gradient(45deg, #e74c3c, #c0392b); 
+        }
+        
+        .VP Internal-role { 
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
         
         .member-card:hover {
             border-color: #e17055;
@@ -640,7 +668,7 @@ HTML_CONTENT = """
             </div>
             
             <div id="membersContainer" class="members-container">
-                <div class="team-title">Team Members</div>
+                <div class="team-title">Meet Our Team</div>
                 <div id="membersList"></div>
             </div>
         </div>
@@ -677,7 +705,10 @@ HTML_CONTENT = """
     </div>
 
     <script>
-        const teamMembers = ["Avin P. Langroodi", "Catherine Caliwag"];
+        const teamMembers = [
+            {name: "Avin P. Langroodi", role: "CEO & Developer", roleClass: "ceo-role"},
+            {name: "Catherine Caliwag", role: "Designer & Marketing Manager", roleClass: "designer-role"}
+        ];
         
         function showTeamMembers() {
             const container = document.getElementById('membersContainer');
@@ -686,12 +717,21 @@ HTML_CONTENT = """
             if (container.style.display === 'none' || container.style.display === '') {
                 container.style.display = 'block';
                 membersList.innerHTML = '';
+                
                 for (var i = 0; i < teamMembers.length; i++) {
                     setTimeout(function(index) {
                         return function() {
                             const memberCard = document.createElement('div');
                             memberCard.className = 'member-card';
-                            memberCard.innerHTML = '<strong>Team Member ' + (index + 1) + '</strong><br>' + teamMembers[index];
+                            
+                            memberCard.innerHTML = `
+                                <div class="member-info">
+                                    <div class="member-name">${teamMembers[index].name}</div>
+                                    <div class="member-role">${teamMembers[index].role}</div>
+                                </div>
+                                <span class="role-badge ${teamMembers[index].roleClass}">${teamMembers[index].role.split('&')[0].trim()}</span>
+                            `;
+                            
                             membersList.appendChild(memberCard);
                         };
                     }(i), i * 200);
@@ -909,5 +949,3 @@ except KeyboardInterrupt:
     print("Website stopped")
 except Exception as e:
     print("Error:", e)
-
-
