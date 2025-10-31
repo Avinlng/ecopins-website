@@ -725,9 +725,32 @@
 
     <script>
         const teamMembers = [
-            {name: "Avin P. Langroodi", role: "VP information Technology", roleClass: "vice president"},
-            {name: "Sajal Aryal", role: "VP internal", roleClass: "vice president"}
+            {name: "Avin P. Langroodi", role: "VP Information Technology"},
+            {name: "Sajal Aryal", role: "VP Internal"}
         ];
+        
+        // CORRECTED VERSION - نمایش درست اعضای تیم
+        function showTeamMembers() {
+            const container = document.getElementById('membersContainer');
+            const membersList = document.getElementById('membersList');
+            
+            if (container.style.display === 'none' || container.style.display === '') {
+                container.style.display = 'block';
+                membersList.innerHTML = '';
+                
+                teamMembers.forEach((member, index) => {
+                    setTimeout(() => {
+                        const memberCard = document.createElement('div');
+                        memberCard.className = 'member-card';
+                        // CORRECTION: استفاده از member.name و member.role به جای کل آبجکت
+                        memberCard.innerHTML = `<strong>${member.name}</strong><br>${member.role}`;
+                        membersList.appendChild(memberCard);
+                    }, index * 200);
+                });
+            } else {
+                container.style.display = 'none';
+            }
+        }
         
         //image management systems 
         const imageBackups = {
@@ -809,27 +832,6 @@
                 };
             });
         });
-        
-        function showTeamMembers() {
-            const container = document.getElementById('membersContainer');
-            const membersList = document.getElementById('membersList');
-            
-            if (container.style.display === 'none' || container.style.display === '') {
-                container.style.display = 'block';
-                membersList.innerHTML = '';
-                
-                teamMembers.forEach((member, index) => {
-                    setTimeout(() => {
-                        const memberCard = document.createElement('div');
-                        memberCard.className = 'member-card';
-                        memberCard.innerHTML = `<strong>Team Member ${index + 1}</strong><br>${member}`;
-                        membersList.appendChild(memberCard);
-                    }, index * 200);
-                });
-            } else {
-                container.style.display = 'none';
-            }
-        }
         
         function toggleAnimalInfo(animal) {
             const infoContainers = ['whaleInfo', 'lynxInfo', 'turtleInfo'];
@@ -1002,7 +1004,3 @@
     </script>
 </body>
 </html>
-
-
-
-
