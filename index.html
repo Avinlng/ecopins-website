@@ -507,106 +507,9 @@
                 font-size: 32px;
             }
             
-            .header {
-                padding: 20px;
+            .container {
+                padding: 10px;
             }
-        }
-
-        /* Team Role Styles */
-        .VP-information-Technology-role {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        .VP-internal-role {
-            background: linear-gradient(45deg, #9b59b6, #8e44ad);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        .VP-External-role {
-            background: linear-gradient(45deg, #3498db, #2980b9);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        .VP-Production-role {
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        .VP-Marketing-role {
-            background: linear-gradient(45deg, #f39c12, #f1c40f);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        .VP-Sales-role {
-            background: linear-gradient(45deg, #8e44ad, #9b59b6);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        .VP-Human-Resources-role {
-            background: linear-gradient(45deg, #d35400, #e67e22);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        .VP-Corporate-Social-Responsibility-role {
-            background: linear-gradient(45deg, #16a085, #1abc9c);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        .VP-Finance-role {
-            background: linear-gradient(45deg, #c0392b, #e74c3c);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        .VP-Environment-role {
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        .VP-Health-Safety-role {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        .Head-of-Video-Production-Special-Events-role {
-            background: linear-gradient(45deg, #8e44ad, #9b59b6);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
         }
     </style>
 </head>
@@ -614,559 +517,372 @@
     <div class="header">
         <h1 class="main-title">EcoPins</h1>
         <div class="subtitle">Velcro Pins - JA Company Program</div>
+        <div style="color: #7f8c8d; font-size: 16px; margin-top: 10px;">Supporting Environmental Sustainability</div>
     </div>
 
     <div class="container">
+        <!-- About Section -->
         <div class="card about-card">
             <h2>About Our Product</h2>
-            <p>EcoPins are versatile reusable velcro pins that can be attached to various accessories. We create them with attention to environmental sustainability.</p>
-            <p>Each pin represents a commitment to eco-friendly fashion while allowing personal expression.</p>
+            <p>EcoPins are reusable velcro pins that support environmental sustainability. Our mission is to create eco-friendly accessories while raising awareness about endangered species in Nova Scotia.</p>
         </div>
 
+        <!-- Animal Designs Section -->
         <div class="card designs-card">
             <h2>Nova Scotia Wildlife Collection</h2>
-            <p>Support local endangered species through our special Nova Scotia designs</p>
+            <p>Support local endangered species through our special designs. Each pin represents an animal that needs our protection.</p>
             
             <div class="designs-container">
-                <!-- Whale -->
+                <!-- Whale Design -->
                 <div class="design-box">
-                    <div class="animal-image">
-                        <img src="https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg" alt="North Atlantic Right Whale" onerror="handleImageError(this)">
-                    </div>
                     <div class="design-title">North Atlantic Right Whale</div>
-                    <div class="design-description">The North Atlantic Right Whale is one of the world's most endangered large whale species.</div>
-                    <div class="help-message">By purchasing this pin, you help fund whale conservation research.</div>
-                    
-                    <div style="text-align: center;">
-                        <button class="animal-button" onclick="toggleAnimalInfo('whale')">
-                            Learn More About Whales
-                        </button>
+                    <div class="animal-image">
+                        <div class="image-placeholder">Whale Design Image</div>
                     </div>
+                    <div class="design-description">One of the world's most endangered whale species, with only about 350 remaining.</div>
+                    
+                    <button class="animal-button" onclick="showAnimalInfo('whaleInfo')">
+                        Learn About Whales
+                    </button>
                     
                     <div id="whaleInfo" class="animal-info-container">
                         <div class="animal-info-card">
-                            <strong>Population:</strong> Only about 350 remaining worldwide
+                            <strong>Population:</strong> Only about 350 remaining<br>
+                            <strong>Habitat:</strong> Nova Scotia waters<br>
+                            <strong>Status:</strong> Critically Endangered
                         </div>
-                        <div class="animal-info-card">
-                            <strong>Habitat:</strong> Nova Scotia waters during summer months
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Threats:</strong> Ship strikes, fishing gear entanglement, ocean noise
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Conservation Status:</strong> Critically Endangered
+                        
+                        <button class="help-button" onclick="showHelpMessage('whaleHelp')">
+                            How to Help Whales
+                        </button>
+                        
+                        <div id="whaleHelp" class="help-message" style="display: none;">
+                            Support marine conservation, reduce plastic use, choose sustainable seafood, report whale sightings, AND BUY A WHALE PIN FROM US!
                         </div>
                     </div>
-                    
-                    <button class="help-button" onclick="showHelpInfo('whale')">How can I help save whales?</button>
                 </div>
                 
-                <!-- Lynx -->
+                <!-- Lynx Design -->
                 <div class="design-box">
-                    <div class="animal-image">
-                        <img src="https://th.bing.com/th/id/R.464a22421f263c1707af3a14eebab0b5?rik=g7bFplMK4QLgng&pid=ImgRaw&r=0" alt="Canada Lynx" onerror="handleImageError(this)">
-                    </div>
                     <div class="design-title">Canada Lynx</div>
-                    <div class="design-description">The Canada Lynx is a threatened species in Nova Scotia forests.</div>
-                    <div class="help-message">Your purchase supports forest conservation programs.</div>
-                    
-                    <div style="text-align: center;">
-                        <button class="animal-button" onclick="toggleAnimalInfo('lynx')">
-                            Learn More About Lynx
-                        </button>
+                    <div class="animal-image">
+                        <div class="image-placeholder">Lynx Design Image</div>
                     </div>
+                    <div class="design-description">Threatened species in Nova Scotia forests, particularly in Cape Breton Highlands.</div>
+                    
+                    <button class="animal-button" onclick="showAnimalInfo('lynxInfo')">
+                        Learn About Lynx
+                    </button>
                     
                     <div id="lynxInfo" class="animal-info-container">
                         <div class="animal-info-card">
-                            <strong>Habitat:</strong> Cape Breton Highlands and forested areas
+                            <strong>Habitat:</strong> Cape Breton Highlands<br>
+                            <strong>Diet:</strong> Snowshoe hares<br>
+                            <strong>Status:</strong> Threatened
                         </div>
-                        <div class="animal-info-card">
-                            <strong>Diet:</strong> Primarily snowshoe hares
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Features:</strong> Large paws for walking on snow, tufted ears
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Conservation Status:</strong> Threatened in Nova Scotia
+                        
+                        <button class="help-button" onclick="showHelpMessage('lynxHelp')">
+                            How to Help Lynx
+                        </button>
+                        
+                        <div id="lynxHelp" class="help-message" style="display: none;">
+                            Support forest conservation, respect wildlife habitats, donate to protection programs, learn about coexistence, AND BUY A LYNX PIN FROM US!
                         </div>
                     </div>
-                    
-                    <button class="help-button" onclick="showHelpInfo('lynx')">How can I help save lynx?</button>
                 </div>
                 
-                <!-- Turtle -->
+                <!-- Turtle Design -->
                 <div class="design-box">
-                    <div class="animal-image">
-                        <img src="https://cdn.provincetownindependent.org/2025/10/Hakimi-leatherback-sea-turtles-photo-1-alive-1.jpeg" alt="Leatherback Sea Turtle" onerror="handleImageError(this)">
-                    </div>
                     <div class="design-title">Leatherback Sea Turtle</div>
-                    <div class="design-description">Leatherback Sea turtles are endangered ocean travelers.</div>
-                    <div class="help-message">Buying this pin contributes to sea turtle rescue organizations.</div>
-                    
-                    <div style="text-align: center;">
-                        <button class="animal-button" onclick="toggleAnimalInfo('turtle')">
-                            Learn More About Turtles
-                        </button>
+                    <div class="animal-image">
+                        <div class="image-placeholder">Turtle Design Image</div>
                     </div>
+                    <div class="design-description">Endangered ocean travelers that migrate thousands of miles through our waters.</div>
+                    
+                    <button class="animal-button" onclick="showAnimalInfo('turtleInfo')">
+                        Learn About Turtles
+                    </button>
                     
                     <div id="turtleInfo" class="animal-info-container">
                         <div class="animal-info-card">
-                            <strong>Size:</strong> Largest sea turtle, up to 2,000 pounds
+                            <strong>Size:</strong> Up to 2,000 pounds<br>
+                            <strong>Migration:</strong> Thousands of miles<br>
+                            <strong>Status:</strong> Endangered
                         </div>
-                        <div class="animal-info-card">
-                            <strong>Migration:</strong> Travel thousands of miles across oceans
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Diet:</strong> Mainly jellyfish
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Conservation Status:</strong> Endangered worldwide
+                        
+                        <button class="help-button" onclick="showHelpMessage('turtleHelp')">
+                            How to Help Turtles
+                        </button>
+                        
+                        <div id="turtleHelp" class="help-message" style="display: none;">
+                            Reduce plastic pollution, support turtle rescue centers, participate in beach cleanups, choose reef-safe sunscreen, AND BUY A TURTLE PIN FROM US!
                         </div>
                     </div>
-                    
-                    <button class="help-button" onclick="showHelpInfo('turtle')">How can I help save turtles?</button>
                 </div>
             </div>
         </div>
 
+        <!-- Features Section -->
         <div class="card features-card">
             <h2>Product Features</h2>
             <ul class="feature-list">
-                <li>Made from recycled and eco-friendly materials</li>
-                <li>Easy to switch between different designs</li>
-                <li>Multiple design options available</li>
-                <li>Supports environmental conservation efforts</li>
-                <li>Suitable as gifts</li>
-                <li>Created by students learning business skills</li>
+                <li>Made from recycled materials</li>
+                <li>Easy to switch designs</li>
+                <li>Supports conservation efforts</li>
+                <li>Perfect as gifts</li>
+                <li>Durable and long-lasting</li>
+                <li>Eco-friendly packaging</li>
             </ul>
         </div>
 
-        <!-- QUIZ SECTION -->
-        <div class="card quiz-card">
-            <h2>Personality Quiz</h2>
-            <p>Which animal matches your personality? Take our quick quiz to find out!</p>
-            
-            <div id="quizStart">
-                <div style="text-align: center; margin: 30px 0;">
-                    <button class="team-button" onclick="startQuiz()">
-                        Start Personality Quiz
-                    </button>
-                </div>
-                
-                <div class="quiz-info">
-                    <h3>How it works:</h3>
-                    <ul class="feature-list">
-                        <li>Answer 4 simple questions</li>
-                        <li>Find your matching animal</li>
-                        <li>Get your perfect EcoPin recommendation</li>
-                        <li>Learn about your spirit animal</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div id="quizQuestions" style="display: none;">
-                <!-- Questions will be loaded here -->
-            </div>
-            
-            <div id="quizResult" style="display: none;">
-                <!-- Result will be shown here -->
-            </div>
-        </div>
-
-        <div class="card team-card">
-            <h2>Our Team</h2>
-            <p>We are a group of students working together on the EcoPins project.</p>
-            
-            <div style="text-align: center;">
-                <button class="team-button" onclick="showTeamMembers()">
-                    View Team Members
-                </button>
-            </div>
-            
-            <div id="membersContainer" class="members-container">
-                <div class="team-title">Team Members</div>
-                <div id="membersList"></div>
-            </div>
-        </div>
-
+        <!-- Future Plans Section -->
         <div class="card future-card">
             <h2>Future Plans</h2>
-            <div class="future-feature">Online Store - In Development</div>
-            <p>We are developing our online store where you can view our velcro pin designs and place orders.</p>
-            
-            <div class="future-feature">Product Gallery - Coming Next</div>
-            <p>View images of our EcoPins collection featuring various designs and patterns.</p>
+            <div class="future-feature">More Animal Designs</div>
+            <div class="future-feature">Custom Pins</div>
+            <div class="future-feature">School Programs</div>
+            <div class="future-feature">Conservation Partnerships</div>
         </div>
 
+        <!-- Quiz Section -->
+        <div class="card quiz-card">
+            <h2>Personality Quiz</h2>
+            <p>Find which animal matches your personality!</p>
+            <div class="quiz-info">
+                <p>Take our fun quiz to discover which EcoPins animal best represents your personality. You might be a majestic whale, a mysterious lynx, or a wise turtle!</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="team-button" onclick="startQuiz()">Start Quiz</button>
+            </div>
+            
+            <div id="quizSection" style="display: none; margin-top: 20px;">
+                <div id="quizQuestions"></div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="card team-card">
+            <h2>Our Team</h2>
+            <p>We are students working on the EcoPins project through the JA Company Program.</p>
+            <p>Our team is passionate about environmental conservation and entrepreneurship.</p>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="team-button" onclick="showTeam()">Show Team Members</button>
+            </div>
+            
+            <div id="teamMembers" class="members-container">
+                <div class="team-title">Meet Our Team</div>
+                <div class="member-card">Avin P. Langroodi - VP Information Technology</div>
+                <div class="member-card">Sajal Aryal - VP Internal</div>
+                <div class="member-card">Alden Hiltz - VP External</div>
+                <div class="member-card">Manuela Roemer - VP Production</div>
+                <div class="member-card">Louis Goossens - VP Marketing</div>
+                <div class="member-card">Henry Hiltz - VP Sales</div>
+                <div class="member-card">Dylan Davidson - VP Human Resources</div>
+                <div class="member-card">Sophia Langille - VP Corporate Social Responsibility</div>
+                <div class="member-card">Maggie Pyke - VP Finance</div>
+                <div class="member-card">Alexander Bautista - VP Environment</div>
+                <div class="member-card">Michael Aucoin - VP Health & Safety</div>
+                <div class="member-card">Lily Bray - Head of Video Production & Special Events</div>
+            </div>
+        </div>
+
+        <!-- Student Project Section -->
         <div class="card student-card">
             <h2>Student Project</h2>
             <div class="student-note">
-                <p>This website was developed by students participating in the JA Company Program</p>
-                <p>We are learning web development with HTML, CSS, and JavaScript</p>
-                <p>This project represents our experience with frontend web development</p>
+                This website was created by students participating in the JA Company Program.
             </div>
-            <p><strong>Thank you for visiting our student project website.</strong></p>
+            <div class="student-note">
+                We are learning programming, business skills, and entrepreneurship through this project.
+            </div>
+            <div class="student-note">
+                Thank you for visiting our website and supporting our learning journey!
+            </div>
         </div>
 
+        <!-- Signature -->
         <div class="signature">
             <h3>Website Developer:</h3>
             <div class="creator-name">Avin P. Langroodi</div>
-            <div class="contact-info">
-                <a href="https://www.linkedin.com/in/avin-langroodi-85ab50287" class="contact-link" target="_blank">LinkedIn Profile</a>
-                <a href="mailto:avinlangroodi4@gmail.com" class="email-link">avinlangroodi4@gmail.com</a>
-            </div>
             <p>JA Company Program Participant</p>
-            <p>Web Development Project - HTML, CSS, JavaScript</p>
+            <p>Python Programming Project</p>
+            <div class="contact-info">
+                <a href="mailto:pinpointpatches1@gmail.com" class="email-link">pinpointpatches1@gmail.com</a>
+            </div>
         </div>
     </div>
 
     <script>
-        const teamMembers = [
-            {name: "Avin P. Langroodi", role: "VP Information Technology"},
-            {name: "Sajal Aryal", role: "VP Internal"},
-            {name: "Alden Hiltz", role: "VP External"},
-            {name: "Manuela Roemer", role: "VP Production"},
-            {name: "Louis Goossens", role: "VP Marketing"},
-            {name: "Henry Hiltz", role: "VP Sales"},
-            {name: "Dylan Davidson", role: "VP Human Resources"},
-            {name: "Sophia Langille", role: "VP Corporate Social Responsibility"},
-            {name: "Maggie Pyke", role: "VP Finance"},
-            {name: "Alexander Bautista", role: "VP Environment"},
-            {name: "Michael Aucoin", role: "VP Health & Safety"},
-            {name: "Lily Bray", role: "Head of Video Production & Special Events"}
-        ];
-        
-        // CORRECTED VERSION - Display team members correctly
-        function showTeamMembers() {
-            const container = document.getElementById('membersContainer');
-            const membersList = document.getElementById('membersList');
-            
-            if (container.style.display === 'none' || container.style.display === '') {
-                container.style.display = 'block';
-                membersList.innerHTML = '';
-                
-                teamMembers.forEach((member, index) => {
-                    setTimeout(() => {
-                        const memberCard = document.createElement('div');
-                        memberCard.className = 'member-card';
-                        
-                        // Create attractive color styles for each role
-                        let roleStyle = '';
-                        let nameStyle = '';
-                        
-                        if (member.role === "VP Information Technology") {
-                            roleStyle = 'background: linear-gradient(45deg, #e74c3c, #c0392b); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #e74c3c; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Internal") {
-                            roleStyle = 'background: linear-gradient(45deg, #9b59b6, #8e44ad); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #9b59b6; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP External") {
-                            roleStyle = 'background: linear-gradient(45deg, #3498db, #2980b9); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #3498db; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Production") {
-                            roleStyle = 'background: linear-gradient(45deg, #27ae60, #2ecc71); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #27ae60; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Marketing") {
-                            roleStyle = 'background: linear-gradient(45deg, #f39c12, #f1c40f); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #f39c12; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Sales") {
-                            roleStyle = 'background: linear-gradient(45deg, #8e44ad, #9b59b6); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #8e44ad; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Human Resources") {
-                            roleStyle = 'background: linear-gradient(45deg, #d35400, #e67e22); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #d35400; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Corporate Social Responsibility") {
-                            roleStyle = 'background: linear-gradient(45deg, #16a085, #1abc9c); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #16a085; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Finance") {
-                            roleStyle = 'background: linear-gradient(45deg, #c0392b, #e74c3c); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #c0392b; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Environment") {
-                            roleStyle = 'background: linear-gradient(45deg, #27ae60, #2ecc71); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #27ae60; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Health & Safety") {
-                            roleStyle = 'background: linear-gradient(45deg, #e74c3c, #c0392b); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #e74c3c; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "Head of Video Production & Special Events") {
-                            roleStyle = 'background: linear-gradient(45deg, #8e44ad, #9b59b6); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #8e44ad; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        }
-                        
-                        // CORRECTION: Using member.name and member.role instead of the whole object
-                        memberCard.innerHTML = `
-                            <div style="${nameStyle}">${member.name}</div>
-                            <div style="${roleStyle}">${member.role}</div>
-                            <div style="margin-top: 8px; color: #7f8c8d; font-style: italic;">
-                                ${member.role === "VP Information Technology" ? "Technology Leader & Developer" : 
-                                  member.role === "VP Internal" ? "Internal Operations & Design" :
-                                  member.role === "VP External" ? "External Relations & Partnerships" :
-                                  member.role === "VP Production" ? "Production Management & Quality Control" :
-                                  member.role === "VP Marketing" ? "Marketing Strategy & Brand Promotion" :
-                                  member.role === "VP Sales" ? "Sales Strategy & Customer Relations" :
-                                  member.role === "VP Human Resources" ? "Team Management & Recruitment" :
-                                  member.role === "VP Corporate Social Responsibility" ? "Social Responsibility & Community Engagement" :
-                                  member.role === "VP Finance" ? "Financial Management & Budget Planning" :
-                                  member.role === "VP Environment" ? "Environmental Initiatives & Sustainability" :
-                                  member.role === "VP Health & Safety" ? "Health & Safety Standards" :
-                                  "Video Production & Event Management"}
-                            </div>
-                        `;
-                        membersList.appendChild(memberCard);
-                    }, index * 200);
-                });
+        // Team display function
+        function showTeam() {
+            var team = document.getElementById('teamMembers');
+            if (team.style.display === 'none' || team.style.display === '') {
+                team.style.display = 'block';
             } else {
-                container.style.display = 'none';
+                team.style.display = 'none';
             }
         }
         
-        // Image management system
-        const imageBackups = {
-            'whale': [
-                'https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg',
-                'https://images.unsplash.com/photo-1574871619176-67c887c369c7?w=400&h=300&fit=crop',
-                'https://cdn.pixabay.com/photo/2019/11/07/19/57/whale-4609077_640.jpg'
-            ],
-            'lynx': [
-                'https://th.bing.com/th/id/R.464a22421f263c1707af3a14eebab0b5?rik=g7bFplMK4QLgng&pid=ImgRaw&r=0',
-                'https://images.unsplash.com/photo-1564889953123-f18976bb38a3?w=400&h=300&fit=crop',
-                'https://cdn.pixabay.com/photo/2017/07/24/18/57/lynx-2536664_640.jpg'
-            ],
-            'turtle': [
-                'https://cdn.provincetownindependent.org/2025/10/Hakimi-leatherback-sea-turtles-photo-1-alive-1.jpeg',
-                'https://images.unsplash.com/photo-1599159340399-64d76513d1a2?w=400&h=300&fit=crop',
-                'https://cdn.pixabay.com/photo/2016/03/05/22/18/animal-1239396_640.jpg'
-            ]
-        };
-
-        // Handle Image Loading Error
-        function handleImageError(img) {
-            const alt = img.alt.toLowerCase();
-            const parent = img.parentElement;
-            
-            console.log('Image failed to load:', img.src);
-            
-            // Find backup images
-            let backupUrls = [];
-            if (alt.includes('whale')) backupUrls = imageBackups.whale;
-            else if (alt.includes('lynx')) backupUrls = imageBackups.lynx;
-            else if (alt.includes('turtle')) backupUrls = imageBackups.turtle;
-            
-            // Try backup images
-            const currentSrc = img.src;
-            const currentIndex = backupUrls.indexOf(currentSrc);
-            const nextIndex = currentIndex + 1;
-            
-            if (nextIndex < backupUrls.length) {
-                // Try next backup image
-                console.log('Trying backup image:', backupUrls[nextIndex]);
-                img.src = backupUrls[nextIndex];
+        // Animal info display function
+        function showAnimalInfo(elementId) {
+            var element = document.getElementById(elementId);
+            if (element.style.display === 'none' || element.style.display === '') {
+                element.style.display = 'block';
             } else {
-                // All backups failed
-                console.log('All backup images failed for:', alt);
-                // Show placeholder with emoji
-                const placeholder = document.createElement('div');
-                placeholder.className = 'image-placeholder';
-                if (alt.includes('whale')) placeholder.textContent = '🐋 WHALE';
-                else if (alt.includes('lynx')) placeholder.textContent = '🐱 LYNX';
-                else if (alt.includes('turtle')) placeholder.textContent = '🐢 TURTLE';
-                parent.appendChild(placeholder);
-                img.style.display = 'none';
-            }
-        }
-
-        // When page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Page loaded - checking images...');
-            
-            // Check image loading status
-            setTimeout(() => {
-                const images = document.querySelectorAll('.animal-image img');
-                images.forEach(img => {
-                    if (!img.complete || img.naturalHeight === 0) {
-                        console.log('Image not loaded:', img.src);
-                        handleImageError(img);
-                    } else {
-                        console.log('Image loaded successfully:', img.src);
-                    }
-                });
-            }, 2000);
-
-            // Check image loading
-            const images = document.querySelectorAll('.animal-image img');
-            images.forEach(img => {
-                img.onload = function() {
-                    console.log('Image loaded successfully:', this.src);
-                };
-            });
-        });
-        
-        function toggleAnimalInfo(animal) {
-            const infoContainers = ['whaleInfo', 'lynxInfo', 'turtleInfo'];
-            
-            // Hide all info containers first
-            infoContainers.forEach(containerId => {
-                const container = document.getElementById(containerId);
-                if (container) {
-                    container.style.display = 'none';
-                }
-            });
-            
-            // Show the selected one if it's currently hidden
-            const selectedInfo = document.getElementById(animal + 'Info');
-            if (selectedInfo) {
-                if (selectedInfo.style.display === 'none' || selectedInfo.style.display === '') {
-                    selectedInfo.style.display = 'block';
-                } else {
-                    selectedInfo.style.display = 'none';
-                }
+                element.style.display = 'none';
             }
         }
         
-        function showHelpInfo(animal) {
-            let message = '';
-            
-            if (animal === 'whale') {
-                message = 'To help save whales:\n• Support marine conservation organizations\n• Reduce plastic use to protect oceans\n• Choose sustainable seafood\n• Report whale sightings to researchers\n\nAND BUY A PIN FROM US!';
-            } else if (animal === 'lynx') {
-                message = 'To help save lynx:\n• Support forest conservation efforts\n• Respect wildlife habitats when hiking\n• Donate to wildlife protection programs\n• Learn about coexisting with wild animals\n\nAND BUY A PIN FROM US!';
-            } else if (animal === 'turtle') {
-                message = 'To help save turtles:\n• Reduce plastic pollution in oceans\n• Support sea turtle rescue centers\n• Participate in beach cleanups\n• Choose reef-safe sunscreen\n\nAND BUY A PIN FROM US!';
+        // Help message display function
+        function showHelpMessage(elementId) {
+            var element = document.getElementById(elementId);
+            if (element.style.display === 'none' || element.style.display === '') {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
             }
-            
-            alert(message);
         }
-
-        // QUIZ FUNCTIONS
-        const quizQuestions = [
-            {
-                question: "What do you like to do in your free time?",
-                options: [
-                    {text: "Ocean and long travels", animal: "whale"},
-                    {text: "Hiking and nature", animal: "lynx"},
-                    {text: "Relax and chill", animal: "turtle"}
-                ]
-            },
-            {
-                question: "What is your main personality trait?",
-                options: [
-                    {text: "Strong and graceful", animal: "whale"},
-                    {text: "Smart and independent", animal: "lynx"},
-                    {text: "Patient and calm", animal: "turtle"}
-                ]
-            },
-            {
-                question: "How do you like to live?",
-                options: [
-                    {text: "In big groups", animal: "whale"},
-                    {text: "Alone and independent", animal: "lynx"},
-                    {text: "With small family", animal: "turtle"}
-                ]
-            },
-            {
-                question: "What is your main goal in life?",
-                options: [
-                    {text: "Discover new world", animal: "whale"},
-                    {text: "Be strong and successful", animal: "lynx"},
-                    {text: "Live peaceful life", animal: "turtle"}
-                ]
-            }
-        ];
         
-        let currentQuestion = 0;
-        let quizAnswers = [];
-        
+        // Simple quiz function
         function startQuiz() {
-            document.getElementById('quizStart').style.display = 'none';
-            document.getElementById('quizQuestions').style.display = 'block';
-            showQuestion(0);
+            var quizSection = document.getElementById('quizSection');
+            var questionsDiv = document.getElementById('quizQuestions');
+            
+            if (quizSection.style.display === 'none' || quizSection.style.display === '') {
+                quizSection.style.display = 'block';
+                
+                var questions = [
+                    {
+                        question: "What do you enjoy doing in your free time?",
+                        options: [
+                            {text: "Traveling and exploring new places", animal: "whale"},
+                            {text: "Hiking and outdoor adventures", animal: "lynx"},
+                            {text: "Relaxing and enjoying quiet moments", animal: "turtle"}
+                        ]
+                    },
+                    {
+                        question: "How would your friends describe your personality?",
+                        options: [
+                            {text: "Strong and adventurous", animal: "whale"},
+                            {text: "Smart and observant", animal: "lynx"},
+                            {text: "Calm and wise", animal: "turtle"}
+                        ]
+                    },
+                    {
+                        question: "What's your preferred way of living?",
+                        options: [
+                            {text: "In groups and communities", animal: "whale"},
+                            {text: "Independent and self-sufficient", animal: "lynx"},
+                            {text: "Family-oriented and traditional", animal: "turtle"}
+                        ]
+                    },
+                    {
+                        question: "What's your main goal in life?",
+                        options: [
+                            {text: "To discover new things and have adventures", animal: "whale"},
+                            {text: "To achieve success and recognition", animal: "lynx"},
+                            {text: "To find peace and happiness", animal: "turtle"}
+                        ]
+                    }
+                ];
+                
+                var html = '';
+                for (var i = 0; i < questions.length; i++) {
+                    html += '<div class="quiz-question">';
+                    html += '<h3>Question ' + (i+1) + ':</h3>';
+                    html += '<p>' + questions[i].question + '</p>';
+                    
+                    for (var j = 0; j < questions[i].options.length; j++) {
+                        html += '<button class="quiz-option" onclick="selectAnswer(' + i + ', \'' + questions[i].options[j].animal + '\')">';
+                        html += questions[i].options[j].text;
+                        html += '</button>';
+                    }
+                    
+                    html += '</div>';
+                }
+                
+                html += '<div style="text-align: center; margin: 20px;">';
+                html += '<button class="result-button" onclick="showQuizResult()">See My Result</button>';
+                html += '<button class="back-button" onclick="resetQuiz()">Start Over</button>';
+                html += '</div>';
+                
+                questionsDiv.innerHTML = html;
+            } else {
+                quizSection.style.display = 'none';
+            }
         }
         
-        function showQuestion(questionIndex) {
-            const question = quizQuestions[questionIndex];
-            let html = '<div class="quiz-question">';
-            html += `<h3>Question ${questionIndex + 1} of 4</h3>`;
-            html += `<div class="question-text">${question.question}</div>`;
-            
-            question.options.forEach((option, index) => {
-                html += `<button class="quiz-option" onclick="answerQuestion(${questionIndex}, '${option.animal}')">`;
-                html += option.text;
-                html += '</button>';
-            });
-            
-            html += '</div>';
-            document.getElementById('quizQuestions').innerHTML = html;
-        }
+        var quizAnswers = [];
         
-        function answerQuestion(questionIndex, animal) {
+        function selectAnswer(questionIndex, animal) {
             quizAnswers[questionIndex] = animal;
             
-            if (questionIndex < quizQuestions.length - 1) {
-                showQuestion(questionIndex + 1);
-            } else {
-                showResult();
-            }
-        }
-        
-        function showResult() {
-            // Count animals
-            const counts = {whale: 0, lynx: 0, turtle: 0};
-            quizAnswers.forEach(animal => {
-                counts[animal]++;
+            // Highlight selected button
+            var buttons = document.querySelectorAll('.quiz-option');
+            buttons.forEach(function(button) {
+                button.style.background = '#3498db';
             });
             
-            // Find winner
-            let maxCount = 0;
-            let winner = '';
+            // Find which button was clicked and highlight it
+            event.target.style.background = '#e17055';
+        }
+        
+        function showQuizResult() {
+            var questionsDiv = document.getElementById('quizQuestions');
             
-            for (const animal in counts) {
-                if (counts[animal] > maxCount) {
-                    maxCount = counts[animal];
-                    winner = animal;
+            // Count animal selections
+            var animalCount = {whale: 0, lynx: 0, turtle: 0};
+            for (var i = 0; i < quizAnswers.length; i++) {
+                if (quizAnswers[i]) {
+                    animalCount[quizAnswers[i]]++;
                 }
             }
             
-            // Show result
-            let resultHTML = '<div class="quiz-result">';
+            // Determine result
+            var resultAnimal = 'whale';
+            var maxCount = animalCount.whale;
             
-            if (winner === 'whale') {
-                resultHTML += '<h2>You are a Whale!</h2>';
-                resultHTML += '<p>Your personality matches the North Atlantic Right Whale: Strong, graceful, and loves to travel!</p>';
-                resultHTML += '<p><strong>We recommend: Whale EcoPin</strong></p>';
-            } else if (winner === 'lynx') {
-                resultHTML += '<h2>You are a Lynx!</h2>';
-                resultHTML += '<p>Your personality matches the Canada Lynx: Independent, smart, and strong!</p>';
-                resultHTML += '<p><strong>We recommend: Lynx EcoPin</strong></p>';
-            } else if (winner === 'turtle') {
-                resultHTML += '<h2>You are a Turtle!</h2>';
-                resultHTML += '<p>Your personality matches the Leatherback Sea Turtle: Patient, calm, and loves peace!</p>';
-                resultHTML += '<p><strong>We recommend: Turtle EcoPin</strong></p>';
+            if (animalCount.lynx > maxCount) {
+                resultAnimal = 'lynx';
+                maxCount = animalCount.lynx;
             }
             
-            resultHTML += '<div class="result-buttons">';
-            resultHTML += '<button class="result-button" onclick="restartQuiz()">Take Quiz Again</button>';
-            resultHTML += '<button class="back-button" onclick="closeQuiz()">Close Quiz</button>';
-            resultHTML += '</div>';
-            resultHTML += '</div>';
+            if (animalCount.turtle > maxCount) {
+                resultAnimal = 'turtle';
+            }
             
-            document.getElementById('quizQuestions').style.display = 'none';
-            document.getElementById('quizResult').innerHTML = resultHTML;
-            document.getElementById('quizResult').style.display = 'block';
+            // Create result message
+            var resultMessage = '';
+            var resultTitle = '';
+            
+            if (resultAnimal === 'whale') {
+                resultTitle = 'You are a WHALE!';
+                resultMessage = 'You are strong, adventurous, and love to explore new places! Like the majestic North Atlantic Right Whale, you value community and long journeys.';
+            } else if (resultAnimal === 'lynx') {
+                resultTitle = 'You are a LYNX!';
+                resultMessage = 'You are smart, observant, and independent! Like the mysterious Canada Lynx, you are adaptable and thrive in challenging environments.';
+            } else {
+                resultTitle = 'You are a TURTLE!';
+                resultMessage = 'You are calm, wise, and value tradition! Like the ancient Leatherback Sea Turtle, you have endurance and appreciate the journey of life.';
+            }
+            
+            questionsDiv.innerHTML = '<div class="quiz-result">' +
+                '<h2>' + resultTitle + '</h2>' +
+                '<p>' + resultMessage + '</p>' +
+                '<p>Get your ' + resultAnimal + ' pin to show your personality!</p>' +
+                '<div class="result-buttons">' +
+                '<button class="result-button" onclick="startQuiz()">Take Quiz Again</button>' +
+                '<button class="back-button" onclick="resetQuiz()">Back to Main</button>' +
+                '</div>' +
+                '</div>';
         }
         
-        function restartQuiz() {
+        function resetQuiz() {
+            var quizSection = document.getElementById('quizSection');
+            quizSection.style.display = 'none';
             quizAnswers = [];
-            currentQuestion = 0;
-            document.getElementById('quizResult').style.display = 'none';
-            document.getElementById('quizQuestions').style.display = 'block';
-            showQuestion(0);
-        }
-        
-        function closeQuiz() {
-            quizAnswers = [];
-            currentQuestion = 0;
-            document.getElementById('quizResult').style.display = 'none';
-            document.getElementById('quizQuestions').style.display = 'none';
-            document.getElementById('quizStart').style.display = 'block';
         }
     </script>
 </body>
