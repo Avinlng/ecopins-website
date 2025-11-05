@@ -1,682 +1,535 @@
-# JA Company Program - EcoPins Website
-# Student Project - Made with Python
-
-print("Creating EcoPins Website...")
-print("This website was made by a student")
-print("Using Python programming")
-
-
-STUDENT_NAME = "Avin P. Langroodi"
-
-
-TEAM_MEMBERS = [
-    {"name": "Avin P. Langroodi", "role": "VP information technology"},
-    {"name": "Sajal Aryal", "role": "VP internal"},
-    {"name": "Alden Hiltz", "role": "VP External"},
-    {"name": "Manuela Roemer", "role": "VP Production"},
-    {"name": "Louis Goossens", "role": "VP Marketing"},
-    {"name": "Henry Hiltz", "role": "VP Sales"},
-    {"name": "Dylan Davidson", "role": "VP Human Resources"},
-    {"name": "Sophia Langille", "role": "VP Corporate Social Responsibility"},
-    {"name": "Maggie Pyke", "role": "VP Finance"},
-    {"name": "Alexander Bautista", "role": "VP Environment"},
-    {"name": "Michael Aucoin", "role": "VP Health & Safety"},
-    {"name": "Lily Bray", "role": "Head of Video Production & Special Events"}
-]
-
-HTML_CONTENT = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>EcoPins - JA Company</title>
+    <title>Animal Designs - EcoPins</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
         }
         
         .header {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
+            background: white;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .main-title {
             color: #2c3e50;
-            font-size: 42px;
+            font-size: 36px;
             margin: 0;
-            font-weight: bold;
-            background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
         
         .subtitle {
             color: #7f8c8d;
-            font-size: 20px;
-            margin: 15px 0;
-            font-weight: 500;
+            font-size: 18px;
+            margin: 10px 0;
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
         
         .card {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
-            margin: 25px 0;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            border: none;
-            transition: all 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
-        }
-        
-        .about-card {
-            background: linear-gradient(135deg, #FFEAA7, #fab1a0);
-        }
-        
-        .features-card {
-            background: linear-gradient(135deg, #81ECEC, #74B9FF);
-        }
-        
-        .future-card {
-            background: linear-gradient(135deg, #FD79A8, #a29bfe);
-        }
-        
-        .student-card {
-            background: linear-gradient(135deg, #55EFC4, #00b894);
-        }
-        
-        .team-card {
-            background: linear-gradient(135deg, #FDCB6E, #e17055);
-        }
-        
-        .designs-card {
-            background: linear-gradient(135deg, #a29bfe, #fd79a8);
-        }
-        
-        .quiz-card {
-            background: linear-gradient(135deg, #FF9A8B, #FF6A88);
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
         h2 {
             color: #2c3e50;
-            font-size: 28px;
-            margin-top: 0;
             text-align: center;
-            padding-bottom: 15px;
-            border-bottom: 3px solid rgba(255,255,255,0.5);
+            margin-bottom: 20px;
         }
         
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .feature-list li {
-            padding: 15px;
-            margin: 10px 0;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            font-weight: bold;
-            color: #2c3e50;
-            border-left: 5px solid #e17055;
-        }
-        
-        .future-feature {
-            text-align: center;
-            font-size: 22px;
-            color: #2c3e50;
-            font-weight: bold;
-            margin: 20px 0;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 12px;
-            border: 2px dashed rgba(255,255,255,0.8);
-        }
-        
-        .student-note {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 20px;
-            border-radius: 12px;
-            margin: 15px 0;
-            text-align: center;
-            font-style: italic;
-            color: #2c3e50;
-            font-size: 18px;
-        }
-        
-        .signature {
-            text-align: center;
-            margin-top: 40px;
-            padding: 25px;
-            background: linear-gradient(135deg, #dfe6e9, #b2bec3);
-            border-radius: 15px;
-            font-weight: bold;
-            color: #2c3e50;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-        }
-        
-        .creator-name {
-            font-size: 24px;
-            color: #0984e3;
-            margin: 10px 0;
-        }
-        
-        .contact-info {
-            margin: 15px 0;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            display: inline-block;
-        }
-        
-        .contact-link {
-            color: #0984e3;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 10px;
-            padding: 8px 15px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.5);
-            transition: all 0.3s ease;
-        }
-        
-        .contact-link:hover {
-            background: rgba(255, 255, 255, 0.8);
-            transform: scale(1.05);
-        }
-        
-        .email-link {
-            color: #d63031;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 10px;
-            padding: 8px 15px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.5);
-            transition: all 0.3s ease;
-            border: 1px solid #d63031;
-        }
-        
-        .email-link:hover {
-            background: rgba(214, 48, 49, 0.1);
-            transform: scale(1.05);
-        }
-        
-        .team-button {
-            background: linear-gradient(45deg, #e17055, #fd79a8);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            border-radius: 25px;
-            cursor: pointer;
-            margin: 15px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .team-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
-        .animal-button {
-            background: linear-gradient(45deg, #3498db, #2980b9);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            margin: 10px 0;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        }
-        
-        .animal-button:hover {
-            transform: scale(1.05);
-            background: linear-gradient(45deg, #2980b9, #3498db);
-        }
-        
-        .members-container {
-            display: none;
-            margin-top: 25px;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            border: 2px dashed rgba(255,255,255,0.6);
-        }
-        
-        .animal-info-container {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            border: 2px dashed rgba(255,255,255,0.6);
-        }
-        
-        .member-card {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 12px;
-            font-weight: bold;
-            color: #2c3e50;
-            animation: fadeIn 0.5s ease;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .member-info {
-            text-align: left;
-            flex-grow: 1;
-        }
-        
-        .member-name {
-            font-size: 18px;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        
-        .member-role {
-            font-size: 14px;
-            color: #7f8c8d;
-            font-style: italic;
-        }
-        
-        .role-badge {
-            display: inline-block;
-            background: linear-gradient(45deg, #e17055, #fd79a8);
-            color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
-        
-        .VP information Technology-role { 
-            background: linear-gradient(45deg, #e74c3c, #c0392b); 
-        }
-        
-        .VP Internal-role { 
-            background: linear-gradient(45deg, #9b59b6, #8e44ad);
-        }
-        
-        .VP External-role { 
-            background: linear-gradient(45deg, #3498db, #2980b9);
-        }
-        
-        .VP Production-role { 
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
-        }
-        
-        .VP Marketing-role { 
-            background: linear-gradient(45deg, #f39c12, #f1c40f);
-        }
-        
-        .VP Sales-role { 
-            background: linear-gradient(45deg, #8e44ad, #9b59b6);
-        }
-        
-        .VP Human Resources-role { 
-            background: linear-gradient(45deg, #d35400, #e67e22);
-        }
-        
-        .VP Corporate Social Responsibility-role { 
-            background: linear-gradient(45deg, #16a085, #1abc9c);
-        }
-        
-        .VP Finance-role { 
-            background: linear-gradient(45deg, #c0392b, #e74c3c);
-        }
-        
-        .VP Environment-role { 
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
-        }
-        
-        .VP Health & Safety-role { 
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-        }
-        
-        .Head of Video Production & Special Events-role { 
-            background: linear-gradient(45deg, #8e44ad, #9b59b6);
-        }
-        
-        .member-card:hover {
-            border-color: #e17055;
-            transform: scale(1.02);
-        }
-        
-        .designs-container {
-            display: flex;
-            justify-content: center;
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
-            flex-wrap: wrap;
             margin-top: 20px;
         }
         
-        .design-box {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 25px;
-            border-radius: 15px;
-            width: 280px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
+        .design-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
             border: 3px solid transparent;
+            transition: all 0.3s ease;
         }
         
-        .design-box:hover {
-            transform: translateY(-8px);
-            border-color: #e17055;
-        }
-        
-        .design-title {
-            color: #2c3e50;
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-align: center;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(0,0,0,0.1);
-        }
-        
-        .design-description {
-            color: #7f8c8d;
-            text-align: center;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            font-size: 16px;
+        .design-card:hover {
+            border-color: #3498db;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
         .animal-image {
             width: 100%;
-            height: 180px;
-            border-radius: 10px;
+            height: 200px;
+            border-radius: 8px;
             margin-bottom: 15px;
             overflow: hidden;
-            border: 2px solid #dee2e6;
         }
         
         .animal-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease;
         }
         
-        .help-message {
-            background: rgba(46, 204, 113, 0.2);
-            padding: 12px;
-            border-radius: 8px;
-            margin-top: 15px;
-            text-align: center;
-            font-weight: bold;
-            color: #27ae60;
-            border: 1px solid #27ae60;
-        }
-        
-        .help-button {
-            background: linear-gradient(45deg, #3498db, #2980b9);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 14px;
-            border-radius: 20px;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-        }
-        
-        .help-button:hover {
+        .design-card:hover .animal-image img {
             transform: scale(1.05);
-            background: linear-gradient(45deg, #2980b9, #3498db);
         }
         
-        /* Quiz Styles */
-        .quiz-info {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 20px;
+        .animal-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
         }
         
-        .quiz-question {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 25px;
-            margin: 20px 0;
-            border-radius: 15px;
-            text-align: center;
+        .animal-description {
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
         
-        .quiz-option {
+        .info-button {
             background: #3498db;
             color: white;
             border: none;
-            padding: 15px 25px;
-            margin: 10px;
+            padding: 10px 20px;
+            margin: 5px;
             border-radius: 25px;
             cursor: pointer;
-            font-size: 16px;
+            font-weight: bold;
             transition: all 0.3s ease;
-            display: block;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
         }
         
-        .quiz-option:hover {
+        .info-button:hover {
             background: #2980b9;
             transform: scale(1.05);
         }
         
-        .quiz-result {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 20px 0;
-            text-align: center;
-        }
-        
-        .result-buttons {
-            margin-top: 20px;
-        }
-        
-        .result-button {
-            background: #f39c12;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 20px;
-            cursor: pointer;
-            margin: 10px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        
-        .back-button {
+        .help-button {
             background: #e74c3c;
             color: white;
             border: none;
-            padding: 12px 25px;
-            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 25px;
             cursor: pointer;
-            margin: 10px;
-            font-size: 16px;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .team-title {
-            color: #2c3e50;
-            font-size: 26px;
-            margin-bottom: 20px;
-            text-align: center;
             font-weight: bold;
+            transition: all 0.3s ease;
         }
         
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #2c3e50;
+        .help-button:hover {
+            background: #c0392b;
+            transform: scale(1.05);
+        }
+        
+        .info-container {
+            display: none;
+            background: #ecf0f1;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: left;
+            border-left: 4px solid #3498db;
+        }
+        
+        .help-container {
+            display: none;
+            background: #ffeaa7;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .feature-list {
+            text-align: left;
+            margin: 10px 0;
+        }
+        
+        .feature-list li {
+            margin: 8px 0;
+            padding-left: 10px;
+        }
+        
+        .buy-highlight {
+            font-weight: bold;
+            color: #e74c3c;
+            margin-top: 15px;
+            padding: 10px;
+            background: #ffeaa7;
+            border-radius: 5px;
             text-align: center;
+            font-size: 18px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .stat-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #bdc3c7;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 5px 0;
+        }
+        
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        .navigation {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .nav-button {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin: 0 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background: #34495e;
+            transform: scale(1.05);
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .contact-info {
+            margin: 15px 0;
+        }
+        
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .contact-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        
+        .email-link {
+            color: #ffeaa7;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .email-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.05);
+        }
+        
+        .status-critical {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .status-threatened {
+            color: #e67e22;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .status-endangered {
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1 class="main-title">EcoPins</h1>
-        <div class="subtitle">Velcro Pins - JA Company Program</div>
+        <h1 class="main-title">EcoPins Animal Designs</h1>
+        <div class="subtitle">Support Endangered Species Through Our Velcro Pin Collection</div>
     </div>
 
     <div class="container">
-        <div class="card about-card">
-            <h2>About Our Product</h2>
-            <p>EcoPins are versatile reusable velcro pins that can be attached to various accessories. We create them with attention to environmental sustainability.</p>
-            <p>Each pin represents a commitment to eco-friendly fashion while allowing personal expression.</p>
+        <!-- Introduction -->
+        <div class="card">
+            <h2>Nova Scotia Wildlife Collection</h2>
+            <p style="text-align: center; font-size: 18px; line-height: 1.6;">
+                Each EcoPin represents an endangered or threatened species from Nova Scotia. 
+                By purchasing our pins, you directly support conservation efforts and help protect these amazing animals.
+            </p>
         </div>
 
-        <div class="card designs-card">
-            <h2>Nova Scotia Wildlife Collection</h2>
-            <p>Support local endangered species through our special Nova Scotia designs</p>
+        <!-- Animal Designs Grid -->
+        <div class="designs-grid">
+            <!-- Whale Design -->
+            <div class="design-card">
+                <div class="animal-image">
+                    <img src="https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg" alt="North Atlantic Right Whale">
+                </div>
+                <div class="animal-name">North Atlantic Right Whale</div>
+                <div class="animal-description">
+                    One of the world's most endangered large whale species, with only about 350 individuals remaining.
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">~350</div>
+                        <div class="stat-label">Remaining</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">Critically</div>
+                        <div class="stat-label">Endangered</div>
+                    </div>
+                </div>
+                
+                <button class="info-button" onclick="toggleInfo('whaleDetails')">Species Information</button>
+                <button class="help-button" onclick="toggleInfo('whaleHelp')">How to Help</button>
+                
+                <div id="whaleDetails" class="info-container">
+                    <h4>About North Atlantic Right Whales:</h4>
+                    <ul class="feature-list">
+                        <li><strong>Scientific Name:</strong> Eubalaena glacialis</li>
+                        <li><strong>Habitat:</strong> Atlantic coastal waters, including Nova Scotia</li>
+                        <li><strong>Size:</strong> Up to 52 feet long, weighing up to 70 tons</li>
+                        <li><strong>Diet:</strong> Tiny crustaceans called copepods</li>
+                        <li><strong>Lifespan:</strong> Up to 70 years</li>
+                        <li><strong>Threats:</strong> Ship strikes, fishing gear entanglement, ocean noise</li>
+                    </ul>
+                    <p class="status-critical">CRITICALLY ENDANGERED - URGENT ACTION NEEDED</p>
+                </div>
+                
+                <div id="whaleHelp" class="help-container">
+                    <h4>How You Can Help Save Right Whales:</h4>
+                    <ul class="feature-list">
+                        <li>Support organizations working on whale conservation</li>
+                        <li>Choose sustainable seafood to reduce fishing pressure</li>
+                        <li>Reduce plastic use to prevent ocean pollution</li>
+                        <li>Report whale sightings to marine authorities</li>
+                        <li>Advocate for ship speed restrictions in whale habitats</li>
+                    </ul>
+                    <div class="buy-highlight">BUY A WHALE PIN TO SUPPORT CONSERVATION!</div>
+                </div>
+            </div>
             
-            <div class="designs-container">
-                <div class="design-box">
-                    <div class="animal-image">
-                        <img src="https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg" alt="North Atlantic Right Whale">
-                    </div>
-                    <div class="design-title">North Atlantic Right Whale</div>
-                    <div class="design-description">The North Atlantic Right Whale is one of the world's most endangered large whale species.</div>
-                    <div class="help-message">By purchasing this pin, you help fund whale conservation research.</div>
-                    
-                    <div style="text-align: center;">
-                        <button class="animal-button" onclick="toggleAnimalInfo('whale')">
-                            Learn More About Whales
-                        </button>
-                    </div>
-                    
-                    <div id="whaleInfo" class="animal-info-container">
-                        <div class="animal-info-card">
-                            <strong>Population:</strong> Only about 350 remaining worldwide
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Habitat:</strong> Nova Scotia waters during summer months
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Threats:</strong> Ship strikes, fishing gear entanglement, ocean noise
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Conservation Status:</strong> Critically Endangered
-                        </div>
-                    </div>
-                    
-                    <button class="help-button" onclick="showHelpInfo('whale')">How can I help save whales?</button>
+            <!-- Lynx Design -->
+            <div class="design-card">
+                <div class="animal-image">
+                    <img src="https://www.ecowatch.com/wp-content/uploads/2022/04/canada-lynx-1024x576.jpg" alt="Canada Lynx">
+                </div>
+                <div class="animal-name">Canada Lynx</div>
+                <div class="animal-description">
+                    A threatened species in Nova Scotia, primarily found in the Cape Breton Highlands.
                 </div>
                 
-                <div class="design-box">
-                    <div class="animal-image">
-                        <img src="https://www.ecowatch.com/wp-content/uploads/2022/04/canada-lynx-1024x576.jpg" alt="Canada Lynx">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">&lt;50</div>
+                        <div class="stat-label">In Nova Scotia</div>
                     </div>
-                    <div class="design-title">Canada Lynx</div>
-                    <div class="design-description">The Canada Lynx is a threatened species in Nova Scotia forests.</div>
-                    <div class="help-message">Your purchase supports forest conservation programs.</div>
-                    
-                    <div style="text-align: center;">
-                        <button class="animal-button" onclick="toggleAnimalInfo('lynx')">
-                            Learn More About Lynx
-                        </button>
+                    <div class="stat-item">
+                        <div class="stat-value">Threatened</div>
+                        <div class="stat-label">Status</div>
                     </div>
-                    
-                    <div id="lynxInfo" class="animal-info-container">
-                        <div class="animal-info-card">
-                            <strong>Habitat:</strong> Cape Breton Highlands and forested areas
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Diet:</strong> Primarily snowshoe hares
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Features:</strong> Large paws for walking on snow, tufted ears
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Conservation Status:</strong> Threatened in Nova Scotia
-                        </div>
-                    </div>
-                    
-                    <button class="help-button" onclick="showHelpInfo('lynx')">How can I help save lynx?</button>
                 </div>
                 
-                <div class="design-box">
-                    <div class="animal-image">
-                        <img src="https://cdn.provincetownindependent.org/2025/10/Hakimi-leatherback-sea-turtles-photo-1-alive-1.jpeg" alt="Leatherback Sea Turtle">
+                <button class="info-button" onclick="toggleInfo('lynxDetails')">Species Information</button>
+                <button class="help-button" onclick="toggleInfo('lynxHelp')">How to Help</button>
+                
+                <div id="lynxDetails" class="info-container">
+                    <h4>About Canada Lynx:</h4>
+                    <ul class="feature-list">
+                        <li><strong>Scientific Name:</strong> Lynx canadensis</li>
+                        <li><strong>Habitat:</strong> Boreal forests, Cape Breton Highlands</li>
+                        <li><strong>Size:</strong> 18-24 pounds, about 3 feet long</li>
+                        <li><strong>Diet:</strong> Primarily snowshoe hares (90% of diet)</li>
+                        <li><strong>Lifespan:</strong> Up to 15 years in the wild</li>
+                        <li><strong>Threats:</strong> Habitat loss, climate change, reduced prey</li>
+                    </ul>
+                    <p class="status-threatened">THREATENED - PROTECTION NEEDED</p>
+                </div>
+                
+                <div id="lynxHelp" class="help-container">
+                    <h4>How You Can Help Protect Lynx:</h4>
+                    <ul class="feature-list">
+                        <li>Support forest conservation efforts</li>
+                        <li>Respect wildlife habitats when hiking</li>
+                        <li>Donate to lynx research and protection programs</li>
+                        <li>Learn about coexistence with wildlife</li>
+                        <li>Advocate for protected wilderness areas</li>
+                    </ul>
+                    <div class="buy-highlight">BUY A LYNX PIN TO SUPPORT FOREST CONSERVATION!</div>
+                </div>
+            </div>
+            
+            <!-- Turtle Design -->
+            <div class="design-card">
+                <div class="animal-image">
+                    <img src="https://cdn.provincetownindependent.org/2025/10/Hakimi-leatherback-sea-turtles-photo-1-alive-1.jpeg" alt="Leatherback Sea Turtle">
+                </div>
+                <div class="animal-name">Leatherback Sea Turtle</div>
+                <div class="animal-description">
+                    The largest sea turtle species, endangered ocean travelers that visit Nova Scotia waters.
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">2,000 lbs</div>
+                        <div class="stat-label">Maximum Weight</div>
                     </div>
-                    <div class="design-title">Leatherback Sea Turtle</div>
-                    <div class="design-description">Leatherback Sea turtles are endangered ocean travelers.</div>
-                    <div class="help-message">Buying this pin contributes to sea turtle rescue organizations.</div>
-                    
-                    <div style="text-align: center;">
-                        <button class="animal-button" onclick="toggleAnimalInfo('turtle')">
-                            Learn More About Turtles
-                        </button>
+                    <div class="stat-item">
+                        <div class="stat-value">Endangered</div>
+                        <div class="stat-label">Status</div>
                     </div>
-                    
-                    <div id="turtleInfo" class="animal-info-container">
-                        <div class="animal-info-card">
-                            <strong>Size:</strong> Largest sea turtle, up to 2,000 pounds
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Migration:</strong> Travel thousands of miles across oceans
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Diet:</strong> Mainly jellyfish
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Conservation Status:</strong> Endangered worldwide
-                        </div>
-                    </div>
-                    
-                    <button class="help-button" onclick="showHelpInfo('turtle')">How can I help save turtles?</button>
+                </div>
+                
+                <button class="info-button" onclick="toggleInfo('turtleDetails')">Species Information</button>
+                <button class="help-button" onclick="toggleInfo('turtleHelp')">How to Help</button>
+                
+                <div id="turtleDetails" class="info-container">
+                    <h4>About Leatherback Sea Turtles:</h4>
+                    <ul class="feature-list">
+                        <li><strong>Scientific Name:</strong> Dermochelys coriacea</li>
+                        <li><strong>Habitat:</strong> Open ocean, coastal waters during migration</li>
+                        <li><strong>Size:</strong> Up to 7 feet long, weighing 2,000 pounds</li>
+                        <li><strong>Diet:</strong> Jellyfish and other soft-bodied animals</li>
+                        <li><strong>Lifespan:</strong> Up to 50 years</li>
+                        <li><strong>Migration:</strong> Travel thousands of miles annually</li>
+                        <li><strong>Threats:</strong> Plastic pollution, fishing gear, habitat loss</li>
+                    </ul>
+                    <p class="status-endangered">ENDANGERED - CONSERVATION CRITICAL</p>
+                </div>
+                
+                <div id="turtleHelp" class="help-container">
+                    <h4>How You Can Help Sea Turtles:</h4>
+                    <ul class="feature-list">
+                        <li>Reduce single-use plastic consumption</li>
+                        <li>Participate in beach cleanups</li>
+                        <li>Support sea turtle rescue and rehabilitation centers</li>
+                        <li>Choose reef-safe sunscreen when swimming</li>
+                        <li>Respect nesting beaches and keep lights low at night</li>
+                    </ul>
+                    <div class="buy-highlight">BUY A TURTLE PIN TO SUPPORT OCEAN CONSERVATION!</div>
                 </div>
             </div>
         </div>
 
-        <div class="card features-card">
-            <h2>Product Features</h2>
-            <ul class="feature-list">
-                <li>Made from recycled and eco-friendly materials</li>
-                <li>Easy to switch between different designs</li>
-                <li>Multiple design options available</li>
-                <li>Supports environmental conservation efforts</li>
-                <li>Suitable as gifts</li>
-                <li>Created by students learning business skills</li>
-            </ul>
+        <!-- Conservation Impact -->
+        <div class="card">
+            <h2>Our Conservation Impact</h2>
+            <div style="text-align: center; font-size: 18px; line-height: 1.6;">
+                <p>100% of profits from EcoPins sales go directly to environmental organizations working to protect these species.</p>
+                <p>Your purchase makes a real difference in conservation efforts!</p>
+            </div>
+            
+            <div class="stats-grid" style="margin-top: 30px;">
+                <div class="stat-item">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Profits Donated</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Species Supported</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">Local</div>
+                    <div class="stat-label">Nova Scotia Focus</div>
+                </div>
+            </div>
         </div>
 
-        <!-- QUIZ SECTION -->
-        <div class="card quiz-card">
-            <h2>Personality Quiz</h2>
-            <p>Which animal matches your personality? Take our quick quiz to find out!</p>
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="index.html" class="nav-button">Back to Main Page</a>
+            <a href="ecopins_website.html" class="nav-button">View Original Website</a>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2>Contact Us</h2>
+            <p>Have questions about our animal designs or conservation efforts? Get in touch!</p>
+            
+            <div class="contact-info">
+                <a href="https://www.linkedin.com/in/avin-langroodi-85ab50287" class="contact-link" target="_blank">LinkedIn</a>
+                <a href="mailto:avinlangroodi4@gmail.com" class="email-link">avinlangroodi4@gmail.com</a>
+            </div>
+            <div class="contact-info">
+                <strong>Company Email:</strong>
+                <a href="mailto:pinpointpatches1@gmail.com" class="email-link">pinpointpatches1@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle information sections
+        function toggleInfo(elementId) {
+            var element = document.getElementById(elementId);
+            if (element.style.display === 'none' || element.style.display === '') {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        }
+        
+        // Close other info sections when one is opened
+        document.addEventListener('DOMContentLoaded', function() {
+            const infoButtons = document.querySelectorAll('.info-button, .help-button');
+            infoButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // You can add logic here to close other sections if needed
+                });
+            });
+        });
+    </script>
+</body>
+</html>
