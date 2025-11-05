@@ -216,6 +216,27 @@ HTML_CONTENT = """
             background: rgba(214, 48, 49, 0.1);
             transform: scale(1.05);
         }
+
+        .company-email-link {
+            color: #27ae60;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            padding: 12px 25px;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        
+        .company-email-link:hover {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+        }
         
         .team-button {
             background: linear-gradient(45deg, #e17055, #fd79a8);
@@ -681,9 +702,33 @@ HTML_CONTENT = """
             <h2>Personality Quiz</h2>
             <p>Which animal matches your personality? Take our quick quiz to find out!</p>
 
-        <!-- Company Email Section -->
-        <div class="card">
-            <h2>Company Email</h2>
-            <p>Email us at: <strong>pinpointpatches1@gmail.com</strong></p>
+        <!-- Signature Section -->
+        <div class="card signature">
+            <h3>Website Developer:</h3>
+            <div class="creator-name">Avin P. Langroodi</div>
+            <div class="contact-info">
+                <a href="https://www.linkedin.com/in/avin-langroodi-85ab50287" class="contact-link" target="_blank">LinkedIn Profile</a>
+                <a href="mailto:avinlangroodi4@gmail.com" class="email-link">avinlangroodi4@gmail.com</a>
+            </div>
+            <div class="contact-info">
+                <h3>Company Email:</h3>
+                <a href="mailto:pinpointpatches1@gmail.com" class="company-email-link">pinpointpatches1@gmail.com</a>
+            </div>
+            <p>JA Company Program Participant</p>
+            <p>Python Programming Project</p>
         </div>
+    </div>
+
+    <script>
+        // JavaScript functions would go here
+        function toggleAnimalInfo(animal) {
+            // Function implementation
+        }
+        
+        function showHelpInfo(animal) {
+            // Function implementation
+        }
+    </script>
+</body>
+</html>
 """
