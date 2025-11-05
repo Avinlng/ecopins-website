@@ -203,6 +203,27 @@
             background: rgba(214, 48, 49, 0.1);
             transform: scale(1.05);
         }
+
+        .company-email-link {
+            color: #27ae60;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            padding: 12px 25px;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        
+        .company-email-link:hover {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+        }
         
         .team-button {
             background: linear-gradient(45deg, #e17055, #fd79a8);
@@ -789,12 +810,6 @@
             </div>
         </div>
 
-        <!-- Company Email Section -->
-        <div class="card">
-            <h2>Company Email</h2>
-            <p>Email us at: <strong>pinpointpatches1@gmail.com</strong></p>
-        </div>
-
         <div class="card future-card">
             <h2>Future Plans</h2>
             <div class="future-feature">Online Store - In Development</div>
@@ -820,6 +835,10 @@
             <div class="contact-info">
                 <a href="https://www.linkedin.com/in/avin-langroodi-85ab50287" class="contact-link" target="_blank">LinkedIn Profile</a>
                 <a href="mailto:avinlangroodi4@gmail.com" class="email-link">avinlangroodi4@gmail.com</a>
+            </div>
+            <div class="contact-info">
+                <h3>Company Email:</h3>
+                <a href="mailto:pinpointpatches1@gmail.com" class="company-email-link">pinpointpatches1@gmail.com</a>
             </div>
             <p>JA Company Program Participant</p>
             <p>Web Development Project - HTML, CSS, JavaScript</p>
@@ -898,25 +917,11 @@
                             nameStyle = 'color: #8e44ad; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
                         }
                         
-                        // CORRECTION: Using member.name and member.role instead of the whole object
                         memberCard.innerHTML = `
                             <div style="${nameStyle}">${member.name}</div>
                             <div style="${roleStyle}">${member.role}</div>
-                            <div style="margin-top: 8px; color: #7f8c8d; font-style: italic;">
-                                ${member.role === "VP Information Technology" ? "Technology Leader & Developer" : 
-                                  member.role === "VP Internal" ? "Internal Operations & Design" :
-                                  member.role === "VP External" ? "External Relations & Partnerships" :
-                                  member.role === "VP Production" ? "Production Management & Quality Control" :
-                                  member.role === "VP Marketing" ? "Marketing Strategy & Brand Promotion" :
-                                  member.role === "VP Sales" ? "Sales Strategy & Customer Relations" :
-                                  member.role === "VP Human Resources" ? "Team Management & Recruitment" :
-                                  member.role === "VP Corporate Social Responsibility" ? "Social Responsibility & Community Engagement" :
-                                  member.role === "VP Finance" ? "Financial Management & Budget Planning" :
-                                  member.role === "VP Environment" ? "Environmental Initiatives & Sustainability" :
-                                  member.role === "VP Health & Safety" ? "Health & Safety Standards" :
-                                  "Video Production & Event Management"}
-                            </div>
                         `;
+                        
                         membersList.appendChild(memberCard);
                     }, index * 200);
                 });
@@ -925,251 +930,192 @@
             }
         }
         
-        // Image management system
-        const imageBackups = {
-            'whale': [
-                'https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg',
-                'https://images.unsplash.com/photo-1574871619176-67c887c369c7?w=400&h=300&fit=crop',
-                'https://cdn.pixabay.com/photo/2019/11/07/19/57/whale-4609077_640.jpg'
-            ],
-            'lynx': [
-                'https://th.bing.com/th/id/R.464a22421f263c1707af3a14eebab0b5?rik=g7bFplMK4QLgng&pid=ImgRaw&r=0',
-                'https://images.unsplash.com/photo-1564889953123-f18976bb38a3?w=400&h=300&fit=crop',
-                'https://cdn.pixabay.com/photo/2017/07/24/18/57/lynx-2536664_640.jpg'
-            ],
-            'turtle': [
-                'https://cdn.provincetownindependent.org/2025/10/Hakimi-leatherback-sea-turtles-photo-1-alive-1.jpeg',
-                'https://images.unsplash.com/photo-1599159340399-64d76513d1a2?w=400&h=300&fit=crop',
-                'https://cdn.pixabay.com/photo/2016/03/05/22/18/animal-1239396_640.jpg'
-            ]
-        };
-
-        // Handle Image Loading Error
-        function handleImageError(img) {
-            const alt = img.alt.toLowerCase();
-            const parent = img.parentElement;
-            
-            console.log('Image failed to load:', img.src);
-            
-            // Find backup images
-            let backupUrls = [];
-            if (alt.includes('whale')) backupUrls = imageBackups.whale;
-            else if (alt.includes('lynx')) backupUrls = imageBackups.lynx;
-            else if (alt.includes('turtle')) backupUrls = imageBackups.turtle;
-            
-            // Try backup images
-            const currentSrc = img.src;
-            const currentIndex = backupUrls.indexOf(currentSrc);
-            const nextIndex = currentIndex + 1;
-            
-            if (nextIndex < backupUrls.length) {
-                // Try next backup image
-                console.log('Trying backup image:', backupUrls[nextIndex]);
-                img.src = backupUrls[nextIndex];
-            } else {
-                // All backups failed
-                console.log('All backup images failed for:', alt);
-                // Show placeholder with emoji
-                const placeholder = document.createElement('div');
-                placeholder.className = 'image-placeholder';
-                if (alt.includes('whale')) placeholder.textContent = '🐋 WHALE';
-                else if (alt.includes('lynx')) placeholder.textContent = '🐱 LYNX';
-                else if (alt.includes('turtle')) placeholder.textContent = '🐢 TURTLE';
-                parent.appendChild(placeholder);
-                img.style.display = 'none';
-            }
-        }
-
-        // When page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Page loaded - checking images...');
-            
-            // Check image loading status
-            setTimeout(() => {
-                const images = document.querySelectorAll('.animal-image img');
-                images.forEach(img => {
-                    if (!img.complete || img.naturalHeight === 0) {
-                        console.log('Image not loaded:', img.src);
-                        handleImageError(img);
-                    } else {
-                        console.log('Image loaded successfully:', img.src);
-                    }
-                });
-            }, 2000);
-
-            // Check image loading
-            const images = document.querySelectorAll('.animal-image img');
-            images.forEach(img => {
-                img.onload = function() {
-                    console.log('Image loaded successfully:', this.src);
-                };
-            });
-        });
-        
         function toggleAnimalInfo(animal) {
-            const infoContainers = ['whaleInfo', 'lynxInfo', 'turtleInfo'];
-            
-            // Hide all info containers first
-            infoContainers.forEach(containerId => {
-                const container = document.getElementById(containerId);
-                if (container) {
-                    container.style.display = 'none';
-                }
-            });
-            
-            // Show the selected one if it's currently hidden
-            const selectedInfo = document.getElementById(animal + 'Info');
-            if (selectedInfo) {
-                if (selectedInfo.style.display === 'none' || selectedInfo.style.display === '') {
-                    selectedInfo.style.display = 'block';
-                } else {
-                    selectedInfo.style.display = 'none';
-                }
+            const infoContainer = document.getElementById(animal + 'Info');
+            if (infoContainer.style.display === 'none' || infoContainer.style.display === '') {
+                infoContainer.style.display = 'block';
+            } else {
+                infoContainer.style.display = 'none';
             }
         }
         
         function showHelpInfo(animal) {
             let message = '';
-            
             if (animal === 'whale') {
-                message = 'To help save whales:\n• Support marine conservation organizations\n• Reduce plastic use to protect oceans\n• Choose sustainable seafood\n• Report whale sightings to researchers\n\nAND BUY A PIN FROM US!';
+                message = 'To help save whales, you can: support marine conservation organizations, reduce plastic use, choose sustainable seafood, and spread awareness about whale conservation.';
             } else if (animal === 'lynx') {
-                message = 'To help save lynx:\n• Support forest conservation efforts\n• Respect wildlife habitats when hiking\n• Donate to wildlife protection programs\n• Learn about coexisting with wild animals\n\nAND BUY A PIN FROM US!';
+                message = 'To help save lynx, you can: support forest conservation, respect wildlife habitats, and donate to organizations working to protect endangered species in Nova Scotia.';
             } else if (animal === 'turtle') {
-                message = 'To help save turtles:\n• Reduce plastic pollution in oceans\n• Support sea turtle rescue centers\n• Participate in beach cleanups\n• Choose reef-safe sunscreen\n\nAND BUY A PIN FROM US!';
+                message = 'To help save sea turtles, you can: reduce plastic pollution, participate in beach cleanups, support sea turtle rescue centers, and avoid single-use plastics.';
             }
             
             alert(message);
         }
-
-        // QUIZ FUNCTIONS
+        
+        function handleImageError(img) {
+            const parent = img.parentElement;
+            parent.innerHTML = '<div class="image-placeholder">Image of ' + img.alt + '</div>';
+        }
+        
+        // Quiz functionality
         const quizQuestions = [
             {
-                question: "What do you like to do in your free time?",
+                question: "Which activity sounds most appealing to you?",
                 options: [
-                    {text: "Ocean and long travels", animal: "whale"},
-                    {text: "Hiking and nature", animal: "lynx"},
-                    {text: "Relax and chill", animal: "turtle"}
-                ]
+                    "Exploring deep oceans and marine life",
+                    "Hiking through quiet forests",
+                    "Traveling to distant places and cultures"
+                ],
+                animals: ["whale", "lynx", "turtle"]
             },
             {
-                question: "What is your main personality trait?",
+                question: "How would your friends describe your personality?",
                 options: [
-                    {text: "Strong and graceful", animal: "whale"},
-                    {text: "Smart and independent", animal: "lynx"},
-                    {text: "Patient and calm", animal: "turtle"}
-                ]
+                    "Social and communicative",
+                    "Observant and thoughtful",
+                    "Adventurous and free-spirited"
+                ],
+                animals: ["whale", "lynx", "turtle"]
             },
             {
-                question: "How do you like to live?",
+                question: "What's your ideal weekend?",
                 options: [
-                    {text: "In big groups", animal: "whale"},
-                    {text: "Alone and independent", animal: "lynx"},
-                    {text: "With small family", animal: "turtle"}
-                ]
+                    "Beach day with friends and family",
+                    "Quiet hike in the woods alone",
+                    "Road trip to somewhere new"
+                ],
+                animals: ["whale", "lynx", "turtle"]
             },
             {
-                question: "What is your main goal in life?",
+                question: "Which superpower would you choose?",
                 options: [
-                    {text: "Discover new world", animal: "whale"},
-                    {text: "Be strong and successful", animal: "lynx"},
-                    {text: "Live peaceful life", animal: "turtle"}
-                ]
+                    "Ability to communicate with all creatures",
+                    "Power to understand nature's secrets",
+                    "Skill to adapt to any environment"
+                ],
+                animals: ["whale", "lynx", "turtle"]
             }
         ];
         
         let currentQuestion = 0;
-        let quizAnswers = [];
+        let userAnswers = [];
         
         function startQuiz() {
             document.getElementById('quizStart').style.display = 'none';
             document.getElementById('quizQuestions').style.display = 'block';
-            showQuestion(0);
+            loadQuestion();
         }
         
-        function showQuestion(questionIndex) {
-            const question = quizQuestions[questionIndex];
-            let html = '<div class="quiz-question">';
-            html += `<h3>Question ${questionIndex + 1} of 4</h3>`;
-            html += `<div class="question-text">${question.question}</div>`;
+        function loadQuestion() {
+            const quizContainer = document.getElementById('quizQuestions');
+            const question = quizQuestions[currentQuestion];
+            
+            let html = `
+                <div class="quiz-question">
+                    <h3>Question ${currentQuestion + 1} of ${quizQuestions.length}</h3>
+                    <p>${question.question}</p>
+            `;
             
             question.options.forEach((option, index) => {
-                html += `<button class="quiz-option" onclick="answerQuestion(${questionIndex}, '${option.animal}')">`;
-                html += option.text;
-                html += '</button>';
+                html += `
+                    <button class="quiz-option" onclick="selectAnswer(${index})">
+                        ${option}
+                    </button>
+                `;
             });
             
-            html += '</div>';
-            document.getElementById('quizQuestions').innerHTML = html;
+            html += `</div>`;
+            quizContainer.innerHTML = html;
         }
         
-        function answerQuestion(questionIndex, animal) {
-            quizAnswers[questionIndex] = animal;
+        function selectAnswer(answerIndex) {
+            userAnswers.push(answerIndex);
+            currentQuestion++;
             
-            if (questionIndex < quizQuestions.length - 1) {
-                showQuestion(questionIndex + 1);
+            if (currentQuestion < quizQuestions.length) {
+                loadQuestion();
             } else {
-                showResult();
+                showQuizResult();
             }
         }
         
-        function showResult() {
-            // Count animals
-            const counts = {whale: 0, lynx: 0, turtle: 0};
-            quizAnswers.forEach(animal => {
-                counts[animal]++;
+        function showQuizResult() {
+            document.getElementById('quizQuestions').style.display = 'none';
+            const resultContainer = document.getElementById('quizResult');
+            resultContainer.style.display = 'block';
+            
+            // Calculate result based on most common answer
+            const animalCount = {whale: 0, lynx: 0, turtle: 0};
+            
+            userAnswers.forEach((answer, index) => {
+                const animal = quizQuestions[index].animals[answer];
+                animalCount[animal]++;
             });
             
-            // Find winner
+            let resultAnimal = 'whale';
             let maxCount = 0;
-            let winner = '';
             
-            for (const animal in counts) {
-                if (counts[animal] > maxCount) {
-                    maxCount = counts[animal];
-                    winner = animal;
+            for (const animal in animalCount) {
+                if (animalCount[animal] > maxCount) {
+                    maxCount = animalCount[animal];
+                    resultAnimal = animal;
                 }
             }
             
-            // Show result
-            let resultHTML = '<div class="quiz-result">';
+            let animalName = '';
+            let description = '';
+            let imageUrl = '';
+            let personality = '';
             
-            if (winner === 'whale') {
-                resultHTML += '<h2>You are a Whale!</h2>';
-                resultHTML += '<p>Your personality matches the North Atlantic Right Whale: Strong, graceful, and loves to travel!</p>';
-                resultHTML += '<p><strong>We recommend: Whale EcoPin</strong></p>';
-            } else if (winner === 'lynx') {
-                resultHTML += '<h2>You are a Lynx!</h2>';
-                resultHTML += '<p>Your personality matches the Canada Lynx: Independent, smart, and strong!</p>';
-                resultHTML += '<p><strong>We recommend: Lynx EcoPin</strong></p>';
-            } else if (winner === 'turtle') {
-                resultHTML += '<h2>You are a Turtle!</h2>';
-                resultHTML += '<p>Your personality matches the Leatherback Sea Turtle: Patient, calm, and loves peace!</p>';
-                resultHTML += '<p><strong>We recommend: Turtle EcoPin</strong></p>';
+            if (resultAnimal === 'whale') {
+                animalName = 'North Atlantic Right Whale';
+                description = 'You are social, communicative, and deeply connected to community. Like the North Atlantic Right Whale, you value relationships and have a strong presence that impacts those around you. You navigate life with purpose and meaning.';
+                imageUrl = 'https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg';
+                personality = 'Communicative & Social';
+            } else if (resultAnimal === 'lynx') {
+                animalName = 'Canada Lynx';
+                description = 'You are observant, thoughtful, and value your independence. Like the Canada Lynx, you move through life with quiet confidence and keen awareness of your surroundings. You prefer meaningful connections over large social circles.';
+                imageUrl = 'https://th.bing.com/th/id/R.464a22421f263c1707af3a14eebab0b5?rik=g7bFplMK4QLgng&pid=ImgRaw&r=0';
+                personality = 'Observant & Independent';
+            } else if (resultAnimal === 'turtle') {
+                animalName = 'Leatherback Sea Turtle';
+                description = 'You are adventurous, adaptable, and drawn to exploration. Like the Leatherback Sea Turtle, you navigate different environments with ease and have a natural curiosity about the world. You value freedom and new experiences.';
+                imageUrl = 'https://cdn.provincetownindependent.org/2025/10/Hakimi-leatherback-sea-turtles-photo-1-alive-1.jpeg';
+                personality = 'Adventurous & Adaptable';
             }
             
-            resultHTML += '<div class="result-buttons">';
-            resultHTML += '<button class="result-button" onclick="restartQuiz()">Take Quiz Again</button>';
-            resultHTML += '<button class="back-button" onclick="closeQuiz()">Close Quiz</button>';
-            resultHTML += '</div>';
-            resultHTML += '</div>';
-            
-            document.getElementById('quizQuestions').style.display = 'none';
-            document.getElementById('quizResult').innerHTML = resultHTML;
-            document.getElementById('quizResult').style.display = 'block';
+            resultContainer.innerHTML = `
+                <div class="quiz-result">
+                    <h3>Your Spirit Animal is the ${animalName}!</h3>
+                    <div style="margin: 20px 0;">
+                        <div class="image-placeholder" style="height: 200px; margin: 0 auto; max-width: 300px;">
+                            <img src="${imageUrl}" alt="${animalName}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;" onerror="handleImageError(this)">
+                        </div>
+                    </div>
+                    <p><strong>Personality Type:</strong> ${personality}</p>
+                    <p>${description}</p>
+                    <div class="help-message">
+                        <strong>Recommended EcoPin:</strong> ${animalName} design
+                    </div>
+                    <div class="result-buttons">
+                        <button class="result-button" onclick="restartQuiz()">Take Quiz Again</button>
+                        <button class="back-button" onclick="backToStart()">Back to Start</button>
+                    </div>
+                </div>
+            `;
         }
         
         function restartQuiz() {
-            quizAnswers = [];
             currentQuestion = 0;
+            userAnswers = [];
             document.getElementById('quizResult').style.display = 'none';
             document.getElementById('quizQuestions').style.display = 'block';
-            showQuestion(0);
+            loadQuestion();
         }
         
-        function closeQuiz() {
-            quizAnswers = [];
+        function backToStart() {
             currentQuestion = 0;
+            userAnswers = [];
             document.getElementById('quizResult').style.display = 'none';
             document.getElementById('quizQuestions').style.display = 'none';
             document.getElementById('quizStart').style.display = 'block';
@@ -1177,3 +1123,905 @@
     </script>
 </body>
 </html>
+// Team members data
+const teamMembers = [
+    {name: "Avin P. Langroodi", role: "VP Information Technology"},
+    {name: "Sajal Aryal", role: "VP Internal"},
+    {name: "Alden Hiltz", role: "VP External"},
+    {name: "Manuela Roemer", role: "VP Production"},
+    {name: "Louis Goossens", role: "VP Marketing"},
+    {name: "Henry Hiltz", role: "VP Sales"},
+    {name: "Dylan Davidson", role: "VP Human Resources"},
+    {name: "Sophia Langille", role: "VP Corporate Social Responsibility"},
+    {name: "Maggie Pyke", role: "VP Finance"},
+    {name: "Alexander Bautista", role: "VP Environment"},
+    {name: "Michael Aucoin", role: "VP Health & Safety"},
+    {name: "Lily Bray", role: "Head of Video Production & Special Events"}
+];
+
+// Display team members with animation
+function showTeamMembers() {
+    const container = document.getElementById('membersContainer');
+    const membersList = document.getElementById('membersList');
+    
+    if (container.style.display === 'none' || container.style.display === '') {
+        container.style.display = 'block';
+        membersList.innerHTML = '';
+        
+        teamMembers.forEach((member, index) => {
+            setTimeout(() => {
+                const memberCard = document.createElement('div');
+                memberCard.className = 'member-card';
+                
+                // Create attractive color styles for each role
+                let roleStyle = '';
+                let nameStyle = '';
+                
+                if (member.role === "VP Information Technology") {
+                    roleStyle = 'background: linear-gradient(45deg, #e74c3c, #c0392b); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
+                    nameStyle = 'color: #e74c3c; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
+                } else if (member.role === "VP Internal") {
+                    roleStyle = 'background: linear-gradient(45deg, #9b59b6, #8e44ad); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
+                    nameStyle = 'color: #9b59b6; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
+                } else if (member.role === "VP External") {
+                    roleStyle = 'background: linear-gradient(45deg, #3498db, #2980b9); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
+                    nameStyle = 'color: #3498db; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
+                } else if (member.role === "VP Production") {
+                    roleStyle = 'background: linear-gradient(45deg, #27ae60, #2ecc71); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
+                    nameStyle = 'color: #27ae60; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
+                } else if (member.role === "VP Marketing") {
+                    roleStyle = 'background: linear-gradient(45deg, #f39c12, #f1c40f); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
+                    nameStyle = 'color: #f39c12; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
+                } else if (member.role === "VP Sales") {
+                    roleStyle = 'background: linear-gradient(45deg, #8e44ad, #9b59b6); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
+                    nameStyle = 'color: #8e44ad; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
+                } else if (member.role === "VP Human Resources") {
+                    roleStyle = 'background: linear-gradient(45deg, #d35400, #e67e22); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
+                    nameStyle = 'color: #d35400; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
+                } else if (member.role === "VP Corporate Social Responsibility") {
+                    roleStyle = 'background: linear-gradient(45deg, #16a085, #1abc9c); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
+                    nameStyle = 'color: #16a085; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
+                } else if (member.role === "VP Finance") {
+                    roleStyle = 'background: linear-gradient(45deg, #c0392b, #e74c3c); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
+                    nameStyle = 'color: #c0392b; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
+                } else if (member.role === "VP Environment") {
+                    roleStyle = 'background: linear-gradient(45deg, #27ae60, #2ecc71); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
+                    nameStyle = 'color: #27ae60; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
+                } else if (member.role === "VP Health & Safety") {
+                    roleStyle = 'background: linear-gradient(45deg, #e74c3c, #c0392b); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
+                    nameStyle = 'color: #e74c3c; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
+                } else if (member.role === "Head of Video Production & Special Events") {
+                    roleStyle = 'background: linear-gradient(45deg, #8e44ad, #9b59b6); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
+                    nameStyle = 'color: #8e44ad; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
+                }
+                
+                memberCard.innerHTML = `
+                    <div style="${nameStyle}">${member.name}</div>
+                    <div style="${roleStyle}">${member.role}</div>
+                `;
+                
+                membersList.appendChild(memberCard);
+            }, index * 200);
+        });
+    } else {
+        container.style.display = 'none';
+    }
+}
+
+// Toggle animal information
+function toggleAnimalInfo(animal) {
+    const infoContainer = document.getElementById(animal + 'Info');
+    if (infoContainer.style.display === 'none' || infoContainer.style.display === '') {
+        infoContainer.style.display = 'block';
+    } else {
+        infoContainer.style.display = 'none';
+    }
+}
+
+// Show help information for animals
+function showHelpInfo(animal) {
+    let message = '';
+    if (animal === 'whale') {
+        message = 'To help save whales, you can: support marine conservation organizations, reduce plastic use, choose sustainable seafood, and spread awareness about whale conservation.';
+    } else if (animal === 'lynx') {
+        message = 'To help save lynx, you can: support forest conservation, respect wildlife habitats, and donate to organizations working to protect endangered species in Nova Scotia.';
+    } else if (animal === 'turtle') {
+        message = 'To help save sea turtles, you can: reduce plastic pollution, participate in beach cleanups, support sea turtle rescue centers, and avoid single-use plastics.';
+    }
+    
+    alert(message);
+}
+
+// Handle image loading errors
+function handleImageError(img) {
+    const parent = img.parentElement;
+    parent.innerHTML = '<div class="image-placeholder">Image of ' + img.alt + '</div>';
+}
+
+// Quiz functionality
+const quizQuestions = [
+    {
+        question: "Which activity sounds most appealing to you?",
+        options: [
+            "Exploring deep oceans and marine life",
+            "Hiking through quiet forests",
+            "Traveling to distant places and cultures"
+        ],
+        animals: ["whale", "lynx", "turtle"]
+    },
+    {
+        question: "How would your friends describe your personality?",
+        options: [
+            "Social and communicative",
+            "Observant and thoughtful",
+            "Adventurous and free-spirited"
+        ],
+        animals: ["whale", "lynx", "turtle"]
+    },
+    {
+        question: "What's your ideal weekend?",
+        options: [
+            "Beach day with friends and family",
+            "Quiet hike in the woods alone",
+            "Road trip to somewhere new"
+        ],
+        animals: ["whale", "lynx", "turtle"]
+    },
+    {
+        question: "Which superpower would you choose?",
+        options: [
+            "Ability to communicate with all creatures",
+            "Power to understand nature's secrets",
+            "Skill to adapt to any environment"
+        ],
+        animals: ["whale", "lynx", "turtle"]
+    }
+];
+
+let currentQuestion = 0;
+let userAnswers = [];
+
+function startQuiz() {
+    document.getElementById('quizStart').style.display = 'none';
+    document.getElementById('quizQuestions').style.display = 'block';
+    loadQuestion();
+}
+
+function loadQuestion() {
+    const quizContainer = document.getElementById('quizQuestions');
+    const question = quizQuestions[currentQuestion];
+    
+    let html = `
+        <div class="quiz-question">
+            <h3>Question ${currentQuestion + 1} of ${quizQuestions.length}</h3>
+            <p>${question.question}</p>
+    `;
+    
+    question.options.forEach((option, index) => {
+        html += `
+            <button class="quiz-option" onclick="selectAnswer(${index})">
+                ${option}
+            </button>
+        `;
+    });
+    
+    html += `</div>`;
+    quizContainer.innerHTML = html;
+}
+
+function selectAnswer(answerIndex) {
+    userAnswers.push(answerIndex);
+    currentQuestion++;
+    
+    if (currentQuestion < quizQuestions.length) {
+        loadQuestion();
+    } else {
+        showQuizResult();
+    }
+}
+
+function showQuizResult() {
+    document.getElementById('quizQuestions').style.display = 'none';
+    const resultContainer = document.getElementById('quizResult');
+    resultContainer.style.display = 'block';
+    
+    // Calculate result based on most common answer
+    const animalCount = {whale: 0, lynx: 0, turtle: 0};
+    
+    userAnswers.forEach((answer, index) => {
+        const animal = quizQuestions[index].animals[answer];
+        animalCount[animal]++;
+    });
+    
+    let resultAnimal = 'whale';
+    let maxCount = 0;
+    
+    for (const animal in animalCount) {
+        if (animalCount[animal] > maxCount) {
+            maxCount = animalCount[animal];
+            resultAnimal = animal;
+        }
+    }
+    
+    let animalName = '';
+    let description = '';
+    let imageUrl = '';
+    let personality = '';
+    
+    if (resultAnimal === 'whale') {
+        animalName = 'North Atlantic Right Whale';
+        description = 'You are social, communicative, and deeply connected to community. Like the North Atlantic Right Whale, you value relationships and have a strong presence that impacts those around you. You navigate life with purpose and meaning.';
+        imageUrl = 'https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg';
+        personality = 'Communicative & Social';
+    } else if (resultAnimal === 'lynx') {
+        animalName = 'Canada Lynx';
+        description = 'You are observant, thoughtful, and value your independence. Like the Canada Lynx, you move through life with quiet confidence and keen awareness of your surroundings. You prefer meaningful connections over large social circles.';
+        imageUrl = 'https://th.bing.com/th/id/R.464a22421f263c1707af3a14eebab0b5?rik=g7bFplMK4QLgng&pid=ImgRaw&r=0';
+        personality = 'Observant & Independent';
+    } else if (resultAnimal === 'turtle') {
+        animalName = 'Leatherback Sea Turtle';
+        description = 'You are adventurous, adaptable, and drawn to exploration. Like the Leatherback Sea Turtle, you navigate different environments with ease and have a natural curiosity about the world. You value freedom and new experiences.';
+        imageUrl = 'https://cdn.provincetownindependent.org/2025/10/Hakimi-leatherback-sea-turtles-photo-1-alive-1.jpeg';
+        personality = 'Adventurous & Adaptable';
+    }
+    
+    resultContainer.innerHTML = `
+        <div class="quiz-result">
+            <h3>Your Spirit Animal is the ${animalName}!</h3>
+            <div style="margin: 20px 0;">
+                <div class="image-placeholder" style="height: 200px; margin: 0 auto; max-width: 300px;">
+                    <img src="${imageUrl}" alt="${animalName}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;" onerror="handleImageError(this)">
+                </div>
+            </div>
+            <p><strong>Personality Type:</strong> ${personality}</p>
+            <p>${description}</p>
+            <div class="help-message">
+                <strong>Recommended EcoPin:</strong> ${animalName} design
+            </div>
+            <div class="result-buttons">
+                <button class="result-button" onclick="restartQuiz()">Take Quiz Again</button>
+                <button class="back-button" onclick="backToStart()">Back to Start</button>
+            </div>
+        </div>
+    `;
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    userAnswers = [];
+    document.getElementById('quizResult').style.display = 'none';
+    document.getElementById('quizQuestions').style.display = 'block';
+    loadQuestion();
+}
+
+function backToStart() {
+    currentQuestion = 0;
+    userAnswers = [];
+    document.getElementById('quizResult').style.display = 'none';
+    document.getElementById('quizQuestions').style.display = 'none';
+    document.getElementById('quizStart').style.display = 'block';
+}
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    border-radius: 15px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-title {
+    color: #2c3e50;
+    font-size: 42px;
+    margin: 0;
+    font-weight: bold;
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #7f8c8d;
+    font-size: 20px;
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    margin: 25px 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+.about-card {
+    background: linear-gradient(135deg, #FFEAA7, #fab1a0);
+}
+
+.features-card {
+    background: linear-gradient(135deg, #81ECEC, #74B9FF);
+}
+
+.future-card {
+    background: linear-gradient(135deg, #FD79A8, #a29bfe);
+}
+
+.student-card {
+    background: linear-gradient(135deg, #55EFC4, #00b894);
+}
+
+.team-card {
+    background: linear-gradient(135deg, #FDCB6E, #e17055);
+}
+
+.designs-card {
+    background: linear-gradient(135deg, #a29bfe, #fd79a8);
+}
+
+.quiz-card {
+    background: linear-gradient(135deg, #FF9A8B, #FF6A88);
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-top: 0;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 3px solid rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    font-weight: bold;
+    color: #2c3e50;
+    border-left: 5px solid #e17055;
+}
+
+.future-feature {
+    text-align: center;
+    font-size: 22px;
+    color: #2c3e50;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    border: 2px dashed rgba(255,255,255,0.8);
+}
+
+.student-note {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 15px 0;
+    text-align: center;
+    font-style: italic;
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+.signature {
+    text-align: center;
+    margin-top: 40px;
+    padding: 25px;
+    background: linear-gradient(135deg, #dfe6e9, #b2bec3);
+    border-radius: 15px;
+    font-weight: bold;
+    color: #2c3e50;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.creator-name {
+    font-size: 24px;
+    color: #0984e3;
+    margin: 10px 0;
+}
+
+.contact-info {
+    margin: 15px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.contact-link {
+    color: #0984e3;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.contact-link:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+}
+
+.email-link {
+    color: #d63031;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    border: 1px solid #d63031;
+    display: inline-block;
+}
+
+.email-link:hover {
+    background: rgba(214, 48, 49, 0.1);
+    transform: scale(1.05);
+}
+
+.company-email-link {
+    color: #27ae60;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    padding: 12px 25px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    color: white;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+.company-email-link:hover {
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+.team-button {
+    background: linear-gradient(45deg, #e17055, #fd79a8);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 15px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.team-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.animal-button {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.animal-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #2980b9, #3498db);
+}
+
+.members-container {
+    display: none;
+    margin-top: 25px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    border: 2px dashed rgba(255,255,255,0.6);
+}
+
+.animal-info-container {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    border: 2px dashed rgba(255,255,255,0.6);
+}
+
+.member-card {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #2c3e50;
+    animation: fadeIn 0.5s ease;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.animal-info-card {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    color: #2c3e50;
+    animation: fadeIn 0.5s ease;
+    border-left: 4px solid #3498db;
+}
+
+.member-card:hover {
+    border-color: #e17055;
+    transform: scale(1.02);
+}
+
+.designs-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.design-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    width: 280px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.design-box:hover {
+    transform: translateY(-8px);
+    border-color: #e17055;
+}
+
+.design-title {
+    color: #2c3e50;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+.design-description {
+    color: #7f8c8d;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.animal-image {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border: 2px solid #dee2e6;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.animal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.design-box:hover .animal-image img {
+    transform: scale(1.05);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.help-message {
+    background: rgba(46, 204, 113, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #27ae60;
+    border: 1px solid #27ae60;
+}
+
+.help-button {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    width: 100%;
+}
+
+.help-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #2980b9, #3498db);
+}
+
+/* Quiz Styles */
+.quiz-info {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.quiz-question {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.quiz-option {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    margin: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quiz-option:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+.quiz-result {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.result-buttons {
+    margin-top: 20px;
+}
+
+.result-button {
+    background: #f39c12;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.back-button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 16px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.team-title {
+    color: #2c3e50;
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .designs-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .design-box {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .main-title {
+        font-size: 32px;
+    }
+    
+    .header {
+        padding: 20px;
+    }
+}
+
+/* Team Role Styles */
+.VP-information-Technology-role {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.VP-internal-role {
+    background: linear-gradient(45deg, #9b59b6, #8e44ad);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.VP-External-role {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.VP-Production-role {
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.VP-Marketing-role {
+    background: linear-gradient(45deg, #f39c12, #f1c40f);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.VP-Sales-role {
+    background: linear-gradient(45deg, #8e44ad, #9b59b6);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.VP-Human-Resources-role {
+    background: linear-gradient(45deg, #d35400, #e67e22);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.VP-Corporate-Social-Responsibility-role {
+    background: linear-gradient(45deg, #16a085, #1abc9c);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.VP-Finance-role {
+    background: linear-gradient(45deg, #c0392b, #e74c3c);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.VP-Environment-role {
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.VP-Health-Safety-role {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.Head-of-Video-Production-Special-Events-role {
+    background: linear-gradient(45deg, #8e44ad, #9b59b6);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
