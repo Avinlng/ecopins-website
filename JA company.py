@@ -222,7 +222,7 @@ HTML_CONTENT = """
             text-decoration: none;
             font-weight: bold;
             margin: 0 10px;
-            padding: 12px 25px;
+            padding: 8px 15px;
             border-radius: 25px;
             background: linear-gradient(45deg, #27ae60, #2ecc71);
             color: white;
@@ -732,3 +732,4 @@ HTML_CONTENT = """
 </body>
 </html>
 """
+
