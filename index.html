@@ -477,39 +477,99 @@
         
         .team-title {
             color: #2c3e50;
-            font-size: 26px;
+            font-size: 24px;
             margin-bottom: 20px;
             text-align: center;
             font-weight: bold;
         }
         
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 15px;
+        .member-role {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 5px;
+            font-size: 14px;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .designs-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .design-box {
-                width: 100%;
-                max-width: 350px;
-            }
-            
-            .main-title {
-                font-size: 32px;
-            }
-            
-            .container {
-                padding: 10px;
-            }
+        
+        .role-badge {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        
+        .VP information Technology-role {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .VP internal-role {
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .VP External-role {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .VP Production-role {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .VP Marketing-role {
+            background: linear-gradient(45deg, #f39c12, #f1c40f);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .VP Sales-role {
+            background: linear-gradient(45deg, #8e44ad, #9b59b6);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .VP Human Resources-role {
+            background: linear-gradient(45deg, #d35400, #e67e22);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .VP Corporate Social Responsibility-role {
+            background: linear-gradient(45deg, #16a085, #1abc9c);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .VP Finance-role {
+            background: linear-gradient(45deg, #c0392b, #e74c3c);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .VP Environment-role {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .VP Health & Safety-role {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .Head of Video Production & Special Events-role {
+            background: linear-gradient(45deg, #8e44ad, #9b59b6);
+            color: white;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -517,31 +577,38 @@
     <div class="header">
         <h1 class="main-title">EcoPins</h1>
         <div class="subtitle">Velcro Pins - JA Company Program</div>
-        <div style="color: #7f8c8d; font-size: 16px; margin-top: 10px;">Supporting Environmental Sustainability</div>
+        <div style="color: #7f8c8d; font-size: 16px; margin-top: 10px;">Supporting Environmental Conservation Through Reusable Pins</div>
     </div>
 
     <div class="container">
         <!-- About Section -->
         <div class="card about-card">
-            <h2>About Our Product</h2>
-            <p>EcoPins are reusable velcro pins that support environmental sustainability. Our mission is to create eco-friendly accessories while raising awareness about endangered species in Nova Scotia.</p>
+            <h2>About EcoPins</h2>
+            <p style="text-align: center; font-size: 18px; line-height: 1.6; color: #2c3e50;">
+                EcoPins are reusable velcro pins designed to support environmental sustainability and conservation efforts. 
+                Each pin represents an endangered species from Nova Scotia, with proceeds going to wildlife protection programs.
+            </p>
         </div>
 
         <!-- Animal Designs Section -->
         <div class="card designs-card">
             <h2>Nova Scotia Wildlife Collection</h2>
-            <p>Support local endangered species through our special designs. Each pin represents an animal that needs our protection.</p>
+            <p style="text-align: center; font-size: 18px; color: #2c3e50; margin-bottom: 20px;">
+                Support local endangered species through our special animal designs
+            </p>
             
             <div class="designs-container">
                 <!-- Whale Design -->
                 <div class="design-box">
                     <div class="design-title">North Atlantic Right Whale</div>
                     <div class="animal-image">
-                        <div class="image-placeholder">Whale Design Image</div>
+                        <img src="https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg" alt="Whale">
                     </div>
-                    <div class="design-description">One of the world's most endangered whale species, with only about 350 remaining.</div>
+                    <div class="design-description">
+                        One of the world's most endangered whale species, found in Nova Scotia waters.
+                    </div>
                     
-                    <button class="animal-button" onclick="showAnimalInfo('whaleInfo')">
+                    <button class="animal-button" onclick="toggleAnimalInfo('whaleInfo')">
                         Learn About Whales
                     </button>
                     
@@ -549,15 +616,12 @@
                         <div class="animal-info-card">
                             <strong>Population:</strong> Only about 350 remaining<br>
                             <strong>Habitat:</strong> Nova Scotia waters<br>
-                            <strong>Status:</strong> Critically Endangered
+                            <strong>Status:</strong> Critically Endangered<br>
+                            <strong>Threats:</strong> Ship strikes, fishing gear entanglement
                         </div>
                         
-                        <button class="help-button" onclick="showHelpMessage('whaleHelp')">
-                            How to Help Whales
-                        </button>
-                        
-                        <div id="whaleHelp" class="help-message" style="display: none;">
-                            Support marine conservation, reduce plastic use, choose sustainable seafood, report whale sightings, AND BUY A WHALE PIN FROM US!
+                        <div class="help-message">
+                            Buy a whale pin to support marine conservation efforts!
                         </div>
                     </div>
                 </div>
@@ -566,11 +630,13 @@
                 <div class="design-box">
                     <div class="design-title">Canada Lynx</div>
                     <div class="animal-image">
-                        <div class="image-placeholder">Lynx Design Image</div>
+                        <img src="https://www.ecowatch.com/wp-content/uploads/2022/04/canada-lynx-1024x576.jpg" alt="Lynx">
                     </div>
-                    <div class="design-description">Threatened species in Nova Scotia forests, particularly in Cape Breton Highlands.</div>
+                    <div class="design-description">
+                        Threatened species in Nova Scotia forests, particularly in Cape Breton Highlands.
+                    </div>
                     
-                    <button class="animal-button" onclick="showAnimalInfo('lynxInfo')">
+                    <button class="animal-button" onclick="toggleAnimalInfo('lynxInfo')">
                         Learn About Lynx
                     </button>
                     
@@ -578,15 +644,12 @@
                         <div class="animal-info-card">
                             <strong>Habitat:</strong> Cape Breton Highlands<br>
                             <strong>Diet:</strong> Snowshoe hares<br>
-                            <strong>Status:</strong> Threatened
+                            <strong>Status:</strong> Threatened<br>
+                            <strong>Population:</strong> Fewer than 50 in Nova Scotia
                         </div>
                         
-                        <button class="help-button" onclick="showHelpMessage('lynxHelp')">
-                            How to Help Lynx
-                        </button>
-                        
-                        <div id="lynxHelp" class="help-message" style="display: none;">
-                            Support forest conservation, respect wildlife habitats, donate to protection programs, learn about coexistence, AND BUY A LYNX PIN FROM US!
+                        <div class="help-message">
+                            Purchase a lynx pin to help protect forest habitats!
                         </div>
                     </div>
                 </div>
@@ -595,11 +658,13 @@
                 <div class="design-box">
                     <div class="design-title">Leatherback Sea Turtle</div>
                     <div class="animal-image">
-                        <div class="image-placeholder">Turtle Design Image</div>
+                        <img src="https://cdn.provincetownindependent.org/2025/10/Hakimi-leatherback-sea-turtles-photo-1-alive-1.jpeg" alt="Turtle">
                     </div>
-                    <div class="design-description">Endangered ocean travelers that migrate thousands of miles through our waters.</div>
+                    <div class="design-description">
+                        Endangered ocean travelers that visit Nova Scotia waters during migration.
+                    </div>
                     
-                    <button class="animal-button" onclick="showAnimalInfo('turtleInfo')">
+                    <button class="animal-button" onclick="toggleAnimalInfo('turtleInfo')">
                         Learn About Turtles
                     </button>
                     
@@ -607,15 +672,12 @@
                         <div class="animal-info-card">
                             <strong>Size:</strong> Up to 2,000 pounds<br>
                             <strong>Migration:</strong> Thousands of miles<br>
-                            <strong>Status:</strong> Endangered
+                            <strong>Status:</strong> Endangered<br>
+                            <strong>Lifespan:</strong> Up to 50 years
                         </div>
                         
-                        <button class="help-button" onclick="showHelpMessage('turtleHelp')">
-                            How to Help Turtles
-                        </button>
-                        
-                        <div id="turtleHelp" class="help-message" style="display: none;">
-                            Reduce plastic pollution, support turtle rescue centers, participate in beach cleanups, choose reef-safe sunscreen, AND BUY A TURTLE PIN FROM US!
+                        <div class="help-message">
+                            Get a turtle pin to support ocean conservation!
                         </div>
                     </div>
                 </div>
@@ -624,99 +686,158 @@
 
         <!-- Features Section -->
         <div class="card features-card">
-            <h2>Product Features</h2>
+            <h2>Why Choose EcoPins?</h2>
             <ul class="feature-list">
-                <li>Made from recycled materials</li>
-                <li>Easy to switch designs</li>
-                <li>Supports conservation efforts</li>
-                <li>Perfect as gifts</li>
-                <li>Durable and long-lasting</li>
-                <li>Eco-friendly packaging</li>
+                <li>🌱 Made from recycled and sustainable materials</li>
+                <li>🔄 Easy to switch designs with velcro backing</li>
+                <li>🐋 Supports conservation efforts for endangered species</li>
+                <li>🎁 Perfect as gifts for nature lovers</li>
+                <li>🏫 Educational tool for learning about local wildlife</li>
+                <li>💚 100% of profits go to environmental charities</li>
             </ul>
         </div>
 
         <!-- Future Plans Section -->
         <div class="card future-card">
-            <h2>Future Plans</h2>
-            <div class="future-feature">More Animal Designs</div>
-            <div class="future-feature">Custom Pins</div>
-            <div class="future-feature">School Programs</div>
-            <div class="future-feature">Conservation Partnerships</div>
+            <h2>Future Expansion Plans</h2>
+            <div class="future-feature">
+                🦅 More Animal Designs
+            </div>
+            <div class="future-feature">
+                 online shops 
+            </div>
+            <div class="future-feature">
+                🎨 Custom Pin Design Service
+            </div>
+            </div>
         </div>
 
         <!-- Quiz Section -->
         <div class="card quiz-card">
             <h2>Personality Quiz</h2>
-            <p>Find which animal matches your personality!</p>
-            <div class="quiz-info">
-                <p>Take our fun quiz to discover which EcoPins animal best represents your personality. You might be a majestic whale, a mysterious lynx, or a wise turtle!</p>
+            <p style="text-align: center; font-size: 18px; color: #2c3e50;">
+                Discover which endangered animal matches your personality!
+            </p>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <button class="team-button" onclick="startPersonalityQuiz()">Start Personality Quiz</button>
             </div>
             
-            <div style="text-align: center; margin-top: 20px;">
-                <button class="team-button" onclick="startQuiz()">Start Quiz</button>
-            </div>
-            
-            <div id="quizSection" style="display: none; margin-top: 20px;">
+            <div id="quizSection" style="display: none;">
                 <div id="quizQuestions"></div>
             </div>
         </div>
 
         <!-- Team Section -->
         <div class="card team-card">
-            <h2>Our Team</h2>
-            <p>We are students working on the EcoPins project through the JA Company Program.</p>
-            <p>Our team is passionate about environmental conservation and entrepreneurship.</p>
+            <h2>Meet Our Team</h2>
+            <p style="text-align: center; font-size: 18px; color: #2c3e50;">
+                We are passionate students working on the EcoPins project through the JA Company Program.
+            </p>
             
-            <div style="text-align: center; margin-top: 20px;">
-                <button class="team-button" onclick="showTeam()">Show Team Members</button>
+            <div style="text-align: center; margin: 20px 0;">
+                <button class="team-button" onclick="toggleTeamMembers()">Show Team Members</button>
             </div>
             
             <div id="teamMembers" class="members-container">
-                <div class="team-title">Meet Our Team</div>
-                <div class="member-card">Avin P. Langroodi - VP Information Technology</div>
-                <div class="member-card">Sajal Aryal - VP Internal</div>
-                <div class="member-card">Alden Hiltz - VP External</div>
-                <div class="member-card">Manuela Roemer - VP Production</div>
-                <div class="member-card">Louis Goossens - VP Marketing</div>
-                <div class="member-card">Henry Hiltz - VP Sales</div>
-                <div class="member-card">Dylan Davidson - VP Human Resources</div>
-                <div class="member-card">Sophia Langille - VP Corporate Social Responsibility</div>
-                <div class="member-card">Maggie Pyke - VP Finance</div>
-                <div class="member-card">Alexander Bautista - VP Environment</div>
-                <div class="member-card">Michael Aucoin - VP Health & Safety</div>
-                <div class="member-card">Lily Bray - Head of Video Production & Special Events</div>
+                <div class="team-title">EcoPins Leadership Team</div>
+                
+                <div class="member-card">
+                    <div>Avin P. Langroodi <span class="role-badge VP information Technology-role">VP Information Technology</span></div>
+                    <div class="member-role">Technology Leader & Developer</div>
+                </div>
+                
+                <div class="member-card">
+                    <div>Sajal Aryal <span class="role-badge VP internal-role">VP Internal</span></div>
+                    <div class="member-role">Internal Operations & Design</div>
+                </div>
+                
+                <div class="member-card">
+                    <div>Alden Hiltz <span class="role-badge VP External-role">VP External</span></div>
+                    <div class="member-role">External Relations & Partnerships</div>
+                </div>
+                
+                <div class="member-card">
+                    <div>Manuela Roemer <span class="role-badge VP Production-role">VP Production</span></div>
+                    <div class="member-role">Production Management & Quality Control</div>
+                </div>
+                
+                <div class="member-card">
+                    <div>Louis Goossens <span class="role-badge VP Marketing-role">VP Marketing</span></div>
+                    <div class="member-role">Marketing Strategy & Brand Promotion</div>
+                </div>
+                
+                <div class="member-card">
+                    <div>Henry Hiltz <span class="role-badge VP Sales-role">VP Sales</span></div>
+                    <div class="member-role">Sales Strategy & Customer Relations</div>
+                </div>
+                
+                <div class="member-card">
+                    <div>Dylan Davidson <span class="role-badge VP Human Resources-role">VP Human Resources</span></div>
+                    <div class="member-role">Team Management & Recruitment</div>
+                </div>
+                
+                <div class="member-card">
+                    <div>Sophia Langille <span class="role-badge VP Corporate Social Responsibility-role">VP Corporate Social Responsibility</span></div>
+                    <div class="member-role">Social Responsibility & Community Engagement</div>
+                </div>
+                
+                <div class="member-card">
+                    <div>Maggie Pyke <span class="role-badge VP Finance-role">VP Finance</span></div>
+                    <div class="member-role">Financial Management & Budget Planning</div>
+                </div>
+                
+                <div class="member-card">
+                    <div>Alexander Bautista <span class="role-badge VP Environment-role">VP Environment</span></div>
+                    <div class="member-role">Environmental Initiatives & Sustainability</div>
+                </div>
+                
+                <div class="member-card">
+                    <div>Michael Aucoin <span class="role-badge VP Health & Safety-role">VP Health & Safety</span></div>
+                    <div class="member-role">Health & Safety Standards</div>
+                </div>
+                
+                <div class="member-card">
+                    <div>Lily Bray <span class="role-badge Head of Video Production & Special Events-role">Head of Video Production & Special Events</span></div>
+                    <div class="member-role">Video Production & Event Management</div>
+                </div>
             </div>
         </div>
 
         <!-- Student Project Section -->
         <div class="card student-card">
-            <h2>Student Project</h2>
+            <h2>Student Learning Project</h2>
             <div class="student-note">
-                This website was created by students participating in the JA Company Program.
+                This website and business project were created by students participating in the JA Company Program.
             </div>
             <div class="student-note">
-                We are learning programming, business skills, and entrepreneurship through this project.
+                We are learning valuable skills in programming, business management, marketing, and environmental stewardship.
             </div>
             <div class="student-note">
-                Thank you for visiting our website and supporting our learning journey!
+                <strong>Thank you for supporting student entrepreneurship and environmental conservation!</strong>
             </div>
         </div>
 
-        <!-- Signature -->
+        <!-- Signature Section -->
         <div class="signature">
-            <h3>Website Developer:</h3>
+            <h3>Website Developed By:</h3>
             <div class="creator-name">Avin P. Langroodi</div>
-            <p>JA Company Program Participant</p>
-            <p>Python Programming Project</p>
+            <p>JA Company Program Participant | Python Programming Project</p>
+            
             <div class="contact-info">
+                <a href="https://www.linkedin.com/in/avin-langroodi-85ab50287" class="contact-link" target="_blank">LinkedIn Profile</a>
+                <a href="mailto:avinlangroodi4@gmail.com" class="email-link">avinlangroodi4@gmail.com</a>
+            </div>
+            <div class="contact-info">
+                <strong>Company Email:</strong>
                 <a href="mailto:pinpointpatches1@gmail.com" class="email-link">pinpointpatches1@gmail.com</a>
             </div>
         </div>
     </div>
 
     <script>
-        // Team display function
-        function showTeam() {
+        // Team members toggle function
+        function toggleTeamMembers() {
             var team = document.getElementById('teamMembers');
             if (team.style.display === 'none' || team.style.display === '') {
                 team.style.display = 'block';
@@ -725,8 +846,8 @@
             }
         }
         
-        // Animal info display function
-        function showAnimalInfo(elementId) {
+        // Animal info toggle function
+        function toggleAnimalInfo(elementId) {
             var element = document.getElementById(elementId);
             if (element.style.display === 'none' || element.style.display === '') {
                 element.style.display = 'block';
@@ -735,154 +856,105 @@
             }
         }
         
-        // Help message display function
-        function showHelpMessage(elementId) {
-            var element = document.getElementById(elementId);
-            if (element.style.display === 'none' || element.style.display === '') {
-                element.style.display = 'block';
-            } else {
-                element.style.display = 'none';
-            }
-        }
-        
-        // Simple quiz function
-        function startQuiz() {
+        // Personality quiz function
+        function startPersonalityQuiz() {
             var quizSection = document.getElementById('quizSection');
             var questionsDiv = document.getElementById('quizQuestions');
             
             if (quizSection.style.display === 'none' || quizSection.style.display === '') {
                 quizSection.style.display = 'block';
                 
-                var questions = [
-                    {
-                        question: "What do you enjoy doing in your free time?",
-                        options: [
-                            {text: "Traveling and exploring new places", animal: "whale"},
-                            {text: "Hiking and outdoor adventures", animal: "lynx"},
-                            {text: "Relaxing and enjoying quiet moments", animal: "turtle"}
-                        ]
-                    },
-                    {
-                        question: "How would your friends describe your personality?",
-                        options: [
-                            {text: "Strong and adventurous", animal: "whale"},
-                            {text: "Smart and observant", animal: "lynx"},
-                            {text: "Calm and wise", animal: "turtle"}
-                        ]
-                    },
-                    {
-                        question: "What's your preferred way of living?",
-                        options: [
-                            {text: "In groups and communities", animal: "whale"},
-                            {text: "Independent and self-sufficient", animal: "lynx"},
-                            {text: "Family-oriented and traditional", animal: "turtle"}
-                        ]
-                    },
-                    {
-                        question: "What's your main goal in life?",
-                        options: [
-                            {text: "To discover new things and have adventures", animal: "whale"},
-                            {text: "To achieve success and recognition", animal: "lynx"},
-                            {text: "To find peace and happiness", animal: "turtle"}
-                        ]
-                    }
-                ];
-                
-                var html = '';
-                for (var i = 0; i < questions.length; i++) {
-                    html += '<div class="quiz-question">';
-                    html += '<h3>Question ' + (i+1) + ':</h3>';
-                    html += '<p>' + questions[i].question + '</p>';
+                var quizHTML = `
+                    <div class="quiz-info">
+                        <p>Answer these 4 questions to discover which endangered animal matches your personality!</p>
+                    </div>
                     
-                    for (var j = 0; j < questions[i].options.length; j++) {
-                        html += '<button class="quiz-option" onclick="selectAnswer(' + i + ', \'' + questions[i].options[j].animal + '\')">';
-                        html += questions[i].options[j].text;
-                        html += '</button>';
-                    }
+                    <div class="quiz-question">
+                        <h3>Question 1: What's your favorite way to spend free time?</h3>
+                        <button class="quiz-option" onclick="answerQuestion(1, 'whale')">Traveling and exploring new places</button>
+                        <button class="quiz-option" onclick="answerQuestion(1, 'lynx')">Hiking in nature and forests</button>
+                        <button class="quiz-option" onclick="answerQuestion(1, 'turtle')">Relaxing by the water</button>
+                    </div>
                     
-                    html += '</div>';
-                }
+                    <div class="quiz-question">
+                        <h3>Question 2: How would friends describe your personality?</h3>
+                        <button class="quiz-option" onclick="answerQuestion(2, 'whale')">Strong and adventurous</button>
+                        <button class="quiz-option" onclick="answerQuestion(2, 'lynx')">Smart and independent</button>
+                        <button class="quiz-option" onclick="answerQuestion(2, 'turtle')">Calm and peaceful</button>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <h3>Question 3: What's your preferred social style?</h3>
+                        <button class="quiz-option" onclick="answerQuestion(3, 'whale')">Large groups and communities</button>
+                        <button class="quiz-option" onclick="answerQuestion(3, 'lynx')">Small circles or alone time</button>
+                        <button class="quiz-option" onclick="answerQuestion(3, 'turtle')">Family and close friends</button>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <h3>Question 4: What's your main life goal?</h3>
+                        <button class="quiz-option" onclick="answerQuestion(4, 'whale')">Discover new things and have adventures</button>
+                        <button class="quiz-option" onclick="answerQuestion(4, 'lynx')">Achieve success and mastery</button>
+                        <button class="quiz-option" onclick="answerQuestion(4, 'turtle')">Find peace and live harmoniously</button>
+                    </div>
+                `;
                 
-                html += '<div style="text-align: center; margin: 20px;">';
-                html += '<button class="result-button" onclick="showQuizResult()">See My Result</button>';
-                html += '<button class="back-button" onclick="resetQuiz()">Start Over</button>';
-                html += '</div>';
-                
-                questionsDiv.innerHTML = html;
+                questionsDiv.innerHTML = quizHTML;
             } else {
                 quizSection.style.display = 'none';
             }
         }
         
-        var quizAnswers = [];
+        let quizAnswers = [];
         
-        function selectAnswer(questionIndex, animal) {
-            quizAnswers[questionIndex] = animal;
+        function answerQuestion(questionNumber, answer) {
+            quizAnswers[questionNumber] = answer;
             
-            // Highlight selected button
-            var buttons = document.querySelectorAll('.quiz-option');
-            buttons.forEach(function(button) {
-                button.style.background = '#3498db';
-            });
-            
-            // Find which button was clicked and highlight it
-            event.target.style.background = '#e17055';
+            // If all questions answered, show result
+            if (quizAnswers.length === 5) { // Because array starts from 1
+                showQuizResult();
+            }
         }
         
         function showQuizResult() {
             var questionsDiv = document.getElementById('quizQuestions');
             
-            // Count animal selections
-            var animalCount = {whale: 0, lynx: 0, turtle: 0};
-            for (var i = 0; i < quizAnswers.length; i++) {
-                if (quizAnswers[i]) {
-                    animalCount[quizAnswers[i]]++;
-                }
-            }
+            // Simple scoring - count occurrences of each animal
+            let whaleCount = quizAnswers.filter(a => a === 'whale').length;
+            let lynxCount = quizAnswers.filter(a => a === 'lynx').length;
+            let turtleCount = quizAnswers.filter(a => a === 'turtle').length;
             
-            // Determine result
-            var resultAnimal = 'whale';
-            var maxCount = animalCount.whale;
+            let resultAnimal = 'whale';
+            let resultMessage = '';
             
-            if (animalCount.lynx > maxCount) {
+            if (whaleCount >= lynxCount && whaleCount >= turtleCount) {
+                resultAnimal = 'whale';
+                resultMessage = 'You are a WHALE! Strong, adventurous, and loves to explore new places!';
+            } else if (lynxCount >= whaleCount && lynxCount >= turtleCount) {
                 resultAnimal = 'lynx';
-                maxCount = animalCount.lynx;
-            }
-            
-            if (animalCount.turtle > maxCount) {
-                resultAnimal = 'turtle';
-            }
-            
-            // Create result message
-            var resultMessage = '';
-            var resultTitle = '';
-            
-            if (resultAnimal === 'whale') {
-                resultTitle = 'You are a WHALE!';
-                resultMessage = 'You are strong, adventurous, and love to explore new places! Like the majestic North Atlantic Right Whale, you value community and long journeys.';
-            } else if (resultAnimal === 'lynx') {
-                resultTitle = 'You are a LYNX!';
-                resultMessage = 'You are smart, observant, and independent! Like the mysterious Canada Lynx, you are adaptable and thrive in challenging environments.';
+                resultMessage = 'You are a LYNX! Smart, independent, and values your personal space!';
             } else {
-                resultTitle = 'You are a TURTLE!';
-                resultMessage = 'You are calm, wise, and value tradition! Like the ancient Leatherback Sea Turtle, you have endurance and appreciate the journey of life.';
+                resultAnimal = 'turtle';
+                resultMessage = 'You are a TURTLE! Calm, peaceful, and values harmony in life!';
             }
             
-            questionsDiv.innerHTML = '<div class="quiz-result">' +
-                '<h2>' + resultTitle + '</h2>' +
-                '<p>' + resultMessage + '</p>' +
-                '<p>Get your ' + resultAnimal + ' pin to show your personality!</p>' +
-                '<div class="result-buttons">' +
-                '<button class="result-button" onclick="startQuiz()">Take Quiz Again</button>' +
-                '<button class="back-button" onclick="resetQuiz()">Back to Main</button>' +
-                '</div>' +
-                '</div>';
-        }
-        
-        function resetQuiz() {
-            var quizSection = document.getElementById('quizSection');
-            quizSection.style.display = 'none';
-            quizAnswers = [];
+            var resultHTML = `
+                <div class="quiz-result">
+                    <h2>Your Personality Animal Is...</h2>
+                    <div style="font-size: 48px; margin: 20px 0;">
+                        ${resultAnimal === 'whale' ? '🐋' : resultAnimal === 'lynx' ? '🐾' : '🐢'}
+                    </div>
+                    <h3>${resultMessage}</h3>
+                    <p>Get your ${resultAnimal} pin to show your personality and support conservation!</p>
+                    
+                    <div class="result-buttons">
+                        <button class="result-button" onclick="startPersonalityQuiz()">Take Quiz Again</button>
+                        <button class="back-button" onclick="document.getElementById('quizSection').style.display='none'">Close Quiz</button>
+                    </div>
+                </div>
+            `;
+            
+            questionsDiv.innerHTML = resultHTML;
+            quizAnswers = []; // Reset for next time
         }
     </script>
 </body>
