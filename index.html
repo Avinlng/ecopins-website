@@ -162,10 +162,10 @@
         }
         
         .contact-info {
-            margin: 10px 0;
-            padding: 5px 10px;
+            margin: 15px 0;
+            padding: 15px;
             background: rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
+            border-radius: 10px;
             display: inline-block;
         }
         
@@ -202,28 +202,6 @@
         .email-link:hover {
             background: rgba(214, 48, 49, 0.1);
             transform: scale(1.05);
-        }
-
-        .company-email-link {
-            color: #27ae60;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 5px;
-            padding: 6px 12px;
-            border-radius: 15px;
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
-            color: white;
-            transition: all 0.3s ease;
-            display: inline-block;
-            box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
-            border: 2px solid rgba(255,255,255,0.5);
-            font-size: 14px;
-        }
-        
-        .company-email-link:hover {
-            background: linear-gradient(45deg, #2ecc71, #27ae60);
-            transform: scale(1.05);
-            box-shadow: 0 3px 10px rgba(39, 174, 96, 0.4);
         }
         
         .team-button {
@@ -645,6 +623,34 @@
             <p>Each pin represents a commitment to eco-friendly fashion while allowing personal expression.</p>
         </div>
 
+        <div class="card features-card">
+            <h2>Product Features</h2>
+            <ul class="feature-list">
+                <li>Made from recycled and eco-friendly materials</li>
+                <li>Easy to switch between different designs</li>
+                <li>Multiple design options available</li>
+                <li>Supports environmental conservation efforts</li>
+                <li>Suitable as gifts</li>
+                <li>Created by students learning business skills</li>
+            </ul>
+        </div>
+
+        <div class="card team-card">
+            <h2>Our Team</h2>
+            <p>We are a group of students working together on the EcoPins project.</p>
+            
+            <div style="text-align: center;">
+                <button class="team-button" onclick="showTeamMembers()">
+                    View Team Members
+                </button>
+            </div>
+            
+            <div id="membersContainer" class="members-container">
+                <div class="team-title">Team Members</div>
+                <div id="membersList"></div>
+            </div>
+        </div>
+
         <div class="card designs-card">
             <h2>Nova Scotia Wildlife Collection</h2>
             <p>Support local endangered species through our special Nova Scotia designs</p>
@@ -751,18 +757,6 @@
             </div>
         </div>
 
-        <div class="card features-card">
-            <h2>Product Features</h2>
-            <ul class="feature-list">
-                <li>Made from recycled and eco-friendly materials</li>
-                <li>Easy to switch between different designs</li>
-                <li>Multiple design options available</li>
-                <li>Supports environmental conservation efforts</li>
-                <li>Suitable as gifts</li>
-                <li>Created by students learning business skills</li>
-            </ul>
-        </div>
-
         <!-- QUIZ SECTION -->
         <div class="card quiz-card">
             <h2>Personality Quiz</h2>
@@ -795,22 +789,6 @@
             </div>
         </div>
 
-        <div class="card team-card">
-            <h2>Our Team</h2>
-            <p>We are a group of students working together on the EcoPins project.</p>
-            
-            <div style="text-align: center;">
-                <button class="team-button" onclick="showTeamMembers()">
-                    View Team Members
-                </button>
-            </div>
-            
-            <div id="membersContainer" class="members-container">
-                <div class="team-title">Team Members</div>
-                <div id="membersList"></div>
-            </div>
-        </div>
-
         <div class="card future-card">
             <h2>Future Plans</h2>
             <div class="future-feature">Online Store - In Development</div>
@@ -836,10 +814,6 @@
             <div class="contact-info">
                 <a href="https://www.linkedin.com/in/avin-langroodi-85ab50287" class="contact-link" target="_blank">LinkedIn Profile</a>
                 <a href="mailto:avinlangroodi4@gmail.com" class="email-link">avinlangroodi4@gmail.com</a>
-            </div>
-            <div class="contact-info">
-                <h3>Company Email:</h3>
-                <a href="mailto:pinpointpatches1@gmail.com" class="company-email-link">pinpointpatches1@gmail.com</a>
             </div>
             <p>JA Company Program Participant</p>
             <p>Web Development Project - HTML, CSS, JavaScript</p>
@@ -1197,8 +1171,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
