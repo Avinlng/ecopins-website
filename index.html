@@ -658,6 +658,34 @@
             transform: scale(1.1);
             box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
+
+        /* TikTok Icon Styles - NEW */
+        .tiktok-footer {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .tiktok-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #000000, #25F4EE, #FE2C55);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .tiktok-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
     </style>
 </head>
 <body>
@@ -882,6 +910,17 @@
            rel="noopener noreferrer"
            title="Follow us on Instagram">
             📷
+        </a>
+    </div>
+
+    <!-- TikTok Link - NEW -->
+    <div class="tiktok-footer">
+        <a href="https://www.tiktok.com/@pin.point.patches?_r=1&_t=ZS-91FhzobMg53" 
+           class="tiktok-link" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           title="Follow us on TikTok">
+            🎵
         </a>
     </div>
 
