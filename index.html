@@ -28,6 +28,21 @@
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .header-logo {
+            position: absolute;
+            left: 30px;
+            height: 80px;
+            width: auto;
+        }
+        
+        .header-content {
+            flex: 1;
         }
         
         .main-title {
@@ -532,6 +547,16 @@
             .header {
                 padding: 20px;
             }
+            
+            .header-logo {
+                position: relative;
+                left: 0;
+                margin-bottom: 15px;
+            }
+            
+            .header {
+                flex-direction: column;
+            }
         }
 
         /* Team Role Styles */
@@ -690,8 +715,11 @@
 </head>
 <body>
     <div class="header">
-        <h1 class="main-title" style="font-weight: 900;">Pin Point Pens</h1>
-        <div class="subtitle">Velcro Pins - JA Company Program</div>
+        <img src="https://i.ibb.co/XrGg1fzz/1002245789.png" alt="Pin Point Pens Logo" class="header-logo">
+        <div class="header-content">
+            <h1 class="main-title" style="font-weight: 900;">Pin Point Pens</h1>
+            <div class="subtitle">Velcro Pins - JA Company Program</div>
+        </div>
     </div>
 
     <div class="container">
