@@ -104,10 +104,6 @@
             background: linear-gradient(135deg, #FDCB6E, #e17055);
         }
         
-        .designs-card {
-            background: linear-gradient(135deg, #a29bfe, #fd79a8);
-        }
-        
         .quiz-card {
             background: linear-gradient(135deg, #FF9A8B, #FF6A88);
         }
@@ -260,41 +256,13 @@
             transform: scale(1.1);
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
-        
-        .animal-button {
-            background: linear-gradient(45deg, #3498db, #2980b9);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            margin: 10px 0;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        }
-        
-        .animal-button:hover {
-            transform: scale(1.05);
-            background: linear-gradient(45deg, #2980b9, #3498db);
-        }
-        
+
         .members-container {
             display: none;
             margin-top: 25px;
             padding: 25px;
             background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
-            border: 2px dashed rgba(255,255,255,0.6);
-        }
-        
-        .animal-info-container {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
             border: 2px dashed rgba(255,255,255,0.6);
         }
         
@@ -311,206 +279,9 @@
             transition: all 0.3s ease;
         }
         
-        .animal-info-card {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 10px;
-            color: #2c3e50;
-            animation: fadeIn 0.5s ease;
-            border-left: 4px solid #3498db;
-        }
-        
         .member-card:hover {
             border-color: #e17055;
             transform: scale(1.02);
-        }
-        
-        .designs-container {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        
-        .design-box {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 25px;
-            border-radius: 15px;
-            width: 280px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
-            border: 3px solid transparent;
-        }
-        
-        .design-box:hover {
-            transform: translateY(-8px);
-            border-color: #e17055;
-        }
-        
-        .design-title {
-            color: #2c3e50;
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-align: center;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(0,0,0,0.1);
-        }
-        
-        .design-description {
-            color: #7f8c8d;
-            text-align: center;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-        
-        .animal-image {
-            width: 100%;
-            height: 180px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            border: 2px solid #dee2e6;
-            background: #f8f9fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        
-        .animal-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .design-box:hover .animal-image img {
-            transform: scale(1.05);
-        }
-        
-        .image-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #3498db, #2980b9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 16px;
-            text-align: center;
-            border-radius: 10px;
-        }
-        
-        .help-message {
-            background: rgba(46, 204, 113, 0.2);
-            padding: 12px;
-            border-radius: 8px;
-            margin-top: 15px;
-            text-align: center;
-            font-weight: bold;
-            color: #27ae60;
-            border: 1px solid #27ae60;
-        }
-        
-        .help-button {
-            background: linear-gradient(45deg, #3498db, #2980b9);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 14px;
-            border-radius: 20px;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            width: 100%;
-        }
-        
-        .help-button:hover {
-            transform: scale(1.05);
-            background: linear-gradient(45deg, #2980b9, #3498db);
-        }
-        
-        /* Quiz Styles */
-        .quiz-info {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 20px;
-        }
-        
-        .quiz-question {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 25px;
-            margin: 20px 0;
-            border-radius: 15px;
-            text-align: center;
-        }
-        
-        .quiz-option {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            margin: 10px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            display: block;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .quiz-option:hover {
-            background: #2980b9;
-            transform: scale(1.05);
-        }
-        
-        .quiz-result {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 20px 0;
-            text-align: center;
-        }
-        
-        .result-buttons {
-            margin-top: 20px;
-        }
-        
-        .result-button {
-            background: #f39c12;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 20px;
-            cursor: pointer;
-            margin: 10px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        
-        .back-button {
-            background: #e74c3c;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 20px;
-            cursor: pointer;
-            margin: 10px;
-            font-size: 16px;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         
         .team-title {
@@ -531,16 +302,6 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .designs-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .design-box {
-                width: 100%;
-                max-width: 350px;
-            }
-            
             .main-title {
                 font-size: 32px;
             }
@@ -758,112 +519,6 @@
             </div>
         </div>
 
-        <div class="card designs-card">
-            <h2>Nova Scotia Wildlife Collection</h2>
-            <p>Support local endangered species through our special Nova Scotia designs</p>
-            
-            <div class="designs-container">
-                <!-- Whale -->
-                <div class="design-box">
-                    <div class="animal-image">
-                        <img src="https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg" alt="North Atlantic Right Whale" onerror="handleImageError(this)">
-                    </div>
-                    <div class="design-title">North Atlantic Right Whale</div>
-                    <div class="design-description">The North Atlantic Right Whale is one of the world's most endangered large whale species.</div>
-                    <div class="help-message">By purchasing this pin, you help fund whale conservation research.</div>
-                    
-                    <div style="text-align: center;">
-                        <button class="animal-button" onclick="toggleAnimalInfo('whale')">
-                            Learn More About Whales
-                        </button>
-                    </div>
-                    
-                    <div id="whaleInfo" class="animal-info-container">
-                        <div class="animal-info-card">
-                            <strong>Population:</strong> Only about 350 remaining worldwide
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Habitat:</strong> Nova Scotia waters during summer months
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Threats:</strong> Ship strikes, fishing gear entanglement, ocean noise
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Conservation Status:</strong> Critically Endangered
-                        </div>
-                    </div>
-                    
-                    <button class="help-button" onclick="showHelpInfo('whale')">How can I help save whales?</button>
-                </div>
-                
-                <!-- Lynx -->
-                <div class="design-box">
-                    <div class="animal-image">
-                        <img src="https://th.bing.com/th/id/R.464a22421f263c1707af3a14eebab0b5?rik=g7bFplMK4QLgng&pid=ImgRaw&r=0" alt="Canada Lynx" onerror="handleImageError(this)">
-                    </div>
-                    <div class="design-title">Canada Lynx</div>
-                    <div class="design-description">The Canada Lynx is a threatened species in Nova Scotia forests.</div>
-                    <div class="help-message">Your purchase supports forest conservation programs.</div>
-                    
-                    <div style="text-align: center;">
-                        <button class="animal-button" onclick="toggleAnimalInfo('lynx')">
-                            Learn More About Lynx
-                        </button>
-                    </div>
-                    
-                    <div id="lynxInfo" class="animal-info-container">
-                        <div class="animal-info-card">
-                            <strong>Habitat:</strong> Cape Breton Highlands and forested areas
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Diet:</strong> Primarily snowshoe hares
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Features:</strong> Large paws for walking on snow, tufted ears
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Conservation Status:</strong> Threatened in Nova Scotia
-                        </div>
-                    </div>
-                    
-                    <button class="help-button" onclick="showHelpInfo('lynx')">How can I help save lynx?</button>
-                </div>
-                
-                <!-- Turtle -->
-                <div class="design-box">
-                    <div class="animal-image">
-                        <img src="https://cdn.provincetownindependent.org/2025/10/Hakimi-leatherback-sea-turtles-photo-1-alive-1.jpeg" alt="Leatherback Sea Turtle" onerror="handleImageError(this)">
-                    </div>
-                    <div class="design-title">Leatherback Sea Turtle</div>
-                    <div class="design-description">Leatherback Sea turtles are endangered ocean travelers.</div>
-                    <div class="help-message">Buying this pin contributes to sea turtle rescue organizations.</div>
-                    
-                    <div style="text-align: center;">
-                        <button class="animal-button" onclick="toggleAnimalInfo('turtle')">
-                            Learn More About Turtles
-                        </button>
-                    </div>
-                    
-                    <div id="turtleInfo" class="animal-info-container">
-                        <div class="animal-info-card">
-                            <strong>Size:</strong> Largest sea turtle, up to 2,000 pounds
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Migration:</strong> Travel thousands of miles across oceans
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Diet:</strong> Mainly jellyfish
-                        </div>
-                        <div class="animal-info-card">
-                            <strong>Conservation Status:</strong> Endangered worldwide
-                        </div>
-                    </div>
-                    
-                    <button class="help-button" onclick="showHelpInfo('turtle')">How can I help save turtles?</button>
-                </div>
-            </div>
-        </div>
-
         <!-- QUIZ SECTION -->
         <div class="card quiz-card">
             <h2>Personality Quiz</h2>
@@ -1051,123 +706,6 @@
                 container.style.display = 'none';
             }
         }
-        
-        // Image management system
-        const imageBackups = {
-            'whale': [
-                'https://i.natgeofe.com/n/cc3fd12b-35f2-410c-894b-dd02112e9d69/right-whales_thumb_4x3.jpg',
-                'https://images.unsplash.com/photo-1574871619176-67c887c369c7?w=400&h=300&fit=crop',
-                'https://cdn.pixabay.com/photo/2019/11/07/19/57/whale-4609077_640.jpg'
-            ],
-            'lynx': [
-                'https://th.bing.com/th/id/R.464a22421f263c1707af3a14eebab0b5?rik=g7bFplMK4QLgng&pid=ImgRaw&r=0',
-                'https://images.unsplash.com/photo-1564889953123-f18976bb38a3?w=400&h=300&fit=crop',
-                'https://cdn.pixabay.com/photo/2017/07/24/18/57/lynx-2536664_640.jpg'
-            ],
-            'turtle': [
-                'https://cdn.provincetownindependent.org/2025/10/Hakimi-leatherback-sea-turtles-photo-1-alive-1.jpeg',
-                'https://images.unsplash.com/photo-1599159340399-64d76513d1a2?w=400&h=300&fit=crop',
-                'https://cdn.pixabay.com/photo/2016/03/05/22/18/animal-1239396_640.jpg'
-            ]
-        };
-
-        // Handle Image Loading Error
-        function handleImageError(img) {
-            const alt = img.alt.toLowerCase();
-            const parent = img.parentElement;
-            
-            console.log('Image failed to load:', img.src);
-            
-            // Find backup images
-            let backupUrls = [];
-            if (alt.includes('whale')) backupUrls = imageBackups.whale;
-            else if (alt.includes('lynx')) backupUrls = imageBackups.lynx;
-            else if (alt.includes('turtle')) backupUrls = imageBackups.turtle;
-            
-            // Try backup images
-            const currentSrc = img.src;
-            const currentIndex = backupUrls.indexOf(currentSrc);
-            const nextIndex = currentIndex + 1;
-            
-            if (nextIndex < backupUrls.length) {
-                // Try next backup image
-                console.log('Trying backup image:', backupUrls[nextIndex]);
-                img.src = backupUrls[nextIndex];
-            } else {
-                // All backups failed
-                console.log('All backup images failed for:', alt);
-                // Show placeholder with emoji
-                const placeholder = document.createElement('div');
-                placeholder.className = 'image-placeholder';
-                if (alt.includes('whale')) placeholder.textContent = '🐋 WHALE';
-                else if (alt.includes('lynx')) placeholder.textContent = '🐱 LYNX';
-                else if (alt.includes('turtle')) placeholder.textContent = '🐢 TURTLE';
-                parent.appendChild(placeholder);
-                img.style.display = 'none';
-            }
-        }
-
-        // When page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Page loaded - checking images...');
-            
-            // Check image loading status
-            setTimeout(() => {
-                const images = document.querySelectorAll('.animal-image img');
-                images.forEach(img => {
-                    if (!img.complete || img.naturalHeight === 0) {
-                        console.log('Image not loaded:', img.src);
-                        handleImageError(img);
-                    } else {
-                        console.log('Image loaded successfully:', img.src);
-                    }
-                });
-            }, 2000);
-
-            // Check image loading
-            const images = document.querySelectorAll('.animal-image img');
-            images.forEach(img => {
-                img.onload = function() {
-                    console.log('Image loaded successfully:', this.src);
-                };
-            });
-        });
-        
-        function toggleAnimalInfo(animal) {
-            const infoContainers = ['whaleInfo', 'lynxInfo', 'turtleInfo'];
-            
-            // Hide all info containers first
-            infoContainers.forEach(containerId => {
-                const container = document.getElementById(containerId);
-                if (container) {
-                    container.style.display = 'none';
-                }
-            });
-            
-            // Show the selected one if it's currently hidden
-            const selectedInfo = document.getElementById(animal + 'Info');
-            if (selectedInfo) {
-                if (selectedInfo.style.display === 'none' || selectedInfo.style.display === '') {
-                    selectedInfo.style.display = 'block';
-                } else {
-                    selectedInfo.style.display = 'none';
-                }
-            }
-        }
-        
-        function showHelpInfo(animal) {
-            let message = '';
-            
-            if (animal === 'whale') {
-                message = 'To help save whales:\n• Support marine conservation organizations\n• Reduce plastic use to protect oceans\n• Choose sustainable seafood\n• Report whale sightings to researchers\n\nAND BUY A PIN FROM US!';
-            } else if (animal === 'lynx') {
-                message = 'To help save lynx:\n• Support forest conservation efforts\n• Respect wildlife habitats when hiking\n• Donate to wildlife protection programs\n• Learn about coexisting with wild animals\n\nAND BUY A PIN FROM US!';
-            } else if (animal === 'turtle') {
-                message = 'To help save turtles:\n• Reduce plastic pollution in oceans\n• Support sea turtle rescue centers\n• Participate in beach cleanups\n• Choose reef-safe sunscreen\n\nAND BUY A PIN FROM US!';
-            }
-            
-            alert(message);
-        }
 
         // QUIZ FUNCTIONS
         const quizQuestions = [
@@ -1304,4 +842,3 @@
     </script>
 </body>
 </html>
-
