@@ -375,7 +375,6 @@
         .image-placeholder {
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #FF6B95, #FF8E53);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -599,29 +598,16 @@
                         <img src="https://i.ibb.co/V0d61fP0/donut-patch.jpg" alt="Donut Patch" onerror="handleImageError(this, 'donut')">
                     </div>
                     <div class="gallery-title">Donut Patch 🍩</div>
-                    <div class="gallery-description">For when you're craving something delicious but don't want to break your diet!  This adorable donut patch with its cute sprinkles is the perfect companion for your morning or afternoon coffee. A daily dose of joy, zero calories! Ideal for tote bags, hats or adding a playful touch to any outfit.</div>
+                    <div class="gallery-description">For when you're craving something delicious but don't want to break your diet! 😉 This adorable donut patch with its cute sprinkles is the perfect companion for your morning or afternoon coffee. A daily dose of joy, zero calories! Ideal for tote bags, hats, or adding a playful touch to any outfit.</div>
                 </div>
                 
-                <!-- Design 2 -->
+                <!-- Seashell Design -->
                 <div class="gallery-item">
                     <div class="product-image">
-                        <div class="image-placeholder">
-                            🐾 COMING SOON
-                        </div>
+                        <img src="https://i.ibb.co/4nzKfNPP/seashell-patch.jpg" alt="Seashell Patch" onerror="handleImageError(this, 'seashell')">
                     </div>
-                    <div class="gallery-title">Animal Series</div>
-                    <div class="gallery-description">Cute animal designs that support wildlife conservation efforts.</div>
-                </div>
-                
-                <!-- Design 3 -->
-                <div class="gallery-item">
-                    <div class="product-image">
-                        <div class="image-placeholder">
-                            🌟 COMING SOON
-                        </div>
-                    </div>
-                    <div class="gallery-title">Special Edition</div>
-                    <div class="gallery-description">Limited edition pins with unique patterns and color combinations.</div>
+                    <div class="gallery-title">Seashell Patch 🐚</div>
+                    <div class="gallery-description">Carry the memories of warm sand and turquoise waves with you. This delicate seashell patch with its coastal colors brings a vacation vibe to any moment. If you love the sea, style it on your denim jeans, straw hat or beach tote to complete your perfect summer look.</div>
                 </div>
             </div>
             
@@ -850,8 +836,13 @@
             placeholder.className = 'image-placeholder';
             
             if (type === 'donut') {
+                placeholder.style.background = 'linear-gradient(45deg, #FF6B95, #FF8E53)';
                 placeholder.textContent = '🍩 DONUT PATCH';
+            } else if (type === 'seashell') {
+                placeholder.style.background = 'linear-gradient(45deg, #00b4db, #0083b0)';
+                placeholder.textContent = '🐚 SEASHELL PATCH';
             } else {
+                placeholder.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
                 placeholder.textContent = '🖼️ IMAGE';
             }
             
