@@ -487,10 +487,10 @@
         
         .question-text {
             font-size: 22px;
-            color: #8e44ad; /* تغییر رنگ به بنفش */
+            color: #8e44ad;
             margin-bottom: 30px;
             font-weight: bold;
-            background: linear-gradient(45deg, #8e44ad, #9b59b6); /* تغییر گرادیانت به بنفش */
+            background: linear-gradient(45deg, #8e44ad, #9b59b6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             padding: 10px;
@@ -783,6 +783,174 @@
             transform: scale(1.1);
             box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
+
+        /* NEW SHARE MODAL STYLES */
+        .share-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .share-modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .share-modal-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .share-platforms {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .share-platform {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            border-radius: 12px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .share-platform:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .share-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .share-platform-name {
+            font-size: 14px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .share-url-container {
+            margin: 20px 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .share-url {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            background: #f8f9fa;
+        }
+
+        .copy-btn {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: linear-gradient(45deg, #2980b9, #3498db);
+        }
+
+        .close-modal-btn {
+            background: linear-gradient(45deg, #e17055, #fd79a8);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .copied-message {
+            color: #27ae60;
+            font-weight: bold;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Platform-specific colors */
+        .twitter-share { color: #1DA1F2; }
+        .instagram-share { color: #E1306C; background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .whatsapp-share { color: #25D366; }
+        .telegram-share { color: #0088cc; }
+        .tiktok-share { color: #000000; background: linear-gradient(45deg, #000000, #25F4EE, #FE2C55); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .facebook-share { color: #1877F2; }
+
+        /* Share buttons in result */
+        .share-buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn-small {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 14px;
+        }
+
+        .share-twitter { background: #1DA1F2; }
+        .share-instagram { background: #E1306C; }
+        .share-whatsapp { background: #25D366; }
+        .share-telegram { background: #0088cc; }
+        .share-tiktok { background: #000000; }
+        .share-facebook { background: #1877F2; }
+
+        .share-btn-small:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
@@ -1030,6 +1198,54 @@
         </div>
     </div>
 
+    <!-- SHARE MODAL -->
+    <div id="shareModal" class="share-modal">
+        <div class="share-modal-content">
+            <h2 class="share-modal-title">Share Your Result 📢</h2>
+            <p>Share your personality quiz result with friends on social media!</p>
+            
+            <div class="share-platforms">
+                <a href="#" class="share-platform" onclick="shareOnTwitter()">
+                    <div class="share-icon twitter-share">🐦</div>
+                    <div class="share-platform-name">Twitter</div>
+                </a>
+                
+                <a href="#" class="share-platform" onclick="shareOnInstagram()">
+                    <div class="share-icon instagram-share">📷</div>
+                    <div class="share-platform-name">Instagram</div>
+                </a>
+                
+                <a href="#" class="share-platform" onclick="shareOnWhatsApp()">
+                    <div class="share-icon whatsapp-share">💬</div>
+                    <div class="share-platform-name">WhatsApp</div>
+                </a>
+                
+                <a href="#" class="share-platform" onclick="shareOnTelegram()">
+                    <div class="share-icon telegram-share">📨</div>
+                    <div class="share-platform-name">Telegram</div>
+                </a>
+                
+                <a href="#" class="share-platform" onclick="shareOnTikTok()">
+                    <div class="share-icon tiktok-share">🎵</div>
+                    <div class="share-platform-name">TikTok</div>
+                </a>
+                
+                <a href="#" class="share-platform" onclick="shareOnFacebook()">
+                    <div class="share-icon facebook-share">👍</div>
+                    <div class="share-platform-name">Facebook</div>
+                </a>
+            </div>
+            
+            <div class="share-url-container">
+                <input type="text" id="shareUrl" class="share-url" readonly value="">
+                <button class="copy-btn" onclick="copyShareUrl()">Copy</button>
+            </div>
+            <div id="copiedMessage" class="copied-message">✓ Copied to clipboard!</div>
+            
+            <button class="close-modal-btn" onclick="closeShareModal()">Close</button>
+        </div>
+    </div>
+
     <!-- Instagram Link - NEW -->
     <div class="instagram-footer">
         <a href="https://www.instagram.com/pin_point_patches?igsh=MWNzYnB3dXJ6eTZlYQ==" 
@@ -1067,6 +1283,14 @@
             {name: "Michael Aucoin", role: "VP Health & Safety"},
             {name: "Lily Bray", role: "Head of Video Production & Special Events"}
         ];
+        
+        // Variables for quiz
+        let currentQuestion = 0;
+        let quizPoints = {
+            donut: 0, seashell: 0, airplane: 0, flower: 0,
+            crocodile: 0, catpaw: 0, basketball: 0, bow: 0, carrot: 0
+        };
+        let winningProduct = '';
         
         // CORRECTED VERSION - Display team members correctly
         function showTeamMembers() {
@@ -1319,15 +1543,17 @@
             }
         };
         
-        let currentQuestion = 0;
-        let quizPoints = {
-            donut: 0, seashell: 0, airplane: 0, flower: 0,
-            crocodile: 0, catpaw: 0, basketball: 0, bow: 0, carrot: 0
-        };
-        
         function startQuiz() {
+            // Reset points
+            for (const product in quizPoints) {
+                quizPoints[product] = 0;
+            }
+            currentQuestion = 0;
+            winningProduct = '';
+            
             document.getElementById('quizStart').style.display = 'none';
             document.getElementById('quizQuestions').style.display = 'block';
+            document.getElementById('quizResult').style.display = 'none';
             showQuestion(0);
         }
         
@@ -1373,7 +1599,7 @@
         function showResult() {
             // Find product with highest points
             let maxPoints = 0;
-            let winningProduct = '';
+            winningProduct = '';
             
             for (const product in quizPoints) {
                 if (quizPoints[product] > maxPoints) {
@@ -1383,6 +1609,8 @@
             }
             
             const product = productInfo[winningProduct];
+            const shareText = `I just discovered my EcoPin personality! I'm a "${product.personality}" and my perfect patch is ${product.name}. What's yours? Take the quiz at Pin Point Pens!`;
+            const shareUrl = window.location.href;
             
             // Show result
             let resultHTML = '<div class="quiz-result">';
@@ -1401,9 +1629,18 @@
                             <div class="result-description">${product.description}</div>
                           </div>`;
             
+            resultHTML += '<div class="share-buttons-container">';
+            resultHTML += `<button class="share-btn-small share-twitter" onclick="shareOnTwitter()">🐦 Twitter</button>`;
+            resultHTML += `<button class="share-btn-small share-instagram" onclick="shareOnInstagram()">📷 Instagram</button>`;
+            resultHTML += `<button class="share-btn-small share-whatsapp" onclick="shareOnWhatsApp()">💬 WhatsApp</button>`;
+            resultHTML += `<button class="share-btn-small share-telegram" onclick="shareOnTelegram()">📨 Telegram</button>`;
+            resultHTML += `<button class="share-btn-small share-tiktok" onclick="shareOnTikTok()">🎵 TikTok</button>`;
+            resultHTML += `<button class="share-btn-small share-facebook" onclick="shareOnFacebook()">👍 Facebook</button>`;
+            resultHTML += '</div>';
+            
             resultHTML += '<div class="result-buttons">';
             resultHTML += '<button class="result-button" onclick="restartQuiz()">Take Quiz Again</button>';
-            resultHTML += '<button class="back-button" onclick="closeQuiz()">Share Result</button>';
+            resultHTML += `<button class="back-button" onclick="openShareModal('${shareText}', '${shareUrl}')">More Share Options</button>`;
             resultHTML += '</div>';
             
             resultHTML += '</div>';
@@ -1411,6 +1648,14 @@
             document.getElementById('quizQuestions').style.display = 'none';
             document.getElementById('quizResult').innerHTML = resultHTML;
             document.getElementById('quizResult').style.display = 'block';
+            
+            // Store share data globally
+            window.quizShareData = {
+                text: shareText,
+                url: shareUrl,
+                productName: product.name,
+                personality: product.personality
+            };
         }
         
         function restartQuiz() {
@@ -1422,13 +1667,84 @@
             currentQuestion = 0;
             document.getElementById('quizResult').style.display = 'none';
             document.getElementById('quizQuestions').style.display = 'block';
+            document.getElementById('quizStart').style.display = 'none';
             showQuestion(0);
         }
         
-        function closeQuiz() {
-            // Share result functionality
-            const resultText = `I just discovered my perfect EcoPin personality! I'm a ${productInfo[Object.keys(quizPoints).reduce((a, b) => quizPoints[a] > quizPoints[b] ? a : b)].personality}. What's yours? Take the quiz at Pin Point Pens!`;
-            alert("Share this on social media: \n\n" + resultText + "\n\nOr copy the text above to share with friends!");
+        // SHARE MODAL FUNCTIONS
+        function openShareModal(shareText, shareUrl) {
+            const modal = document.getElementById('shareModal');
+            const shareUrlInput = document.getElementById('shareUrl');
+            
+            shareUrlInput.value = shareUrl;
+            modal.style.display = 'flex';
+        }
+        
+        function closeShareModal() {
+            const modal = document.getElementById('shareModal');
+            modal.style.display = 'none';
+        }
+        
+        function copyShareUrl() {
+            const shareUrlInput = document.getElementById('shareUrl');
+            const copiedMessage = document.getElementById('copiedMessage');
+            
+            shareUrlInput.select();
+            shareUrlInput.setSelectionRange(0, 99999);
+            
+            navigator.clipboard.writeText(shareUrlInput.value).then(() => {
+                copiedMessage.style.display = 'block';
+                setTimeout(() => {
+                    copiedMessage.style.display = 'none';
+                }, 3000);
+            });
+        }
+        
+        // PLATFORM-SPECIFIC SHARE FUNCTIONS
+        function shareOnTwitter() {
+            const shareData = window.quizShareData;
+            const text = encodeURIComponent(shareData.text);
+            const url = encodeURIComponent(shareData.url);
+            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+        }
+        
+        function shareOnInstagram() {
+            const shareData = window.quizShareData;
+            const text = encodeURIComponent(shareData.text);
+            alert("To share on Instagram:\n\n1. Copy the text below\n2. Open Instagram\n3. Create a new post\n4. Paste the text\n\n" + shareData.text + "\n\n" + shareData.url);
+        }
+        
+        function shareOnWhatsApp() {
+            const shareData = window.quizShareData;
+            const text = encodeURIComponent(shareData.text + " " + shareData.url);
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
+        
+        function shareOnTelegram() {
+            const shareData = window.quizShareData;
+            const text = encodeURIComponent(shareData.text);
+            const url = encodeURIComponent(shareData.url);
+            window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
+        }
+        
+        function shareOnTikTok() {
+            const shareData = window.quizShareData;
+            const text = encodeURIComponent(shareData.text);
+            alert("To share on TikTok:\n\n1. Copy the text below\n2. Open TikTok\n3. Create a new video\n4. Add the text as caption\n\n" + shareData.text + "\n\n" + shareData.url);
+        }
+        
+        function shareOnFacebook() {
+            const shareData = window.quizShareData;
+            const url = encodeURIComponent(shareData.url);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('shareModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
         }
     </script>
 </body>
