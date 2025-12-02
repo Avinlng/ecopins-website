@@ -654,6 +654,15 @@
                     <div class="gallery-title">Basketball Patch 🏀</div>
                     <div class="gallery-description">More than just decor. it's a symbol for setting goals and competitive spirit. Add this basketball patch to your sneakers, gym bag or sporty jacket to show you're always ready to 'shoot' for your dreams. High energy, street style essential.</div>
                 </div>
+                
+                <!-- Bow Design - NEW -->
+                <div class="gallery-item">
+                    <div class="product-image">
+                        <img src="https://i.ibb.co/p9Xdq6c/bow-patch.jpg" alt="Bow Patch" onerror="handleImageError(this, 'bow')">
+                    </div>
+                    <div class="gallery-title">Bow Patch 🎀</div>
+                    <div class="gallery-description">An icon of elegance like a perfectly wrapped gift! This chic patch in a gorgeous berry hue can be the perfect accent on formal wear, a hair clip or your favorite handbag. A timeless, classic element that never goes out of style.</div>
+                </div>
             </div>
             
             <p style="margin-top: 20px; font-style: italic;">More designs coming soon to our online store!</p>
@@ -901,6 +910,9 @@
             } else if (type === 'basketball') {
                 placeholder.style.background = 'linear-gradient(45deg, #FF8B3D, #FF5733)';
                 placeholder.textContent = '🏀 BASKETBALL PATCH';
+            } else if (type === 'bow') {
+                placeholder.style.background = 'linear-gradient(45deg, #FF6BC9, #C13584)';
+                placeholder.textContent = '🎀 BOW PATCH';
             } else {
                 placeholder.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
                 placeholder.textContent = '🖼️ IMAGE';
