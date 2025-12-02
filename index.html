@@ -782,7 +782,7 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
-        /* ADVANCED SHARE MODAL STYLES */
+        /* NEW SHARE MODAL STYLES */
         .share-modal {
             display: none;
             position: fixed;
@@ -790,25 +790,21 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 10000;
             align-items: center;
             justify-content: center;
-            overflow-y: auto;
-            padding: 20px;
         }
 
         .share-modal-content {
             background: white;
             padding: 30px;
             border-radius: 20px;
-            max-width: 800px;
+            max-width: 500px;
             width: 90%;
             text-align: center;
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
             animation: modalFadeIn 0.3s ease;
-            max-height: 90vh;
-            overflow-y: auto;
         }
 
         @keyframes modalFadeIn {
@@ -823,45 +819,6 @@
             font-weight: bold;
         }
 
-        .share-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #eee;
-            flex-wrap: wrap;
-        }
-
-        .share-tab {
-            padding: 12px 24px;
-            background: none;
-            border: none;
-            font-size: 16px;
-            font-weight: bold;
-            color: #7f8c8d;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-bottom: 3px solid transparent;
-        }
-
-        .share-tab.active {
-            color: #E1306C;
-            border-bottom-color: #E1306C;
-        }
-
-        .share-tab-content {
-            display: none;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .share-tab-content.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         .share-platforms {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -873,107 +830,28 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
             border-radius: 12px;
             background: #f8f9fa;
             transition: all 0.3s ease;
             cursor: pointer;
             text-decoration: none;
-            border: 2px solid transparent;
         }
 
         .share-platform:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-color: #ddd;
         }
 
         .share-icon {
-            font-size: 32px;
-            margin-bottom: 10px;
+            font-size: 28px;
+            margin-bottom: 8px;
         }
 
         .share-platform-name {
             font-size: 14px;
             color: #2c3e50;
             font-weight: 600;
-            margin-top: 5px;
-        }
-
-        .share-advanced-section {
-            margin: 25px 0;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            text-align: left;
-        }
-
-        .share-advanced-title {
-            font-size: 18px;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .share-template {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .share-template:hover {
-            background: #f0f7ff;
-            border-color: #3498db;
-        }
-
-        .share-template-text {
-            font-size: 14px;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        .share-template-hashtags {
-            font-size: 12px;
-            color: #E1306C;
-            font-weight: bold;
-        }
-
-        .copy-template-btn {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 12px;
-            margin-top: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .copy-template-btn:hover {
-            background: #2980b9;
-        }
-
-        .qrcode-container {
-            margin: 25px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
-            max-width: 300px;
-            border: 2px solid #f0f0f0;
-        }
-
-        .qrcode-canvas {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-            background: white;
-            padding: 10px;
-            border: 1px solid #ddd;
         }
 
         .share-url-container {
@@ -1029,15 +907,6 @@
             display: none;
         }
 
-        .social-color-badge {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: bold;
-            margin-left: 8px;
-        }
-
         /* Platform-specific colors */
         .twitter-share { color: #1DA1F2; }
         .instagram-share { color: #E1306C; background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -1045,8 +914,6 @@
         .telegram-share { color: #0088cc; }
         .tiktok-share { color: #000000; background: linear-gradient(45deg, #000000, #25F4EE, #FE2C55); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .facebook-share { color: #1877F2; }
-        .snapchat-share { color: #FFFC00; -webkit-text-stroke: 0.5px #000; }
-        .pinterest-share { color: #E60023; }
 
         /* Share buttons in result */
         .share-buttons-container {
@@ -1077,73 +944,12 @@
         .share-telegram { background: #0088cc; }
         .share-tiktok { background: #000000; }
         .share-facebook { background: #1877F2; }
-        .share-snapchat { background: #FFFC00; color: #000; }
-        .share-pinterest { background: #E60023; }
 
         .share-btn-small:hover {
             transform: scale(1.05);
             opacity: 0.9;
         }
-
-        /* Story templates */
-        .story-templates {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .story-template {
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            border: 2px solid #f0f0f0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: left;
-        }
-
-        .story-template:hover {
-            border-color: #E1306C;
-            transform: translateY(-3px);
-        }
-
-        .story-template-title {
-            font-size: 14px;
-            font-weight: bold;
-            color: #E1306C;
-            margin-bottom: 8px;
-        }
-
-        .story-template-text {
-            font-size: 12px;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        /* Platform-specific styles */
-        .instagram-bg {
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-            color: white;
-        }
-
-        .tiktok-bg {
-            background: linear-gradient(45deg, #000000, #25F4EE, #FE2C55);
-            color: white;
-        }
-
-        .instagram-badge {
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-            color: white;
-        }
-
-        .tiktok-badge {
-            background: linear-gradient(45deg, #000000, #25F4EE, #FE2C55);
-            color: white;
-        }
     </style>
-    <!-- QR Code Library -->
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
 </head>
 <body>
     <div class="header">
@@ -1390,201 +1196,49 @@
         </div>
     </div>
 
-    <!-- ADVANCED SHARE MODAL -->
+    <!-- SHARE MODAL -->
     <div id="shareModal" class="share-modal">
         <div class="share-modal-content">
-            <h2 class="share-modal-title">🌟 Share Your Result 🌟</h2>
-            <p>Choose your favorite way to share your personality quiz result!</p>
+            <h2 class="share-modal-title">Share Your Result 📢</h2>
+            <p>Share your personality quiz result with friends on social media!</p>
             
-            <div class="share-tabs">
-                <button class="share-tab active" onclick="switchShareTab('quick')">Quick Share</button>
-                <button class="share-tab" onclick="switchShareTab('instagram')">Instagram</button>
-                <button class="share-tab" onclick="switchShareTab('tiktok')">TikTok</button>
-                <button class="share-tab" onclick="switchShareTab('advanced')">Advanced</button>
+            <div class="share-platforms">
+                <a href="#" class="share-platform" onclick="shareOnTwitter()">
+                    <div class="share-icon twitter-share">🐦</div>
+                    <div class="share-platform-name">Twitter</div>
+                </a>
+                
+                <a href="#" class="share-platform" onclick="shareOnInstagram()">
+                    <div class="share-icon instagram-share">📷</div>
+                    <div class="share-platform-name">Instagram</div>
+                </a>
+                
+                <a href="#" class="share-platform" onclick="shareOnWhatsApp()">
+                    <div class="share-icon whatsapp-share">💬</div>
+                    <div class="share-platform-name">WhatsApp</div>
+                </a>
+                
+                <a href="#" class="share-platform" onclick="shareOnTelegram()">
+                    <div class="share-icon telegram-share">📨</div>
+                    <div class="share-platform-name">Telegram</div>
+                </a>
+                
+                <a href="#" class="share-platform" onclick="shareOnTikTok()">
+                    <div class="share-icon tiktok-share">🎵</div>
+                    <div class="share-platform-name">TikTok</div>
+                </a>
+                
+                <a href="#" class="share-platform" onclick="shareOnFacebook()">
+                    <div class="share-icon facebook-share">👍</div>
+                    <div class="share-platform-name">Facebook</div>
+                </a>
             </div>
             
-            <!-- Quick Share Tab -->
-            <div id="quickShareTab" class="share-tab-content active">
-                <div class="share-platforms">
-                    <a href="#" class="share-platform" onclick="shareOnTwitter()">
-                        <div class="share-icon twitter-share">🐦</div>
-                        <div class="share-platform-name">Twitter</div>
-                        <span class="social-color-badge instagram-badge">Fast</span>
-                    </a>
-                    
-                    <a href="#" class="share-platform" onclick="shareOnInstagramStory()">
-                        <div class="share-icon instagram-share">📸</div>
-                        <div class="share-platform-name">Insta Story</div>
-                        <span class="social-color-badge instagram-badge">New</span>
-                    </a>
-                    
-                    <a href="#" class="share-platform" onclick="shareOnWhatsApp()">
-                        <div class="share-icon whatsapp-share">💬</div>
-                        <div class="share-platform-name">WhatsApp</div>
-                    </a>
-                    
-                    <a href="#" class="share-platform" onclick="shareOnTelegram()">
-                        <div class="share-icon telegram-share">📨</div>
-                        <div class="share-platform-name">Telegram</div>
-                    </a>
-                    
-                    <a href="#" class="share-platform" onclick="shareOnTikTokPost()">
-                        <div class="share-icon tiktok-share">🎵</div>
-                        <div class="share-platform-name">TikTok Post</div>
-                        <span class="social-color-badge tiktok-badge">Trend</span>
-                    </a>
-                    
-                    <a href="#" class="share-platform" onclick="shareOnFacebook()">
-                        <div class="share-icon facebook-share">👍</div>
-                        <div class="share-platform-name">Facebook</div>
-                    </a>
-                </div>
-                
-                <div class="share-url-container">
-                    <input type="text" id="shareUrl" class="share-url" readonly value="">
-                    <button class="copy-btn" onclick="copyShareUrl()">Copy Link</button>
-                </div>
-                <div id="copiedMessage" class="copied-message">✓ Copied to clipboard!</div>
-                
-                <div class="qrcode-container">
-                    <div class="share-advanced-title">Scan QR Code</div>
-                    <div id="qrcodeCanvas" class="qrcode-canvas"></div>
-                    <p style="font-size: 12px; color: #7f8c8d; margin-top: 10px;">Scan to share quickly!</p>
-                </div>
+            <div class="share-url-container">
+                <input type="text" id="shareUrl" class="share-url" readonly value="">
+                <button class="copy-btn" onclick="copyShareUrl()">Copy</button>
             </div>
-            
-            <!-- Instagram Tab -->
-            <div id="instagramTab" class="share-tab-content">
-                <div class="share-advanced-section">
-                    <div class="share-advanced-title">Instagram Story Templates</div>
-                    <p style="font-size: 14px; color: #7f8c8d; margin-bottom: 15px;">Copy these ready-to-use templates for your Instagram story:</p>
-                    
-                    <div class="story-templates">
-                        <div class="story-template" onclick="copyInstagramTemplate('story1')">
-                            <div class="story-template-title">Personality Reveal</div>
-                            <div class="story-template-text">Just discovered my EcoPin personality! 🎯 I'm a "[PERSONALITY]" and my perfect patch is [PRODUCT]! 🌟</div>
-                            <div class="share-template-hashtags">#PinPointPens #EcoPins #PersonalityQuiz #EcoFashion</div>
-                            <button class="copy-template-btn">Copy Template</button>
-                        </div>
-                        
-                        <div class="story-template" onclick="copyInstagramTemplate('story2')">
-                            <div class="story-template-title">Quiz Challenge</div>
-                            <div class="story-template-text">Can you guess which EcoPin matches my personality? 🤔 Took the quiz and got [PRODUCT]! What's yours? 👇</div>
-                            <div class="share-template-hashtags">#EcoPinsQuiz #SustainableFashion #JACompany #StudentBusiness</div>
-                            <button class="copy-template-btn">Copy Template</button>
-                        </div>
-                        
-                        <div class="story-template" onclick="copyInstagramTemplate('story3')">
-                            <div class="story-template-title">Eco Style</div>
-                            <div class="story-template-text">My personality = [PERSONALITY] 🌈 My style = [PRODUCT] ✨ Loving these eco-friendly patches! 🌍</div>
-                            <div class="share-template-hashtags">#EcoFriendly #SustainableStyle #VelcroPins #FashionQuiz</div>
-                            <button class="copy-template-btn">Copy Template</button>
-                        </div>
-                        
-                        <div class="story-template" onclick="copyInstagramTemplate('story4')">
-                            <div class="story-template-title">Tag Friends</div>
-                            <div class="story-template-text">Tag 3 friends who need to take this quiz! 👥 Find your perfect EcoPin personality match! 🔗 in bio</div>
-                            <div class="share-template-hashtags">#TagAFriend #QuizTime #DiscoverYourStyle #EcoPinsChallenge</div>
-                            <button class="copy-template-btn">Copy Template</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="share-advanced-section">
-                    <div class="share-advanced-title">Direct Instagram Share</div>
-                    <p style="font-size: 14px; color: #7f8c8d; margin-bottom: 15px;">Share directly via Instagram Direct:</p>
-                    <button class="copy-btn" style="width: 100%; margin-bottom: 10px;" onclick="shareOnInstagramDirect()">📩 Share via Instagram Direct</button>
-                    <button class="copy-btn" style="width: 100%; background: linear-gradient(45deg, #405DE6, #5851DB);" onclick="openInstagramCamera()">📸 Open Instagram Camera</button>
-                </div>
-            </div>
-            
-            <!-- TikTok Tab -->
-            <div id="tiktokTab" class="share-tab-content">
-                <div class="share-advanced-section">
-                    <div class="share-advanced-title">TikTok Video Ideas</div>
-                    <p style="font-size: 14px; color: #7f8c8d; margin-bottom: 15px;">Create engaging TikTok content with these ideas:</p>
-                    
-                    <div class="story-templates">
-                        <div class="story-template" onclick="copyTikTokTemplate('idea1')">
-                            <div class="story-template-title">Personality Reveal</div>
-                            <div class="story-template-text">"What your favorite EcoPin says about you" ✨ I got [PRODUCT] which means I'm [PERSONALITY]! 😲</div>
-                            <div class="share-template-hashtags">#EcoPins #PersonalityQuiz #TikTokQuiz #EcoFashion</div>
-                            <button class="copy-template-btn">Copy Script</button>
-                        </div>
-                        
-                        <div class="story-template" onclick="copyTikTokTemplate('idea2')">
-                            <div class="story-template-title">Duet Challenge</div>
-                            <div class="story-template-text">"Duet this with your result!" 🤝 Take the quiz and show your EcoPin match! Let's see your personality! 👇</div>
-                            <div class="share-template-hashtags">#DuetThis #QuizChallenge #EcoPinsChallenge #Fyp</div>
-                            <button class="copy-template-btn">Copy Script</button>
-                        </div>
-                        
-                        <div class="story-template" onclick="copyTikTokTemplate('idea3')">
-                            <div class="story-template-title">Before/After</div>
-                            <div class="story-template-text">"My style before vs after discovering my EcoPin personality" 🎬 Plain outfit → [PRODUCT] patch = perfection! ✨</div>
-                            <div class="share-template-hashtags">#StyleTransformation #EcoStyle #OutfitIdeas #SustainableFashion</div>
-                            <button class="copy-template-btn">Copy Script</button>
-                        </div>
-                        
-                        <div class="story-template" onclick="copyTikTokTemplate('idea4')">
-                            <div class="story-template-title">Sound Trend</div>
-                            <div class="story-template-text">"Using trending sound to reveal my EcoPin personality" 🎵 *trending sound* Me: [PERSONALITY] with [PRODUCT]! 💃</div>
-                            <div class="share-template-hashtags">#TrendingSound #TikTokTrend #EcoPinsTrend #ViralQuiz</div>
-                            <button class="copy-template-btn">Copy Script</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="share-advanced-section">
-                    <div class="share-advanced-title">TikTok Direct Share</div>
-                    <p style="font-size: 14px; color: #7f8c8d; margin-bottom: 15px;">Quick TikTok sharing options:</p>
-                    <button class="copy-btn" style="width: 100%; margin-bottom: 10px; background: linear-gradient(45deg, #000000, #25F4EE);" onclick="createTikTokVideo()">🎬 Create TikTok Video</button>
-                    <button class="copy-btn" style="width: 100%; background: linear-gradient(45deg, #000000, #FE2C55);" onclick="shareOnTikTokDirect()">📱 Share on TikTok</button>
-                </div>
-            </div>
-            
-            <!-- Advanced Tab -->
-            <div id="advancedTab" class="share-tab-content">
-                <div class="share-advanced-section">
-                    <div class="share-advanced-title">Customize Your Share</div>
-                    <textarea id="customShareText" class="share-url" style="height: 100px; width: 100%; margin-bottom: 15px;" placeholder="Customize your share message here...">I just discovered my EcoPin personality! Take the quiz to find yours!</textarea>
-                    <div class="share-url-container">
-                        <input type="text" id="customShareUrl" class="share-url" readonly value="">
-                        <button class="copy-btn" onclick="copyCustomShare()">Copy Custom</button>
-                    </div>
-                </div>
-                
-                <div class="share-advanced-section">
-                    <div class="share-advanced-title">More Platforms</div>
-                    <div class="share-platforms" style="grid-template-columns: repeat(4, 1fr);">
-                        <a href="#" class="share-platform" onclick="shareOnSnapchat()">
-                            <div class="share-icon snapchat-share">👻</div>
-                            <div class="share-platform-name">Snapchat</div>
-                        </a>
-                        
-                        <a href="#" class="share-platform" onclick="shareOnPinterest()">
-                            <div class="share-icon pinterest-share">📌</div>
-                            <div class="share-platform-name">Pinterest</div>
-                        </a>
-                        
-                        <a href="#" class="share-platform" onclick="shareOnReddit()">
-                            <div class="share-icon" style="color: #FF4500;">🤖</div>
-                            <div class="share-platform-name">Reddit</div>
-                        </a>
-                        
-                        <a href="#" class="share-platform" onclick="shareOnLinkedIn()">
-                            <div class="share-icon" style="color: #0077B5;">💼</div>
-                            <div class="share-platform-name">LinkedIn</div>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="share-advanced-section">
-                    <div class="share-advanced-title">Download Assets</div>
-                    <button class="copy-btn" style="width: 100%; margin-bottom: 10px; background: linear-gradient(45deg, #27ae60, #2ecc71);" onclick="downloadShareImage()">📸 Download Share Image</button>
-                    <button class="copy-btn" style="width: 100%; background: linear-gradient(45deg, #9b59b6, #8e44ad);" onclick="downloadQRCode()">📱 Download QR Code</button>
-                </div>
-            </div>
+            <div id="copiedMessage" class="copied-message">✓ Copied to clipboard!</div>
             
             <button class="close-modal-btn" onclick="closeShareModal()">Close</button>
         </div>
@@ -1635,7 +1289,6 @@
             crocodile: 0, catpaw: 0, basketball: 0, bow: 0, carrot: 0
         };
         let winningProduct = '';
-        let shareData = null;
         
         // CORRECTED VERSION - Display team members correctly
         function showTeamMembers() {
@@ -1966,15 +1619,6 @@
             const shareText = `I just discovered my EcoPin personality! I'm a "${product.personality}" and my perfect patch is ${product.name}. What's yours? Take the quiz at Pin Point Pens!`;
             const shareUrl = window.location.href;
             
-            // Store share data globally
-            shareData = {
-                text: shareText,
-                url: shareUrl,
-                productName: product.name,
-                personality: product.personality,
-                product: product
-            };
-            
             // Show result
             let resultHTML = '<div class="quiz-result">';
             resultHTML += `<div class="result-title">You are: ${product.personality}</div>`;
@@ -1994,16 +1638,16 @@
             
             resultHTML += '<div class="share-buttons-container">';
             resultHTML += `<button class="share-btn-small share-twitter" onclick="shareOnTwitter()">🐦 Twitter</button>`;
-            resultHTML += `<button class="share-btn-small share-instagram" onclick="shareOnInstagramStory()">📸 Insta Story</button>`;
+            resultHTML += `<button class="share-btn-small share-instagram" onclick="shareOnInstagram()">📷 Instagram</button>`;
             resultHTML += `<button class="share-btn-small share-whatsapp" onclick="shareOnWhatsApp()">💬 WhatsApp</button>`;
             resultHTML += `<button class="share-btn-small share-telegram" onclick="shareOnTelegram()">📨 Telegram</button>`;
-            resultHTML += `<button class="share-btn-small share-tiktok" onclick="shareOnTikTokPost()">🎵 TikTok</button>`;
+            resultHTML += `<button class="share-btn-small share-tiktok" onclick="shareOnTikTok()">🎵 TikTok</button>`;
             resultHTML += `<button class="share-btn-small share-facebook" onclick="shareOnFacebook()">👍 Facebook</button>`;
             resultHTML += '</div>';
             
             resultHTML += '<div class="result-buttons">';
             resultHTML += '<button class="result-button" onclick="restartQuiz()">Take Quiz Again</button>';
-            resultHTML += `<button class="back-button" onclick="openAdvancedShareModal()">🎯 Advanced Share</button>`;
+            // خط زیر حذف شده است تا دکمه "More Share Options" نمایش داده نشود
             resultHTML += '</div>';
             
             resultHTML += '</div>';
@@ -2011,6 +1655,14 @@
             document.getElementById('quizQuestions').style.display = 'none';
             document.getElementById('quizResult').innerHTML = resultHTML;
             document.getElementById('quizResult').style.display = 'block';
+            
+            // Store share data globally
+            window.quizShareData = {
+                text: shareText,
+                url: shareUrl,
+                productName: product.name,
+                personality: product.personality
+            };
         }
         
         function restartQuiz() {
@@ -2026,52 +1678,13 @@
             showQuestion(0);
         }
         
-        // ADVANCED SHARE MODAL FUNCTIONS
-        function openAdvancedShareModal() {
+        // SHARE MODAL FUNCTIONS
+        function openShareModal(shareText, shareUrl) {
             const modal = document.getElementById('shareModal');
             const shareUrlInput = document.getElementById('shareUrl');
-            const customShareUrl = document.getElementById('customShareUrl');
-            const customShareText = document.getElementById('customShareText');
             
-            if (!shareData) return;
-            
-            shareUrlInput.value = shareData.url;
-            customShareUrl.value = shareData.url;
-            customShareText.value = shareData.text;
-            
-            // Generate QR Code
-            const qrcodeCanvas = document.getElementById('qrcodeCanvas');
-            qrcodeCanvas.innerHTML = '';
-            QRCode.toCanvas(qrcodeCanvas, shareData.url, {
-                width: 180,
-                height: 180,
-                color: {
-                    dark: '#2c3e50',
-                    light: '#ffffff'
-                }
-            }, function(error) {
-                if (error) console.error(error);
-            });
-            
+            shareUrlInput.value = shareUrl;
             modal.style.display = 'flex';
-        }
-        
-        function switchShareTab(tabName) {
-            // Remove active class from all tabs
-            document.querySelectorAll('.share-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Hide all tab contents
-            document.querySelectorAll('.share-tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            // Add active class to clicked tab
-            event.target.classList.add('active');
-            
-            // Show selected tab content
-            document.getElementById(tabName + 'ShareTab').classList.add('active');
         }
         
         function closeShareModal() {
@@ -2094,202 +1707,43 @@
             });
         }
         
-        function copyCustomShare() {
-            const customShareText = document.getElementById('customShareText');
-            const customShareUrl = document.getElementById('customShareUrl');
-            const copiedMessage = document.getElementById('copiedMessage');
-            
-            const fullText = customShareText.value + '\n\n' + customShareUrl.value;
-            navigator.clipboard.writeText(fullText).then(() => {
-                copiedMessage.style.display = 'block';
-                setTimeout(() => {
-                    copiedMessage.style.display = 'none';
-                }, 3000);
-            });
-        }
-        
-        // INSTAGRAM ADVANCED FUNCTIONS
-        function shareOnInstagramStory() {
-            if (!shareData) return;
-            
-            const storyText = `🌟 Just discovered my EcoPin personality! 🌟\n\nI'm a "${shareData.personality}" and my perfect patch is ${shareData.productName}! 🎯\n\nWhat's your EcoPin personality? Take the quiz and find out! 👇\n\n${shareData.url}\n\n#PinPointPens #EcoPins #PersonalityQuiz #EcoFashion #SustainableStyle #JACompany #StudentBusiness`;
-            
-            // Try to use Instagram's story sharing
-            if (navigator.share) {
-                navigator.share({
-                    title: 'My EcoPin Personality',
-                    text: storyText,
-                    url: shareData.url
-                }).catch(console.error);
-            } else {
-                // Fallback: copy to clipboard
-                navigator.clipboard.writeText(storyText).then(() => {
-                    alert('📸 Instagram Story Template Copied!\n\nPaste this into your Instagram Story:\n\n1. Open Instagram\n2. Create a new Story\n3. Add text sticker\n4. Paste copied text\n5. Add hashtags and share!');
-                });
-            }
-        }
-        
-        function copyInstagramTemplate(templateId) {
-            if (!shareData) return;
-            
-            const templates = {
-                story1: `Just discovered my EcoPin personality! 🎯 I'm a "${shareData.personality}" and my perfect patch is ${shareData.productName}! 🌟\n\nWhat's yours? Take the quiz and find out! 🔗 in bio\n\n#PinPointPens #EcoPins #PersonalityQuiz #EcoFashion #SustainableStyle #JACompany #StudentBusiness`,
-                story2: `Can you guess which EcoPin matches my personality? 🤔 Took the quiz and got ${shareData.productName}! What's yours? 👇\n\nTake the quiz: ${shareData.url}\n\n#EcoPinsQuiz #SustainableFashion #JACompany #StudentBusiness #FashionQuiz #DiscoverYourStyle`,
-                story3: `My personality = ${shareData.personality} 🌈\nMy style = ${shareData.productName} ✨\n\nLoving these eco-friendly patches! 🌍 Perfect way to express yourself sustainably!\n\n#EcoFriendly #SustainableStyle #VelcroPins #FashionQuiz #PersonalityMatch #EcoPins`,
-                story4: `Tag 3 friends who need to take this quiz! 👥\n\nFind your perfect EcoPin personality match! 🎯 I'm ${shareData.personality} with ${shareData.productName}! ✨\n\n🔗 in bio to take the quiz!\n\n#TagAFriend #QuizTime #DiscoverYourStyle #EcoPinsChallenge #FriendQuiz`
-            };
-            
-            navigator.clipboard.writeText(templates[templateId]).then(() => {
-                alert('✅ Instagram Template Copied!\n\nReady to paste into your Instagram Story or post!');
-            });
-        }
-        
-        function shareOnInstagramDirect() {
-            if (!shareData) return;
-            
-            const directText = `Check out my EcoPin personality result! I'm ${shareData.personality} and my perfect patch is ${shareData.productName}! Take the quiz: ${shareData.url}`;
-            
-            // Instagram Direct share URL
-            const instagramUrl = `instagram://sharesheet?text=${encodeURIComponent(directText)}`;
-            
-            // Try to open Instagram app
-            window.location.href = instagramUrl;
-            
-            // Fallback
-            setTimeout(() => {
-                navigator.clipboard.writeText(directText).then(() => {
-                    alert('📩 Instagram Direct Text Copied!\n\nOpen Instagram and paste in Direct message!');
-                });
-            }, 1000);
-        }
-        
-        function openInstagramCamera() {
-            alert('📸 Instagram Camera Ready!\n\n1. Open Instagram\n2. Swipe right for Camera\n3. Take photo/video\n4. Add text: "My EcoPin Personality: [PERSONALITY]"\n5. Add stickers and share!');
-        }
-        
-        // TIKTOK ADVANCED FUNCTIONS
-        function shareOnTikTokPost() {
-            if (!shareData) return;
-            
-            const tiktokText = `What your favorite EcoPin says about you! ✨\n\nI got ${shareData.productName} which means I'm ${shareData.personality}! 😲\n\nTake the quiz and find your match! 👇\n${shareData.url}\n\n#EcoPins #PersonalityQuiz #TikTokQuiz #EcoFashion #Fyp #ForYouPage #QuizTime #DiscoverYourStyle`;
-            
-            // Try TikTok sharing
-            if (navigator.share) {
-                navigator.share({
-                    title: 'My EcoPin Personality Quiz Result',
-                    text: tiktokText,
-                    url: shareData.url
-                }).catch(console.error);
-            } else {
-                navigator.clipboard.writeText(tiktokText).then(() => {
-                    alert('🎵 TikTok Text Copied!\n\nPaste this in your TikTok video description!\n\nVideo Idea:\n1. Show your result\n2. Talk about your personality\n3. Use trending sound\n4. Add hashtags!');
-                });
-            }
-        }
-        
-        function copyTikTokTemplate(templateId) {
-            if (!shareData) return;
-            
-            const templates = {
-                idea1: `What your favorite EcoPin says about you! ✨\n\nI got ${shareData.productName} which means I'm ${shareData.personality}! 😲\n\nTake the quiz and find your match! 👇\n${shareData.url}\n\n#EcoPins #PersonalityQuiz #TikTokQuiz #EcoFashion #Fyp #ForYouPage #QuizTime`,
-                idea2: `Duet this with your result! 🤝\n\nTake the quiz and show your EcoPin match! Let's see your personality! 👇\n\nI'm ${shareData.personality} with ${shareData.productName}! ✨\n\n#DuetThis #QuizChallenge #EcoPinsChallenge #Fyp #TikTokDuet #PersonalityReveal`,
-                idea3: `My style before vs after discovering my EcoPin personality 🎬\n\nPlain outfit → ${shareData.productName} patch = perfection! ✨\n\nI'm ${shareData.personality}! What about you? 👇\n\n#StyleTransformation #EcoStyle #OutfitIdeas #SustainableFashion #FashionTikTok #BeforeAfter`,
-                idea4: `Using trending sound to reveal my EcoPin personality 🎵\n\n*trending sound* Me: ${shareData.personality} with ${shareData.productName}! 💃\n\nTake the quiz and duet with your result! 🔗 in bio\n\n#TrendingSound #TikTokTrend #EcoPinsTrend #ViralQuiz #Fyp #ForYou`
-            };
-            
-            navigator.clipboard.writeText(templates[templateId]).then(() => {
-                alert('✅ TikTok Script Copied!\n\nPerfect for your next TikTok video! 🎬');
-            });
-        }
-        
-        function createTikTokVideo() {
-            alert('🎬 TikTok Video Creation Guide:\n\n1. Film yourself reacting to your result\n2. Show the EcoPin patch (if you have it)\n3. Add text overlay: "I\'m [PERSONALITY]" \n4. Use trending sound\n5. Add hashtags: #EcoPins #PersonalityQuiz\n6. Encourage duets!');
-        }
-        
-        function shareOnTikTokDirect() {
-            if (!shareData) return;
-            
-            const tiktokDirectText = `Check out my EcoPin personality! I'm ${shareData.personality} with ${shareData.productName}! Take the quiz: ${shareData.url}`;
-            
-            // Try to open TikTok
-            const tiktokUrl = `tiktok://sharesheet?text=${encodeURIComponent(tiktokDirectText)}`;
-            window.location.href = tiktokUrl;
-            
-            // Fallback
-            setTimeout(() => {
-                navigator.clipboard.writeText(tiktokDirectText).then(() => {
-                    alert('📱 TikTok Share Text Copied!\n\nOpen TikTok and paste when creating a post!');
-                });
-            }, 1000);
-        }
-        
-        // OTHER PLATFORM SHARE FUNCTIONS
+        // PLATFORM-SPECIFIC SHARE FUNCTIONS
         function shareOnTwitter() {
-            if (!shareData) return;
+            const shareData = window.quizShareData;
             const text = encodeURIComponent(shareData.text);
             const url = encodeURIComponent(shareData.url);
             window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
         }
         
+        function shareOnInstagram() {
+            const shareData = window.quizShareData;
+            const text = encodeURIComponent(shareData.text);
+            alert("To share on Instagram:\n\n1. Copy the text below\n2. Open Instagram\n3. Create a new post\n4. Paste the text\n\n" + shareData.text + "\n\n" + shareData.url);
+        }
+        
         function shareOnWhatsApp() {
-            if (!shareData) return;
+            const shareData = window.quizShareData;
             const text = encodeURIComponent(shareData.text + " " + shareData.url);
             window.open(`https://wa.me/?text=${text}`, '_blank');
         }
         
         function shareOnTelegram() {
-            if (!shareData) return;
+            const shareData = window.quizShareData;
             const text = encodeURIComponent(shareData.text);
             const url = encodeURIComponent(shareData.url);
             window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
         }
         
+        function shareOnTikTok() {
+            const shareData = window.quizShareData;
+            const text = encodeURIComponent(shareData.text);
+            alert("To share on TikTok:\n\n1. Copy the text below\n2. Open TikTok\n3. Create a new video\n4. Add the text as caption\n\n" + shareData.text + "\n\n" + shareData.url);
+        }
+        
         function shareOnFacebook() {
-            if (!shareData) return;
+            const shareData = window.quizShareData;
             const url = encodeURIComponent(shareData.url);
             window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
-        }
-        
-        function shareOnSnapchat() {
-            alert('👻 Snapchat Share:\n\n1. Take a screenshot of your result\n2. Open Snapchat\n3. Create a new Snap\n4. Add caption: "My EcoPin Personality!"\n5. Add link: ' + shareData.url);
-        }
-        
-        function shareOnPinterest() {
-            if (!shareData) return;
-            const url = encodeURIComponent(shareData.url);
-            const description = encodeURIComponent(shareData.text);
-            window.open(`https://pinterest.com/pin/create/button/?url=${url}&description=${description}`, '_blank');
-        }
-        
-        function shareOnReddit() {
-            if (!shareData) return;
-            const title = encodeURIComponent(`My EcoPin Personality: ${shareData.personality}`);
-            const url = encodeURIComponent(shareData.url);
-            window.open(`https://reddit.com/submit?url=${url}&title=${title}`, '_blank');
-        }
-        
-        function shareOnLinkedIn() {
-            if (!shareData) return;
-            const url = encodeURIComponent(shareData.url);
-            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
-        }
-        
-        // DOWNLOAD FUNCTIONS
-        function downloadShareImage() {
-            alert('📸 Download Feature:\n\n1. Take a screenshot of your result\n2. Save it to your device\n3. Share as an image on social media!\n\nPro Tip: Use your device\'s screenshot feature!');
-        }
-        
-        function downloadQRCode() {
-            const canvas = document.querySelector('#qrcodeCanvas canvas');
-            if (!canvas) {
-                alert('QR Code not generated yet!');
-                return;
-            }
-            
-            const link = document.createElement('a');
-            link.download = 'ecopin-quiz-qr.png';
-            link.href = canvas.toDataURL('image/png');
-            link.click();
         }
         
         // Close modal when clicking outside
