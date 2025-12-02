@@ -636,6 +636,15 @@
                     <div class="gallery-title">Crocodile Patch 🐊</div>
                     <div class="gallery-description">For those who fear not even the darkest swamps. This crocodile patch is a symbol of strength and resilience. Add a dose of adventure and excitement to your everyday style. Perfect for customizing your backpack, hoodie or even a pair of kicks.</div>
                 </div>
+                
+                <!-- Cat Paw Design -->
+                <div class="gallery-item">
+                    <div class="product-image">
+                        <img src="https://i.ibb.co/7N1xKyw2/cat-paw-patch.jpg" alt="Cat Paw Patch" onerror="handleImageError(this, 'catpaw')">
+                    </div>
+                    <div class="gallery-title">Cat Paw Patch 🐾</div>
+                    <div class="gallery-description">For those who know the best friends have four paws! This cute paw patch represents your unconditional love for furry companions. With its detailed embroidery and heartwarming colors, it adds a cozy, personal touch to your look. Perfect for the cuff of a sleeve, a collar or kids' clothing.</div>
+                </div>
             </div>
             
             <p style="margin-top: 20px; font-style: italic;">More designs coming soon to our online store!</p>
@@ -877,6 +886,9 @@
             } else if (type === 'crocodile') {
                 placeholder.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
                 placeholder.textContent = '🐊 CROCODILE PATCH';
+            } else if (type === 'catpaw') {
+                placeholder.style.background = 'linear-gradient(45deg, #FF8E53, #FF6B95)';
+                placeholder.textContent = '🐾 CAT PAW PATCH';
             } else {
                 placeholder.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
                 placeholder.textContent = '🖼️ IMAGE';
