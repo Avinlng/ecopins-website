@@ -598,7 +598,7 @@
                         <img src="https://i.ibb.co/V0d61fP0/donut-patch.jpg" alt="Donut Patch" onerror="handleImageError(this, 'donut')">
                     </div>
                     <div class="gallery-title">Donut Patch 🍩</div>
-                    <div class="gallery-description">For when you're craving something delicious but don't want to break your diet! 😉 This adorable donut patch with its cute sprinkles is the perfect companion for your morning or afternoon coffee. A daily dose of joy, zero calories! Ideal for tote bags, hats, or adding a playful touch to any outfit.</div>
+                    <div class="gallery-description">For when you're craving something delicious but don't want to break your diet! This adorable donut patch with its cute sprinkles is the perfect companion for your morning or afternoon coffee. A daily dose of joy, zero calories! Ideal for tote bags, hats, or adding a playful touch to any outfit.</div>
                 </div>
                 
                 <!-- Seashell Design -->
@@ -608,6 +608,15 @@
                     </div>
                     <div class="gallery-title">Seashell Patch 🐚</div>
                     <div class="gallery-description">Carry the memories of warm sand and turquoise waves with you. This delicate seashell patch with its coastal colors brings a vacation vibe to any moment. If you love the sea, style it on your denim jeans, straw hat or beach tote to complete your perfect summer look.</div>
+                </div>
+                
+                <!-- Airplane Design -->
+                <div class="gallery-item">
+                    <div class="product-image">
+                        <img src="https://i.ibb.co/5XZcSQ0V/airplane-patch.jpg" alt="Airplane Patch" onerror="handleImageError(this, 'airplane')">
+                    </div>
+                    <div class="gallery-title">Airplane Patch ✈️</div>
+                    <div class="gallery-description">It's time to pack your bags and head for new horizons. This airplane patch isn't just decor it's a commitment to seeing the world. The perfect gift for a travel loving friend or for yourself, a constant reminder that Adventure Awaits! Great for decorating a travel journal or a carry on bag.</div>
                 </div>
             </div>
             
@@ -841,6 +850,9 @@
             } else if (type === 'seashell') {
                 placeholder.style.background = 'linear-gradient(45deg, #00b4db, #0083b0)';
                 placeholder.textContent = '🐚 SEASHELL PATCH';
+            } else if (type === 'airplane') {
+                placeholder.style.background = 'linear-gradient(45deg, #4A90E2, #9013FE)';
+                placeholder.textContent = '✈️ AIRPLANE PATCH';
             } else {
                 placeholder.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
                 placeholder.textContent = '🖼️ IMAGE';
