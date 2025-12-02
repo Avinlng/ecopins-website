@@ -409,7 +409,17 @@
             transform: rotate(180deg);
         }
 
-        /* Responsive Design */
+        /* NEW: Responsive styles for quiz result image on mobile */
+        .result-product-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            margin: 20px auto;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
         @media (max-width: 768px) {
             .gallery-container {
                 flex-direction: column;
@@ -437,6 +447,20 @@
             
             .header {
                 flex-direction: column;
+            }
+            
+            /* NEW: Adjust quiz result image position on mobile */
+            .result-product-image {
+                margin: 20px 0 20px -10px;
+                transform: translateX(-10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* NEW: Further adjustments for very small screens */
+            .result-product-image {
+                margin: 20px 0 20px -15px;
+                transform: translateX(-15px);
             }
         }
 
@@ -534,16 +558,6 @@
             margin: 30px auto;
             max-width: 600px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
-        
-        .result-product-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 10px;
-            margin: 20px auto;
-            overflow: hidden;
-            border: 4px solid white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         
         .result-product-image img {
@@ -1647,7 +1661,7 @@
             
             resultHTML += '<div class="result-buttons">';
             resultHTML += '<button class="result-button" onclick="restartQuiz()">Take Quiz Again</button>';
-            // خط زیر حذف شده است تا دکمه "More Share Options" نمایش داده نشود
+            
             resultHTML += '</div>';
             
             resultHTML += '</div>';
