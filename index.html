@@ -529,7 +529,6 @@
         }
         
         .result-product {
-            background: linear-gradient(135deg, #a29bfe, #fd79a8);
             padding: 25px;
             border-radius: 15px;
             margin: 30px auto;
@@ -568,7 +567,6 @@
         }
         
         .result-personality {
-            background: linear-gradient(135deg, #81ECEC, #74B9FF);
             padding: 20px;
             border-radius: 12px;
             margin: 20px auto;
@@ -1428,51 +1426,51 @@
             item.classList.toggle('active');
         }
 
-        // NEW CREATIVE QUIZ FUNCTIONS
+        // IMPROVED QUIZ QUESTIONS FOR BETTER MATCHING
         const quizQuestions = [
             {
-                question: "Which activity sounds most appealing to you?",
+                question: "What's your favorite way to spend a weekend?",
                 options: [
-                    {text: "Exploring new countries and cultures", points: {airplane: 3, seashell: 1, crocodile: 2}},
-                    {text: "Relaxing with a good book and coffee", points: {donut: 3, flower: 2, bow: 1}},
-                    {text: "Playing sports or outdoor adventures", points: {basketball: 3, crocodile: 2, carrot: 1}},
-                    {text: "Cuddling with pets at home", points: {catpaw: 3, flower: 2, donut: 1}}
+                    {text: "Trying new restaurants and sweet treats", points: {donut: 4, flower: 1, carrot: 2}},
+                    {text: "Traveling to new places or planning trips", points: {airplane: 4, seashell: 2, crocodile: 1}},
+                    {text: "Relaxing at the beach or near water", points: {seashell: 4, flower: 2, catpaw: 1}},
+                    {text: "Playing sports or outdoor activities", points: {basketball: 4, crocodile: 2, airplane: 1}}
                 ]
             },
             {
-                question: "How would your friends describe your style?",
+                question: "Which accessory would you add to your outfit?",
                 options: [
-                    {text: "Adventurous and bold", points: {crocodile: 3, airplane: 2, basketball: 1}},
-                    {text: "Elegant and sophisticated", points: {bow: 3, flower: 2, seashell: 1}},
-                    {text: "Playful and fun-loving", points: {donut: 3, catpaw: 2, carrot: 1}},
-                    {text: "Sporty and energetic", points: {basketball: 3, airplane: 2, crocodile: 1}}
+                    {text: "A playful, colorful pin with sprinkles", points: {donut: 4, carrot: 3, basketball: 1}},
+                    {text: "An elegant bow or classic detail", points: {bow: 4, flower: 3, seashell: 1}},
+                    {text: "Something with animals or nature", points: {catpaw: 4, crocodile: 3, flower: 2}},
+                    {text: "A symbol of adventure or strength", points: {crocodile: 4, airplane: 3, basketball: 2}}
                 ]
             },
             {
-                question: "What's your ideal weekend look like?",
+                question: "What's your personality trait that friends notice most?",
                 options: [
-                    {text: "Beach day with friends", points: {seashell: 3, airplane: 2, crocodile: 1}},
-                    {text: "Baking or cooking something delicious", points: {donut: 3, carrot: 2, flower: 1}},
-                    {text: "Watching sports or playing games", points: {basketball: 3, catpaw: 2, crocodile: 1}},
-                    {text: "Gardening or nature walk", points: {flower: 3, carrot: 2, seashell: 1}}
+                    {text: "Sweet and joyful - always positive", points: {donut: 4, catpaw: 3, flower: 2}},
+                    {text: "Adventurous and brave - loves challenges", points: {crocodile: 4, airplane: 3, basketball: 2}},
+                    {text: "Calm and peaceful - brings tranquility", points: {seashell: 4, flower: 3, bow: 2}},
+                    {text: "Energetic and competitive - always active", points: {basketball: 4, crocodile: 3, airplane: 2}}
                 ]
             },
             {
-                question: "What's your approach to life?",
+                question: "What's your ideal vacation destination?",
                 options: [
-                    {text: "Always seeking new adventures", points: {airplane: 3, crocodile: 2, basketball: 1}},
-                    {text: "Finding beauty in simple things", points: {flower: 3, seashell: 2, bow: 1}},
-                    {text: "Sweet and joyful every day", points: {donut: 3, catpaw: 2, carrot: 1}},
-                    {text: "Strong and resilient", points: {crocodile: 3, basketball: 2, bow: 1}}
+                    {text: "Tropical beach with white sand", points: {seashell: 4, flower: 2, crocodile: 1}},
+                    {text: "European cities and cultural sites", points: {airplane: 4, bow: 3, donut: 1}},
+                    {text: "Mountain adventure or safari", points: {crocodile: 4, basketball: 3, airplane: 2}},
+                    {text: "Cozy cabin with seasonal activities", points: {carrot: 4, catpaw: 3, donut: 2}}
                 ]
             },
             {
-                question: "What season matches your personality?",
+                question: "How do you express your personal style?",
                 options: [
-                    {text: "Summer - warm and vibrant", points: {seashell: 3, basketball: 2, flower: 1}},
-                    {text: "Spring - fresh and blossoming", points: {flower: 3, bow: 2, catpaw: 1}},
-                    {text: "Winter - cozy and festive", points: {carrot: 3, donut: 2, bow: 1}},
-                    {text: "Fall - adventurous and changing", points: {airplane: 3, crocodile: 2, basketball: 1}}
+                    {text: "Playful and quirky accessories", points: {donut: 4, carrot: 3, catpaw: 2}},
+                    {text: "Elegant and timeless pieces", points: {bow: 4, flower: 3, seashell: 1}},
+                    {text: "Sporty and practical items", points: {basketball: 4, crocodile: 3, airplane: 2}},
+                    {text: "Nature-inspired and earthy tones", points: {flower: 4, seashell: 3, catpaw: 2}}
                 ]
             }
         ];
@@ -1481,65 +1479,74 @@
             donut: {
                 name: "Donut Patch 🍩",
                 image: "https://i.ibb.co/V0d61fP0/donut-patch.jpg",
-                description: "For when you're craving something delicious but don't want to break your diet! This adorable donut patch brings joy to every moment.",
-                personality: "The Sweet Soul",
-                traits: "Joyful, playful, and always finding happiness in life's simple pleasures. You spread positivity wherever you go!"
+                description: "For when you're craving something delicious but don't want to break your diet! This adorable donut patch with its cute sprinkles is the perfect companion for your morning or afternoon coffee. A daily dose of joy, zero calories!",
+                personality: "The Sweet Optimist",
+                traits: "You're joyful, playful, and always find happiness in life's simple pleasures. Your positivity is contagious and you brighten every room you enter. You believe in celebrating small moments and spreading cheer wherever you go.",
+                color: "linear-gradient(135deg, #FF9A8B, #FF6A88)"
             },
             seashell: {
                 name: "Seashell Patch 🐚",
                 image: "https://i.ibb.co/4nzKfNPP/seashell-patch.jpg",
-                description: "Carry the memories of warm sand and turquoise waves with you. This delicate seashell patch brings a vacation vibe to any moment.",
-                personality: "The Beach Wanderer",
-                traits: "Calm, nostalgic, and deeply connected to nature. You bring peace and tranquility to those around you."
+                description: "Carry the memories of warm sand and turquoise waves with you. This delicate seashell patch with its coastal colors brings a vacation vibe to any moment. If you love the sea, style it on your denim jeans, straw hat or beach tote.",
+                personality: "The Tranquil Soul",
+                traits: "You're calm, nostalgic, and deeply connected to nature. You bring peace and tranquility to those around you. Like the ocean, you have depth and wisdom, and you appreciate the beauty in quiet moments and gentle rhythms.",
+                color: "linear-gradient(135deg, #81ECEC, #74B9FF)"
             },
             airplane: {
                 name: "Airplane Patch ✈️",
                 image: "https://i.ibb.co/5XZcSQ0V/airplane-patch.jpg",
-                description: "It's time to pack your bags and head for new horizons. This airplane patch is a commitment to seeing the world.",
+                description: "It's time to pack your bags and head for new horizons. This airplane patch isn't just decor it's a commitment to seeing the world. The perfect gift for a travel loving friend or for yourself, a constant reminder that Adventure Awaits!",
                 personality: "The Global Explorer",
-                traits: "Adventurous, curious, and always ready for the next journey. You inspire others to dream big!"
+                traits: "You're adventurous, curious, and always ready for the next journey. You inspire others to dream big and step outside their comfort zones. Your passport is your favorite accessory, and your stories captivate everyone you meet.",
+                color: "linear-gradient(135deg, #a29bfe, #fd79a8)"
             },
             flower: {
                 name: "Flower Patch 🌸",
                 image: "https://i.ibb.co/xSR7vynD/flower-patch.jpg",
-                description: "A little flower for a whole lot of calm. This pink daisy patch symbolizes innocence and freshness.",
+                description: "A little flower for a whole lot of calm. This pink daisy patch symbolizes innocence and freshness. With its simple, delicate charm, it can transform any plain garment or bag into a gentle work of art.",
                 personality: "The Gentle Bloom",
-                traits: "Kind, nurturing, and appreciative of life's delicate beauty. You help others grow and flourish."
+                traits: "You're kind, nurturing, and appreciative of life's delicate beauty. You help others grow and flourish. Like a flower, you bring color and life to your surroundings, and you believe in cultivating beauty in everyday moments.",
+                color: "linear-gradient(135deg, #FFEAA7, #fab1a0)"
             },
             crocodile: {
                 name: "Crocodile Patch 🐊",
                 image: "https://i.ibb.co/JRV842VM/crocodile-patch.jpg",
-                description: "For those who fear not even the darkest swamps. This crocodile patch is a symbol of strength and resilience.",
-                personality: "The Fearless Adventurer",
-                traits: "Brave, determined, and unafraid of challenges. You protect and lead with confidence."
+                description: "For those who fear not even the darkest swamps. This crocodile patch is a symbol of strength and resilience. Add a dose of adventure and excitement to your everyday style. Perfect for customizing your backpack or hoodie.",
+                personality: "The Fearless Leader",
+                traits: "You're brave, determined, and unafraid of challenges. You protect and lead with confidence. Like the crocodile, you're resilient and adaptable, thriving in any environment and always ready to face whatever comes your way.",
+                color: "linear-gradient(135deg, #55EFC4, #00b894)"
             },
             catpaw: {
                 name: "Cat Paw Patch 🐾",
                 image: "https://i.ibb.co/7N1xKyw2/cat-paw-patch.jpg",
-                description: "For those who know the best friends have four paws! This cute paw patch represents unconditional love for furry companions.",
+                description: "For those who know the best friends have four paws! This cute paw patch represents unconditional love for furry companions. With its detailed embroidery, it adds a cozy, personal touch to your look.",
                 personality: "The Loyal Companion",
-                traits: "Loving, protective, and deeply connected to those you care about. You bring comfort and loyalty."
+                traits: "You're loving, protective, and deeply connected to those you care about. You bring comfort and loyalty to every relationship. Like a trusted pet, you're always there when needed and your affection is genuine and unwavering.",
+                color: "linear-gradient(135deg, #FDCB6E, #e17055)"
             },
             basketball: {
                 name: "Basketball Patch 🏀",
                 image: "https://i.ibb.co/GfHsFstf/basketball-patch.jpg",
-                description: "More than just decor - it's a symbol for setting goals and competitive spirit. Always ready to 'shoot' for your dreams.",
+                description: "More than just decor - it's a symbol for setting goals and competitive spirit. Add this basketball patch to your sneakers or gym bag to show you're always ready to 'shoot' for your dreams.",
                 personality: "The Team Player",
-                traits: "Energetic, competitive, and always striving for excellence. You motivate others to reach their goals."
+                traits: "You're energetic, competitive, and always striving for excellence. You motivate others to reach their goals and work well in teams. You understand that success comes from practice, dedication, and supporting your teammates.",
+                color: "linear-gradient(135deg, #FD79A8, #a29bfe)"
             },
             bow: {
                 name: "Bow Patch 🎀",
                 image: "https://i.ibb.co/p9Xdq6c/bow-patch.jpg",
-                description: "An icon of elegance like a perfectly wrapped gift! This chic patch adds timeless class to any outfit.",
-                personality: "The Classic Elegance",
-                traits: "Sophisticated, graceful, and always put together. You appreciate tradition and timeless beauty."
+                description: "An icon of elegance like a perfectly wrapped gift! This chic patch in a gorgeous berry hue can be the perfect accent on formal wear or your favorite handbag. A timeless, classic element that never goes out of style.",
+                personality: "The Classic Sophisticate",
+                traits: "You're sophisticated, graceful, and always put together. You appreciate tradition and timeless beauty. Your style is intentional and elegant, and you believe that details matter - just like the perfect bow on a gift.",
+                color: "linear-gradient(135deg, #FF9A8B, #FF6A88)"
             },
             carrot: {
                 name: "Carrot Patch 🥕",
                 image: "https://i.ibb.co/39Wt1ntj/carrot-patch.jpg",
-                description: "A nostalgic nod to every snowman's nose from childhood! A fun, quirky way to add a pop of color.",
+                description: "A nostalgic nod to every snowman's nose from childhood! A fun, quirky way to add a pop of color to your winter wardrobe. Perfect for Christmas sweaters, winter hats or scarves.",
                 personality: "The Playful Spirit",
-                traits: "Whimsical, creative, and always bringing fun to ordinary moments. You remind others to enjoy life!"
+                traits: "You're whimsical, creative, and always bringing fun to ordinary moments. You remind others to enjoy life and not take things too seriously. Your sense of humor and playful nature make you the life of every gathering.",
+                color: "linear-gradient(135deg, #FFEAA7, #fab1a0)"
             }
         };
         
@@ -1616,12 +1623,12 @@
             let resultHTML = '<div class="quiz-result">';
             resultHTML += `<div class="result-title">You are: ${product.personality}</div>`;
             
-            resultHTML += `<div class="result-personality">
+            resultHTML += `<div class="result-personality" style="background: ${product.color}; color: white;">
                             <div class="personality-title">Your Personality Traits:</div>
                             <div class="personality-description">${product.traits}</div>
                           </div>`;
             
-            resultHTML += `<div class="result-product">
+            resultHTML += `<div class="result-product" style="background: ${product.color};">
                             <div class="result-product-name">Your Perfect EcoPin: ${product.name}</div>
                             <div class="result-product-image">
                                 <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200/FF6B6B/ffffff?text=ECO+PIN'">
