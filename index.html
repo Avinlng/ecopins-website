@@ -88,6 +88,10 @@
             background: linear-gradient(135deg, #FFEAA7, #fab1a0);
         }
         
+        .gallery-card {
+            background: linear-gradient(135deg, #a29bfe, #fd79a8);
+        }
+        
         .features-card {
             background: linear-gradient(135deg, #81ECEC, #74B9FF);
         }
@@ -300,8 +304,100 @@
             margin-bottom: 15px;
         }
 
+        /* Product Gallery Styles */
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .gallery-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 15px;
+            width: 280px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            text-align: center;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            border-color: #e17055;
+        }
+        
+        .gallery-title {
+            color: #2c3e50;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
+        }
+        
+        .gallery-description {
+            color: #7f8c8d;
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 2px solid #dee2e6;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
+            .gallery-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .gallery-item {
+                width: 100%;
+                max-width: 350px;
+            }
+            
             .main-title {
                 font-size: 32px;
             }
@@ -489,6 +585,49 @@
             <h2>About Our Product</h2>
             <p>EcoPins are versatile reusable velcro pins that can be attached to various accessories. We create them with attention to environmental sustainability.</p>
             <p>Each pin represents a commitment to eco-friendly fashion while allowing personal expression.</p>
+        </div>
+
+        <!-- NEW PRODUCT GALLERY SECTION -->
+        <div class="card gallery-card">
+            <h2>Product Gallery</h2>
+            <p>Explore our collection of EcoPins designs. Each pin is crafted with care and environmental consciousness.</p>
+            
+            <div class="gallery-container">
+                <!-- Design 1 -->
+                <div class="gallery-item">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            🌱 ECO PIN 1
+                        </div>
+                    </div>
+                    <div class="gallery-title">Nature Collection</div>
+                    <div class="gallery-description">Beautiful nature-inspired designs featuring trees, leaves, and flowers.</div>
+                </div>
+                
+                <!-- Design 2 -->
+                <div class="gallery-item">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            🐾 ANIMAL PIN 2
+                        </div>
+                    </div>
+                    <div class="gallery-title">Animal Series</div>
+                    <div class="gallery-description">Cute animal designs that support wildlife conservation efforts.</div>
+                </div>
+                
+                <!-- Design 3 -->
+                <div class="gallery-item">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            🌟 SPECIAL PIN 3
+                        </div>
+                    </div>
+                    <div class="gallery-title">Special Edition</div>
+                    <div class="gallery-description">Limited edition pins with unique patterns and color combinations.</div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px; font-style: italic;">More designs coming soon to our online store!</p>
         </div>
 
         <div class="card features-card">
