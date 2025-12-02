@@ -304,7 +304,7 @@
             margin-bottom: 15px;
         }
 
-        /* Product Gallery Styles */
+        /* Product Gallery Styles - UPDATED */
         .gallery-container {
             display: flex;
             justify-content: center;
@@ -322,6 +322,7 @@
             transition: all 0.3s ease;
             border: 3px solid transparent;
             text-align: center;
+            cursor: pointer;
         }
         
         .gallery-item:hover {
@@ -345,6 +346,17 @@
             line-height: 1.6;
             margin-bottom: 15px;
             font-size: 16px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, margin 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+        
+        .gallery-description.show {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 15px;
+            margin-bottom: 15px;
         }
         
         .product-image {
@@ -383,6 +395,18 @@
             font-size: 16px;
             text-align: center;
             border-radius: 10px;
+        }
+
+        /* Toggle indicator */
+        .toggle-indicator {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item.active .toggle-indicator {
+            transform: rotate(180deg);
         }
 
         /* Responsive Design */
@@ -589,92 +613,137 @@
         <!-- NEW PRODUCT GALLERY SECTION -->
         <div class="card gallery-card">
             <h2>Product Gallery</h2>
-            <p>Explore our collection of EcoPins designs. Each pin is crafted with care and environmental consciousness.</p>
+            <p>Explore our collection of EcoPins designs. Each pin is crafted with care and environmental consciousness. <strong>Click on any product to view description.</strong></p>
             
             <div class="gallery-container">
                 <!-- Donut Design -->
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="toggleDescription('donut')" id="item-donut">
                     <div class="product-image">
                         <img src="https://i.ibb.co/V0d61fP0/donut-patch.jpg" alt="Donut Patch" onerror="handleImageError(this, 'donut')">
                     </div>
-                    <div class="gallery-title">Donut Patch 🍩</div>
-                    <div class="gallery-description">For when you're craving something delicious but don't want to break your diet! This adorable donut patch with its cute sprinkles is the perfect companion for your morning or afternoon coffee. A daily dose of joy, zero calories! Ideal for tote bags, hats, or adding a playful touch to any outfit.</div>
+                    <div class="gallery-title">
+                        Donut Patch 🍩 
+                        <span class="toggle-indicator">▼</span>
+                    </div>
+                    <div class="gallery-description" id="desc-donut">
+                        For when you're craving something delicious but don't want to break your diet! This adorable donut patch with its cute sprinkles is the perfect companion for your morning or afternoon coffee. A daily dose of joy, zero calories! Ideal for tote bags, hats, or adding a playful touch to any outfit.
+                    </div>
                 </div>
                 
                 <!-- Seashell Design -->
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="toggleDescription('seashell')" id="item-seashell">
                     <div class="product-image">
                         <img src="https://i.ibb.co/4nzKfNPP/seashell-patch.jpg" alt="Seashell Patch" onerror="handleImageError(this, 'seashell')">
                     </div>
-                    <div class="gallery-title">Seashell Patch 🐚</div>
-                    <div class="gallery-description">Carry the memories of warm sand and turquoise waves with you. This delicate seashell patch with its coastal colors brings a vacation vibe to any moment. If you love the sea, style it on your denim jeans, straw hat or beach tote to complete your perfect summer look.</div>
+                    <div class="gallery-title">
+                        Seashell Patch 🐚 
+                        <span class="toggle-indicator">▼</span>
+                    </div>
+                    <div class="gallery-description" id="desc-seashell">
+                        Carry the memories of warm sand and turquoise waves with you. This delicate seashell patch with its coastal colors brings a vacation vibe to any moment. If you love the sea, style it on your denim jeans, straw hat or beach tote to complete your perfect summer look.
+                    </div>
                 </div>
                 
                 <!-- Airplane Design -->
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="toggleDescription('airplane')" id="item-airplane">
                     <div class="product-image">
                         <img src="https://i.ibb.co/5XZcSQ0V/airplane-patch.jpg" alt="Airplane Patch" onerror="handleImageError(this, 'airplane')">
                     </div>
-                    <div class="gallery-title">Airplane Patch ✈️</div>
-                    <div class="gallery-description">It's time to pack your bags and head for new horizons. This airplane patch isn't just decor it's a commitment to seeing the world. The perfect gift for a travel loving friend or for yourself, a constant reminder that Adventure Awaits! Great for decorating a travel journal or a carry on bag.</div>
+                    <div class="gallery-title">
+                        Airplane Patch ✈️ 
+                        <span class="toggle-indicator">▼</span>
+                    </div>
+                    <div class="gallery-description" id="desc-airplane">
+                        It's time to pack your bags and head for new horizons. This airplane patch isn't just decor it's a commitment to seeing the world. The perfect gift for a travel loving friend or for yourself, a constant reminder that Adventure Awaits! Great for decorating a travel journal or a carry on bag.
+                    </div>
                 </div>
                 
                 <!-- Flower Design -->
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="toggleDescription('flower')" id="item-flower">
                     <div class="product-image">
                         <img src="https://i.ibb.co/xSR7vynD/flower-patch.jpg" alt="Flower Patch" onerror="handleImageError(this, 'flower')">
                     </div>
-                    <div class="gallery-title">Flower Patch 🌸</div>
-                    <div class="gallery-description">A little flower for a whole lot of calm. This pink daisy patch symbolizes innocence and freshness. With its simple, delicate charm, it can transform any plain garment or bag into a gentle work of art. Perfect for scarves, linen dresses and skirts.</div>
+                    <div class="gallery-title">
+                        Flower Patch 🌸 
+                        <span class="toggle-indicator">▼</span>
+                    </div>
+                    <div class="gallery-description" id="desc-flower">
+                        A little flower for a whole lot of calm. This pink daisy patch symbolizes innocence and freshness. With its simple, delicate charm, it can transform any plain garment or bag into a gentle work of art. Perfect for scarves, linen dresses and skirts.
+                    </div>
                 </div>
                 
                 <!-- Crocodile Design -->
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="toggleDescription('crocodile')" id="item-crocodile">
                     <div class="product-image">
                         <img src="https://i.ibb.co/JRV842VM/crocodile-patch.jpg" alt="Crocodile Patch" onerror="handleImageError(this, 'crocodile')">
                     </div>
-                    <div class="gallery-title">Crocodile Patch 🐊</div>
-                    <div class="gallery-description">For those who fear not even the darkest swamps. This crocodile patch is a symbol of strength and resilience. Add a dose of adventure and excitement to your everyday style. Perfect for customizing your backpack, hoodie or even a pair of kicks.</div>
+                    <div class="gallery-title">
+                        Crocodile Patch 🐊 
+                        <span class="toggle-indicator">▼</span>
+                    </div>
+                    <div class="gallery-description" id="desc-crocodile">
+                        For those who fear not even the darkest swamps. This crocodile patch is a symbol of strength and resilience. Add a dose of adventure and excitement to your everyday style. Perfect for customizing your backpack, hoodie or even a pair of kicks.
+                    </div>
                 </div>
                 
                 <!-- Cat Paw Design -->
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="toggleDescription('catpaw')" id="item-catpaw">
                     <div class="product-image">
                         <img src="https://i.ibb.co/7N1xKyw2/cat-paw-patch.jpg" alt="Cat Paw Patch" onerror="handleImageError(this, 'catpaw')">
                     </div>
-                    <div class="gallery-title">Cat Paw Patch 🐾</div>
-                    <div class="gallery-description">For those who know the best friends have four paws! This cute paw patch represents your unconditional love for furry companions. With its detailed embroidery and heartwarming colors, it adds a cozy, personal touch to your look. Perfect for the cuff of a sleeve, a collar or kids' clothing.</div>
+                    <div class="gallery-title">
+                        Cat Paw Patch 🐾 
+                        <span class="toggle-indicator">▼</span>
+                    </div>
+                    <div class="gallery-description" id="desc-catpaw">
+                        For those who know the best friends have four paws! This cute paw patch represents your unconditional love for furry companions. With its detailed embroidery and heartwarming colors, it adds a cozy, personal touch to your look. Perfect for the cuff of a sleeve, a collar or kids' clothing.
+                    </div>
                 </div>
                 
                 <!-- Basketball Design -->
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="toggleDescription('basketball')" id="item-basketball">
                     <div class="product-image">
                         <img src="https://i.ibb.co/GfHsFstf/basketball-patch.jpg" alt="Basketball Patch" onerror="handleImageError(this, 'basketball')">
                     </div>
-                    <div class="gallery-title">Basketball Patch 🏀</div>
-                    <div class="gallery-description">More than just decor. it's a symbol for setting goals and competitive spirit. Add this basketball patch to your sneakers, gym bag or sporty jacket to show you're always ready to 'shoot' for your dreams. High energy, street style essential.</div>
+                    <div class="gallery-title">
+                        Basketball Patch 🏀 
+                        <span class="toggle-indicator">▼</span>
+                    </div>
+                    <div class="gallery-description" id="desc-basketball">
+                        More than just decor. it's a symbol for setting goals and competitive spirit. Add this basketball patch to your sneakers, gym bag or sporty jacket to show you're always ready to 'shoot' for your dreams. High energy, street style essential.
+                    </div>
                 </div>
                 
                 <!-- Bow Design -->
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="toggleDescription('bow')" id="item-bow">
                     <div class="product-image">
                         <img src="https://i.ibb.co/p9Xdq6c/bow-patch.jpg" alt="Bow Patch" onerror="handleImageError(this, 'bow')">
                     </div>
-                    <div class="gallery-title">Bow Patch 🎀</div>
-                    <div class="gallery-description">An icon of elegance like a perfectly wrapped gift! This chic patch in a gorgeous berry hue can be the perfect accent on formal wear, a hair clip or your favorite handbag. A timeless, classic element that never goes out of style.</div>
+                    <div class="gallery-title">
+                        Bow Patch 🎀 
+                        <span class="toggle-indicator">▼</span>
+                    </div>
+                    <div class="gallery-description" id="desc-bow">
+                        An icon of elegance like a perfectly wrapped gift! This chic patch in a gorgeous berry hue can be the perfect accent on formal wear, a hair clip or your favorite handbag. A timeless, classic element that never goes out of style.
+                    </div>
                 </div>
                 
-                <!-- Carrot Design - NEW -->
-                <div class="gallery-item">
+                <!-- Carrot Design -->
+                <div class="gallery-item" onclick="toggleDescription('carrot')" id="item-carrot">
                     <div class="product-image">
                         <img src="https://i.ibb.co/39Wt1ntj/carrot-patch.jpg" alt="Carrot Patch" onerror="handleImageError(this, 'carrot')">
                     </div>
-                    <div class="gallery-title">Carrot Patch 🥕</div>
-                    <div class="gallery-description">A nostalgic nod to every snowman's nose from childhood! A fun, quirky way to add a pop of color to your winter wardrobe. Start planning now to decorate your Christmas sweaters, winter hats or scarves and bring a smile to everyone's face.</div>
+                    <div class="gallery-title">
+                        Carrot Patch 🥕 
+                        <span class="toggle-indicator">▼</span>
+                    </div>
+                    <div class="gallery-description" id="desc-carrot">
+                        A nostalgic nod to every snowman's nose from childhood! A fun, quirky way to add a pop of color to your winter wardrobe. Start planning now to decorate your Christmas sweaters, winter hats or scarves and bring a smile to everyone's face.
+                    </div>
                 </div>
             </div>
             
-            <p style="margin-top: 20px; font-style: italic;">More designs coming soon to our online store!</p>
+            <p style="margin-top: 20px; font-style: italic;">Click on any product to view/hide description!</p>
         </div>
 
         <div class="card features-card">
@@ -932,6 +1001,15 @@
             
             parent.appendChild(placeholder);
             img.style.display = 'none';
+        }
+
+        // NEW: Toggle description function for gallery items
+        function toggleDescription(productId) {
+            const description = document.getElementById(`desc-${productId}`);
+            const item = document.getElementById(`item-${productId}`);
+            
+            description.classList.toggle('show');
+            item.classList.toggle('active');
         }
 
         // QUIZ FUNCTIONS
