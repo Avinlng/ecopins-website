@@ -627,6 +627,15 @@
                     <div class="gallery-title">Flower Patch 🌸</div>
                     <div class="gallery-description">A little flower for a whole lot of calm. This pink daisy patch symbolizes innocence and freshness. With its simple, delicate charm, it can transform any plain garment or bag into a gentle work of art. Perfect for scarves, linen dresses and skirts.</div>
                 </div>
+                
+                <!-- Crocodile Design -->
+                <div class="gallery-item">
+                    <div class="product-image">
+                        <img src="https://i.ibb.co/JRV842VM/crocodile-patch.jpg" alt="Crocodile Patch" onerror="handleImageError(this, 'crocodile')">
+                    </div>
+                    <div class="gallery-title">Crocodile Patch 🐊</div>
+                    <div class="gallery-description">For those who fear not even the darkest swamps. This crocodile patch is a symbol of strength and resilience. Add a dose of adventure and excitement to your everyday style. Perfect for customizing your backpack, hoodie or even a pair of kicks.</div>
+                </div>
             </div>
             
             <p style="margin-top: 20px; font-style: italic;">More designs coming soon to our online store!</p>
@@ -865,6 +874,9 @@
             } else if (type === 'flower') {
                 placeholder.style.background = 'linear-gradient(45deg, #FF6BC9, #FF8E9E)';
                 placeholder.textContent = '🌸 FLOWER PATCH';
+            } else if (type === 'crocodile') {
+                placeholder.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
+                placeholder.textContent = '🐊 CROCODILE PATCH';
             } else {
                 placeholder.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
                 placeholder.textContent = '🖼️ IMAGE';
