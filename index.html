@@ -618,6 +618,15 @@
                     <div class="gallery-title">Airplane Patch ✈️</div>
                     <div class="gallery-description">It's time to pack your bags and head for new horizons. This airplane patch isn't just decor it's a commitment to seeing the world. The perfect gift for a travel loving friend or for yourself, a constant reminder that Adventure Awaits! Great for decorating a travel journal or a carry on bag.</div>
                 </div>
+                
+                <!-- Flower Design -->
+                <div class="gallery-item">
+                    <div class="product-image">
+                        <img src="https://i.ibb.co/xSR7vynD/flower-patch.jpg" alt="Flower Patch" onerror="handleImageError(this, 'flower')">
+                    </div>
+                    <div class="gallery-title">Flower Patch 🌸</div>
+                    <div class="gallery-description">A little flower for a whole lot of calm. This pink daisy patch symbolizes innocence and freshness. With its simple, delicate charm, it can transform any plain garment or bag into a gentle work of art. Perfect for scarves, linen dresses and skirts.</div>
+                </div>
             </div>
             
             <p style="margin-top: 20px; font-style: italic;">More designs coming soon to our online store!</p>
@@ -853,6 +862,9 @@
             } else if (type === 'airplane') {
                 placeholder.style.background = 'linear-gradient(45deg, #4A90E2, #9013FE)';
                 placeholder.textContent = '✈️ AIRPLANE PATCH';
+            } else if (type === 'flower') {
+                placeholder.style.background = 'linear-gradient(45deg, #FF6BC9, #FF8E9E)';
+                placeholder.textContent = '🌸 FLOWER PATCH';
             } else {
                 placeholder.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
                 placeholder.textContent = '🖼️ IMAGE';
