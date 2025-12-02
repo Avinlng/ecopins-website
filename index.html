@@ -645,6 +645,15 @@
                     <div class="gallery-title">Cat Paw Patch 🐾</div>
                     <div class="gallery-description">For those who know the best friends have four paws! This cute paw patch represents your unconditional love for furry companions. With its detailed embroidery and heartwarming colors, it adds a cozy, personal touch to your look. Perfect for the cuff of a sleeve, a collar or kids' clothing.</div>
                 </div>
+                
+                <!-- Basketball Design -->
+                <div class="gallery-item">
+                    <div class="product-image">
+                        <img src="https://i.ibb.co/GfHsFstf/basketball-patch.jpg" alt="Basketball Patch" onerror="handleImageError(this, 'basketball')">
+                    </div>
+                    <div class="gallery-title">Basketball Patch 🏀</div>
+                    <div class="gallery-description">More than just decor. it's a symbol for setting goals and competitive spirit. Add this basketball patch to your sneakers, gym bag or sporty jacket to show you're always ready to 'shoot' for your dreams. High energy, street style essential.</div>
+                </div>
             </div>
             
             <p style="margin-top: 20px; font-style: italic;">More designs coming soon to our online store!</p>
@@ -889,6 +898,9 @@
             } else if (type === 'catpaw') {
                 placeholder.style.background = 'linear-gradient(45deg, #FF8E53, #FF6B95)';
                 placeholder.textContent = '🐾 CAT PAW PATCH';
+            } else if (type === 'basketball') {
+                placeholder.style.background = 'linear-gradient(45deg, #FF8B3D, #FF5733)';
+                placeholder.textContent = '🏀 BASKETBALL PATCH';
             } else {
                 placeholder.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
                 placeholder.textContent = '🖼️ IMAGE';
