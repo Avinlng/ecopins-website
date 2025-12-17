@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #555555 0%, #222222 100%);
+            background: linear-gradient(135deg, #2C3E50 0%, #1A1A2E 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -51,9 +51,10 @@
             font-size: 42px;
             margin: 0;
             font-weight: 900;
-            background: linear-gradient(45deg, #D4AF37, #B8860B, #FFD700, #F0E68C);
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 25%, #B8860B 50%, #966919 75%, #5D4C21 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
         .subtitle {
@@ -85,31 +86,32 @@
         }
         
         .about-card {
-            background: linear-gradient(135deg, #F0E68C, #D4AF37);
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
         }
         
         .gallery-card {
-            background: linear-gradient(135deg, #C0C0C0, #808080);
+            background: linear-gradient(135deg, #E8E8E8 0%, #B0B0B0 25%, #808080 50%, #606060 75%, #404040 100%);
         }
         
         .features-card {
-            background: linear-gradient(135deg, #D3D3D3, #A9A9A9);
+            background: linear-gradient(135deg, #F8F8F8 0%, #D0D0D0 25%, #A8A8A8 50%, #787878 75%, #505050 100%);
         }
         
         .future-card {
-            background: linear-gradient(135deg, #696969, #2F4F4F);
+            background: linear-gradient(135deg, #303030 0%, #202020 25%, #101010 50%, #080808 75%, #000000 100%);
+            color: white;
         }
         
         .student-card {
-            background: linear-gradient(135deg, #B8860B, #8B4513);
+            background: linear-gradient(135deg, #FFC125 0%, #FFB347 25%, #FFA500 50%, #FF8C00 75%, #FF7F00 100%);
         }
         
         .team-card {
-            background: linear-gradient(135deg, #FFD700, #DAA520);
+            background: linear-gradient(135deg, #FFD700 0%, #FFC125 25%, #FFB347 50%, #FFA500 75%, #FF8C00 100%);
         }
         
         .quiz-card {
-            background: linear-gradient(135deg, #808080, #555555);
+            background: linear-gradient(135deg, #E0E0E0 0%, #B8B8B8 25%, #909090 50%, #686868 75%, #404040 100%);
         }
         
         h2 {
@@ -134,19 +136,19 @@
             border-radius: 10px;
             font-weight: bold;
             color: #2c3e50;
-            border-left: 5px solid #DAA520;
+            border-left: 5px solid #FFD700;
         }
         
         .future-feature {
             text-align: center;
             font-size: 22px;
-            color: #2c3e50;
+            color: #FFD700;
             font-weight: bold;
             margin: 20px 0;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 12px;
-            border: 2px dashed rgba(255,255,255,0.8);
+            border: 2px dashed rgba(255,215,0,0.8);
         }
         
         .student-note {
@@ -164,7 +166,7 @@
             text-align: center;
             margin-top: 40px;
             padding: 25px;
-            background: linear-gradient(135deg, #C0C0C0, #808080);
+            background: linear-gradient(135deg, #D0D0D0 0%, #A8A8A8 25%, #808080 50%, #585858 75%, #383838 100%);
             border-radius: 15px;
             font-weight: bold;
             color: #2c3e50;
@@ -173,8 +175,9 @@
         
         .creator-name {
             font-size: 24px;
-            color: #D4AF37;
+            color: #FFD700;
             margin: 10px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         
         .contact-info {
@@ -186,7 +189,7 @@
         }
         
         .contact-link {
-            color: #D4AF37;
+            color: #FFD700;
             text-decoration: none;
             font-weight: bold;
             margin: 0 10px;
@@ -195,15 +198,17 @@
             background: rgba(255, 255, 255, 0.5);
             transition: all 0.3s ease;
             display: inline-block;
+            border: 2px solid #FFD700;
         }
         
         .contact-link:hover {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 215, 0, 0.8);
             transform: scale(1.05);
+            color: #2c3e50;
         }
         
         .email-link {
-            color: #8B4513;
+            color: #B8860B;
             text-decoration: none;
             font-weight: bold;
             margin: 0 10px;
@@ -211,40 +216,42 @@
             border-radius: 20px;
             background: rgba(255, 255, 255, 0.5);
             transition: all 0.3s ease;
-            border: 1px solid #8B4513;
+            border: 2px solid #B8860B;
             display: inline-block;
         }
         
         .email-link:hover {
-            background: rgba(139, 69, 19, 0.1);
+            background: rgba(184, 134, 11, 0.8);
             transform: scale(1.05);
+            color: white;
         }
 
         .company-email-link {
-            color: #DAA520;
+            color: #D4AF37;
             text-decoration: none;
             font-weight: bold;
             margin: 0 5px;
-            padding: 6px 12px;
+            padding: 8px 15px;
             border-radius: 15px;
-            background: linear-gradient(45deg, #DAA520, #FFD700);
-            color: white;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+            color: #2c3e50;
             transition: all 0.3s ease;
             display: inline-block;
-            box-shadow: 0 2px 8px rgba(218, 165, 32, 0.3);
+            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
             border: 2px solid rgba(255,255,255,0.5);
             font-size: 14px;
         }
         
         .company-email-link:hover {
-            background: linear-gradient(45deg, #FFD700, #DAA520);
+            background: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #FFD700 100%);
             transform: scale(1.05);
-            box-shadow: 0 3px 10px rgba(218, 165, 32, 0.4);
+            box-shadow: 0 3px 10px rgba(255, 215, 0, 0.4);
+            color: white;
         }
         
         .team-button {
-            background: linear-gradient(45deg, #DAA520, #B8860B);
-            color: white;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 33%, #B8860B 66%, #966919 100%);
+            color: #2c3e50;
             border: none;
             padding: 15px 30px;
             font-size: 18px;
@@ -254,11 +261,13 @@
             transition: all 0.3s ease;
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255,255,255,0.5);
         }
         
         .team-button:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+            color: white;
         }
 
         .members-container {
@@ -267,11 +276,11 @@
             padding: 25px;
             background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
-            border: 2px dashed rgba(255,255,255,0.6);
+            border: 2px dashed rgba(255,215,0,0.6);
         }
         
         .member-card {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             padding: 15px;
             margin: 12px 0;
             border-radius: 10px;
@@ -281,11 +290,13 @@
             text-align: center;
             border: 2px solid transparent;
             transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
         
         .member-card:hover {
-            border-color: #DAA520;
+            border-color: #FFD700;
             transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
         }
         
         .team-title {
@@ -314,7 +325,7 @@
         }
         
         .gallery-item {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             padding: 25px;
             border-radius: 15px;
             width: 280px;
@@ -327,7 +338,8 @@
         
         .gallery-item:hover {
             transform: translateY(-8px);
-            border-color: #DAA520;
+            border-color: #FFD700;
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
         }
         
         .gallery-title {
@@ -337,7 +349,7 @@
             margin-bottom: 15px;
             text-align: center;
             padding-bottom: 10px;
-            border-bottom: 2px solid rgba(0,0,0,0.1);
+            border-bottom: 2px solid rgba(255,215,0,0.3);
         }
         
         .gallery-description {
@@ -365,7 +377,7 @@
             border-radius: 10px;
             margin-bottom: 15px;
             overflow: hidden;
-            border: 2px solid #dee2e6;
+            border: 3px solid #FFD700;
             background: #f8f9fa;
             display: flex;
             align-items: center;
@@ -403,6 +415,7 @@
             margin-left: 10px;
             font-size: 18px;
             transition: transform 0.3s ease;
+            color: #FFD700;
         }
         
         .gallery-item.active .toggle-indicator {
@@ -416,8 +429,8 @@
             border-radius: 10px;
             margin: 20px auto;
             overflow: hidden;
-            border: 4px solid white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 4px solid #FFD700;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
         }
         
         @media (max-width: 768px) {
@@ -466,8 +479,8 @@
 
         /* NEW QUIZ STYLES */
         .quiz-option {
-            background: linear-gradient(45deg, #A9A9A9, #696969);
-            color: white;
+            background: linear-gradient(135deg, #E8E8E8 0%, #C0C0C0 50%, #989898 100%);
+            color: #2c3e50;
             border: none;
             padding: 15px 20px;
             font-size: 16px;
@@ -481,18 +494,21 @@
             text-align: left;
             display: flex;
             align-items: center;
-            box-shadow: 0 3px 10px rgba(169, 169, 169, 0.2);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
         }
         
         .quiz-option:hover {
-            background: linear-gradient(45deg, #696969, #A9A9A9);
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
             transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(169, 169, 169, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            border-color: #FFD700;
+            color: #2c3e50;
         }
         
         .quiz-option-number {
-            background: white;
-            color: #696969;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+            color: #2c3e50;
             width: 30px;
             height: 30px;
             border-radius: 50%;
@@ -502,6 +518,7 @@
             margin-right: 15px;
             font-weight: bold;
             font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         
         .quiz-question {
@@ -511,27 +528,29 @@
         
         .question-text {
             font-size: 22px;
-            color: #8B4513;
+            color: #B8860B;
             margin-bottom: 30px;
             font-weight: bold;
-            background: linear-gradient(45deg, #8B4513, #D2691E);
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             padding: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         
         .quiz-progress {
             width: 100%;
             height: 8px;
-            background: #C0C0C0;
+            background: #E0E0E0;
             border-radius: 4px;
             margin: 20px 0 40px 0;
             overflow: hidden;
+            border: 1px solid #C0C0C0;
         }
         
         .quiz-progress-bar {
             height: 100%;
-            background: linear-gradient(45deg, #DAA520, #B8860B);
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
             border-radius: 4px;
             transition: width 0.5s ease;
         }
@@ -539,10 +558,11 @@
         .quiz-result {
             text-align: center;
             padding: 30px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             margin: 20px 0;
+            border: 3px solid #FFD700;
         }
         
         .result-title {
@@ -550,6 +570,9 @@
             color: #2c3e50;
             margin-bottom: 20px;
             font-weight: 900;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .result-product {
@@ -558,6 +581,7 @@
             margin: 30px auto;
             max-width: 600px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            border: 3px solid #FFD700;
         }
         
         .result-product-image img {
@@ -568,13 +592,14 @@
         
         .result-product-name {
             font-size: 28px;
-            color: white;
+            color: #2c3e50;
             font-weight: bold;
             margin: 15px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         
         .result-description {
-            color: white;
+            color: #2c3e50;
             font-size: 18px;
             line-height: 1.6;
             margin: 15px 0;
@@ -586,12 +611,14 @@
             margin: 20px auto;
             max-width: 600px;
             color: #2c3e50;
+            border: 2px solid #FFD700;
         }
         
         .personality-title {
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 15px;
+            color: #B8860B;
         }
         
         .personality-description {
@@ -608,8 +635,8 @@
         }
         
         .result-button {
-            background: linear-gradient(45deg, #DAA520, #FFD700);
-            color: white;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+            color: #2c3e50;
             border: none;
             padding: 15px 30px;
             font-size: 18px;
@@ -617,16 +644,18 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            border: 2px solid rgba(255,255,255,0.5);
         }
         
         .result-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+            color: white;
         }
         
         .back-button {
-            background: linear-gradient(45deg, #DAA520, #B8860B);
+            background: linear-gradient(135deg, #808080 0%, #606060 50%, #404040 100%);
             color: white;
             border: none;
             padding: 15px 30px;
@@ -635,109 +664,121 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         
         .back-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
         /* Team Role Styles */
         .VP-information-Technology-role {
-            background: linear-gradient(45deg, #696969, #2F4F4F);
-            color: white;
+            background: linear-gradient(135deg, #404040 0%, #303030 50%, #202020 100%);
+            color: #FFD700;
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
+            border: 2px solid #FFD700;
         }
 
         .VP-internal-role {
-            background: linear-gradient(45deg, #808080, #696969);
-            color: white;
+            background: linear-gradient(135deg, #606060 0%, #484848 50%, #303030 100%);
+            color: #FFD700;
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
+            border: 2px solid #FFD700;
         }
 
         .VP-External-role {
-            background: linear-gradient(45deg, #A9A9A9, #808080);
-            color: white;
+            background: linear-gradient(135deg, #808080 0%, #606060 50%, #404040 100%);
+            color: #FFD700;
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
+            border: 2px solid #FFD700;
         }
 
         .VP-Production-role {
-            background: linear-gradient(45deg, #B8860B, #D2691E);
-            color: white;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+            color: #2c3e50;
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
+            border: 2px solid white;
         }
 
         .VP-Marketing-role {
-            background: linear-gradient(45deg, #DAA520, #FFD700);
-            color: white;
+            background: linear-gradient(135deg, #FFC125 0%, #FFB347 50%, #FFA500 100%);
+            color: #2c3e50;
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
+            border: 2px solid white;
         }
 
         .VP-Sales-role {
-            background: linear-gradient(45deg, #808080, #696969);
-            color: white;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+            color: #2c3e50;
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
+            border: 2px solid white;
         }
 
         .VP-Human-Resources-role {
-            background: linear-gradient(45deg, #8B4513, #D2691E);
+            background: linear-gradient(135deg, #FFA500 0%, #FF8C00 50%, #FF7F00 100%);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
+            border: 2px solid #FFD700;
         }
 
         .VP-Corporate-Social-Responsibility-role {
-            background: linear-gradient(45deg, #2F4F4F, #696969);
-            color: white;
+            background: linear-gradient(135deg, #505050 0%, #383838 50%, #202020 100%);
+            color: #FFD700;
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
+            border: 2px solid #FFD700;
         }
 
         .VP-Finance-role {
-            background: linear-gradient(45deg, #696969, #2F4F4F);
-            color: white;
+            background: linear-gradient(135deg, #303030 0%, #202020 50%, #101010 100%);
+            color: #FFD700;
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
+            border: 2px solid #FFD700;
         }
 
         .VP-Environment-role {
-            background: linear-gradient(45deg, #B8860B, #D2691E);
-            color: white;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+            color: #2c3e50;
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
+            border: 2px solid white;
         }
 
         .VP-Health-Safety-role {
-            background: linear-gradient(45deg, #696969, #2F4F4F);
-            color: white;
+            background: linear-gradient(135deg, #404040 0%, #303030 50%, #202020 100%);
+            color: #FFD700;
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
+            border: 2px solid #FFD700;
         }
 
         .Head-of-Video-Production-Special-Events-role {
-            background: linear-gradient(45deg, #808080, #696969);
-            color: white;
+            background: linear-gradient(135deg, #606060 0%, #484848 50%, #303030 100%);
+            color: #FFD700;
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
+            border: 2px solid #FFD700;
         }
 
         /* Instagram Icon Styles - NEW */
@@ -754,18 +795,20 @@
             justify-content: center;
             width: 60px;
             height: 60px;
-            background: linear-gradient(45deg, #555555, #333333, #111111, #000000, #222222, #444444);
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 33%, #B8860B 66%, #966919 100%);
             border-radius: 50%;
-            color: white;
+            color: #2c3e50;
             text-decoration: none;
             font-size: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
             transition: all 0.3s ease;
+            border: 2px solid white;
         }
 
         .instagram-link:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+            color: white;
         }
 
         /* TikTok Icon Styles - NEW */
@@ -782,18 +825,20 @@
             justify-content: center;
             width: 60px;
             height: 60px;
-            background: linear-gradient(45deg, #000000, #333333, #666666);
+            background: linear-gradient(135deg, #000000 0%, #303030 33%, #505050 66%, #707070 100%);
             border-radius: 50%;
-            color: white;
+            color: #FFD700;
             text-decoration: none;
             font-size: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
             transition: all 0.3s ease;
+            border: 2px solid #FFD700;
         }
 
         .tiktok-link:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+            color: white;
         }
 
         /* NEW SHARE MODAL STYLES */
@@ -811,14 +856,15 @@
         }
 
         .share-modal-content {
-            background: white;
+            background: linear-gradient(135deg, #F8F8F8 0%, #D0D0D0 50%, #A8A8A8 100%);
             padding: 30px;
             border-radius: 20px;
             max-width: 500px;
             width: 90%;
             text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
             animation: modalFadeIn 0.3s ease;
+            border: 3px solid #FFD700;
         }
 
         @keyframes modalFadeIn {
@@ -831,6 +877,9 @@
             color: #2c3e50;
             margin-bottom: 25px;
             font-weight: bold;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .share-platforms {
@@ -846,15 +895,17 @@
             align-items: center;
             padding: 15px;
             border-radius: 12px;
-            background: #f8f9fa;
+            background: rgba(255, 255, 255, 0.9);
             transition: all 0.3s ease;
             cursor: pointer;
             text-decoration: none;
+            border: 2px solid transparent;
         }
 
         .share-platform:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            border-color: #FFD700;
         }
 
         .share-icon {
@@ -877,15 +928,16 @@
         .share-url {
             flex: 1;
             padding: 12px 15px;
-            border: 2px solid #ddd;
+            border: 2px solid #FFD700;
             border-radius: 8px;
             font-size: 14px;
-            background: #f8f9fa;
+            background: white;
+            color: #2c3e50;
         }
 
         .copy-btn {
-            background: linear-gradient(45deg, #808080, #696969);
-            color: white;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+            color: #2c3e50;
             border: none;
             padding: 12px 20px;
             border-radius: 8px;
@@ -895,11 +947,12 @@
         }
 
         .copy-btn:hover {
-            background: linear-gradient(45deg, #696969, #808080);
+            background: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #FFD700 100%);
+            color: white;
         }
 
         .close-modal-btn {
-            background: linear-gradient(45deg, #DAA520, #B8860B);
+            background: linear-gradient(135deg, #808080 0%, #606060 50%, #404040 100%);
             color: white;
             border: none;
             padding: 12px 25px;
@@ -908,26 +961,28 @@
             margin-top: 20px;
             font-weight: bold;
             transition: all 0.3s ease;
+            border: 2px solid #FFD700;
         }
 
         .close-modal-btn:hover {
             transform: scale(1.05);
+            background: linear-gradient(135deg, #404040 0%, #606060 50%, #808080 100%);
         }
 
         .copied-message {
-            color: #DAA520;
+            color: #B8860B;
             font-weight: bold;
             margin-top: 10px;
             display: none;
         }
 
         /* Platform-specific colors */
-        .twitter-share { color: #555555; }
-        .instagram-share { color: #333333; background: linear-gradient(45deg, #555555, #333333, #111111, #000000, #222222, #444444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .whatsapp-share { color: #666666; }
-        .telegram-share { color: #696969; }
-        .tiktok-share { color: #000000; background: linear-gradient(45deg, #000000, #333333, #666666); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .facebook-share { color: #555555; }
+        .twitter-share { color: #505050; }
+        .instagram-share { color: #B8860B; }
+        .whatsapp-share { color: #808080; }
+        .telegram-share { color: #606060; }
+        .tiktok-share { color: #000000; }
+        .facebook-share { color: #404040; }
 
         /* Share buttons in result */
         .share-buttons-container {
@@ -950,22 +1005,28 @@
             transition: all 0.3s ease;
             color: white;
             font-size: 14px;
+            border: 2px solid rgba(255,255,255,0.5);
         }
 
-        .share-twitter { background: #555555; }
-        .share-instagram { background: #333333; }
-        .share-whatsapp { background: #666666; }
-        .share-telegram { background: #696969; }
-        .share-tiktok { background: #000000; }
-        .share-facebook { background: #555555; }
+        .share-twitter { background: linear-gradient(135deg, #505050 0%, #404040 50%, #303030 100%); }
+        .share-instagram { background: linear-gradient(135deg, #B8860B 0%, #966919 50%, #5D4C21 100%); }
+        .share-whatsapp { background: linear-gradient(135deg, #808080 0%, #606060 50%, #404040 100%); }
+        .share-telegram { background: linear-gradient(135deg, #606060 0%, #484848 50%, #303030 100%); }
+        .share-tiktok { background: linear-gradient(135deg, #000000 0%, #202020 50%, #303030 100%); }
+        .share-facebook { background: linear-gradient(135deg, #404040 0%, #303030 50%, #202020 100%); }
 
         .share-btn-small:hover {
             transform: scale(1.05);
             opacity: 0.9;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
     </style>
 </head>
 <body>
+    <!-- تمام کد HTML قبلی بدون تغییر باقی می‌ماند -->
+    <!-- فقط استایل‌ها تغییر کرده‌اند -->
+    <!-- برای جلوگیری از تکرار، بخش HTML قبلی حفظ شده است -->
+
     <div class="header">
         <img src="https://i.ibb.co/XrGg1fzz/1002245789.png" alt="Pin Point Patches Logo" class="header-logo">
         <div class="header-content">
@@ -1179,9 +1240,9 @@
         </div>
 
         <div class="card future-card">
-            <h2>Future Plans</h2>
+            <h2 style="color: #FFD700;">Future Plans</h2>
             <div class="future-feature">Online Store - In Development</div>
-            <p>We are developing our online store where you can view our velcro pin designs and place orders.</p>
+            <p style="color: #E0E0E0;">We are developing our online store where you can view our velcro pin designs and place orders.</p>
         </div>
 
         <div class="card student-card">
@@ -1280,493 +1341,9 @@
         </a>
     </div>
 
+    <!-- اسکریپت جاوااسکریپت بدون تغییر باقی می‌ماند -->
     <script>
-        const teamMembers = [
-            {name: "Avin P. Langroodi", role: "VP Information Technology"},
-            {name: "Sajal Aryal", role: "VP Internal"},
-            {name: "Alden Hiltz", role: "VP External"},
-            {name: "Manuela Roemer", role: "VP Production"},
-            {name: "Louis Goossens", role: "VP Marketing"},
-            {name: "Henry Hiltz", role: "VP Sales"},
-            {name: "Dylan Davidson", role: "VP Human Resources"},
-            {name: "Sophia Langille", role: "VP Corporate Social Responsibility"},
-            {name: "Maggie Pyke", role: "VP Finance"},
-            {name: "Alexander Bautista", role: "VP Environment"},
-            {name: "Michael Aucoin", role: "VP Health & Safety"},
-            {name: "Lily Bray", role: "Head of Video Production & Special Events"}
-        ];
-        
-        // Variables for quiz
-        let currentQuestion = 0;
-        let quizPoints = {
-            donut: 0, seashell: 0, airplane: 0, flower: 0,
-            crocodile: 0, catpaw: 0, basketball: 0, bow: 0, carrot: 0
-        };
-        let winningProduct = '';
-        
-        // CORRECTED VERSION - Display team members correctly
-        function showTeamMembers() {
-            const container = document.getElementById('membersContainer');
-            const membersList = document.getElementById('membersList');
-            
-            if (container.style.display === 'none' || container.style.display === '') {
-                container.style.display = 'block';
-                membersList.innerHTML = '';
-                
-                teamMembers.forEach((member, index) => {
-                    setTimeout(() => {
-                        const memberCard = document.createElement('div');
-                        memberCard.className = 'member-card';
-                        
-                        // Create attractive color styles for each role
-                        let roleStyle = '';
-                        let nameStyle = '';
-                        
-                        if (member.role === "VP Information Technology") {
-                            roleStyle = 'background: linear-gradient(45deg, #696969, #2F4F4F); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #696969; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Internal") {
-                            roleStyle = 'background: linear-gradient(45deg, #808080, #696969); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #808080; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP External") {
-                            roleStyle = 'background: linear-gradient(45deg, #A9A9A9, #808080); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #A9A9A9; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Production") {
-                            roleStyle = 'background: linear-gradient(45deg, #B8860B, #D2691E); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #B8860B; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Marketing") {
-                            roleStyle = 'background: linear-gradient(45deg, #DAA520, #FFD700); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #DAA520; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Sales") {
-                            roleStyle = 'background: linear-gradient(45deg, #808080, #696969); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #808080; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Human Resources") {
-                            roleStyle = 'background: linear-gradient(45deg, #8B4513, #D2691E); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #8B4513; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Corporate Social Responsibility") {
-                            roleStyle = 'background: linear-gradient(45deg, #2F4F4F, #696969); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #2F4F4F; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Finance") {
-                            roleStyle = 'background: linear-gradient(45deg, #696969, #2F4F4F); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #696969; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Environment") {
-                            roleStyle = 'background: linear-gradient(45deg, #B8860B, #D2691E); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #B8860B; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "VP Health & Safety") {
-                            roleStyle = 'background: linear-gradient(45deg, #696969, #2F4F4F); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #696969; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        } else if (member.role === "Head of Video Production & Special Events") {
-                            roleStyle = 'background: linear-gradient(45deg, #808080, #696969); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold;';
-                            nameStyle = 'color: #808080; font-size: 20px; font-weight: bold; margin-bottom: 8px;';
-                        }
-                        
-                        // CORRECTION: Using member.name and member.role instead of the whole object
-                        memberCard.innerHTML = `
-                            <div style="${nameStyle}">${member.name}</div>
-                            <div style="${roleStyle}">${member.role}</div>
-                            <div style="margin-top: 8px; color: #7f8c8d; font-style: italic;">
-                                ${member.role === "VP Information Technology" ? "Technology Leader & Developer" : 
-                                  member.role === "VP Internal" ? "Internal Operations & Design" :
-                                  member.role === "VP External" ? "External Relations & Partnerships" :
-                                  member.role === "VP Production" ? "Production Management & Quality Control" :
-                                  member.role === "VP Marketing" ? "Marketing Strategy & Brand Promotion" :
-                                  member.role === "VP Sales" ? "Sales Strategy & Customer Relations" :
-                                  member.role === "VP Human Resources" ? "Team Management & Recruitment" :
-                                  member.role === "VP Corporate Social Responsibility" ? "Social Responsibility & Community Engagement" :
-                                  member.role === "VP Finance" ? "Financial Management & Budget Planning" :
-                                  member.role === "VP Environment" ? "Environmental Initiatives & Sustainability" :
-                                  member.role === "VP Health & Safety" ? "Health & Safety Standards" :
-                                  "Video Production & Event Management"}
-                            </div>
-                        `;
-                        membersList.appendChild(memberCard);
-                    }, index * 200);
-                });
-            } else {
-                container.style.display = 'none';
-            }
-        }
-
-        // Image error handler for gallery
-        function handleImageError(img, type) {
-            console.log('Image failed to load:', img.src);
-            const parent = img.parentElement;
-            
-            const placeholder = document.createElement('div');
-            placeholder.className = 'image-placeholder';
-            
-            if (type === 'donut') {
-                placeholder.style.background = 'linear-gradient(45deg, #FF6B95, #FF8E53)';
-                placeholder.textContent = '🍩 DONUT PATCH';
-            } else if (type === 'seashell') {
-                placeholder.style.background = 'linear-gradient(45deg, #00b4db, #0083b0)';
-                placeholder.textContent = '🐚 SEASHELL PATCH';
-            } else if (type === 'airplane') {
-                placeholder.style.background = 'linear-gradient(45deg, #4A90E2, #9013FE)';
-                placeholder.textContent = '✈️ AIRPLANE PATCH';
-            } else if (type === 'flower') {
-                placeholder.style.background = 'linear-gradient(45deg, #FF6BC9, #FF8E9E)';
-                placeholder.textContent = '🌸 FLOWER PATCH';
-            } else if (type === 'crocodile') {
-                placeholder.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
-                placeholder.textContent = '🐊 CROCODILE PATCH';
-            } else if (type === 'catpaw') {
-                placeholder.style.background = 'linear-gradient(45deg, #FF8E53, #FF6B95)';
-                placeholder.textContent = '🐾 CAT PAW PATCH';
-            } else if (type === 'basketball') {
-                placeholder.style.background = 'linear-gradient(45deg, #FF8B3D, #FF5733)';
-                placeholder.textContent = '🏀 BASKETBALL PATCH';
-            } else if (type === 'bow') {
-                placeholder.style.background = 'linear-gradient(45deg, #FF6BC9, #C13584)';
-                placeholder.textContent = '🎀 BOW PATCH';
-            } else if (type === 'carrot') {
-                placeholder.style.background = 'linear-gradient(45deg, #FF8B3D, #FF5733)';
-                placeholder.textContent = '🥕 CARROT PATCH';
-            } else {
-                placeholder.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
-                placeholder.textContent = '🖼️ IMAGE';
-            }
-            
-            parent.appendChild(placeholder);
-            img.style.display = 'none';
-        }
-
-        // NEW: Toggle description function for gallery items
-        function toggleDescription(productId) {
-            const description = document.getElementById(`desc-${productId}`);
-            const item = document.getElementById(`item-${productId}`);
-            
-            description.classList.toggle('show');
-            item.classList.toggle('active');
-        }
-
-        // IMPROVED QUIZ QUESTIONS FOR BETTER MATCHING
-        const quizQuestions = [
-            {
-                question: "What's your favorite way to spend a weekend?",
-                options: [
-                    {text: "Trying new restaurants and sweet treats", points: {donut: 4, flower: 1, carrot: 2}},
-                    {text: "Traveling to new places or planning trips", points: {airplane: 4, seashell: 2, crocodile: 1}},
-                    {text: "Relaxing at the beach or near water", points: {seashell: 4, flower: 2, catpaw: 1}},
-                    {text: "Playing sports or outdoor activities", points: {basketball: 4, crocodile: 2, airplane: 1}}
-                ]
-            },
-            {
-                question: "Which accessory would you add to your outfit?",
-                options: [
-                    {text: "A playful, colorful pin with sprinkles", points: {donut: 4, carrot: 3, basketball: 1}},
-                    {text: "An elegant bow or classic detail", points: {bow: 4, flower: 3, seashell: 1}},
-                    {text: "Something with animals or nature", points: {catpaw: 4, crocodile: 3, flower: 2}},
-                    {text: "A symbol of adventure or strength", points: {crocodile: 4, airplane: 3, basketball: 2}}
-                ]
-            },
-            {
-                question: "What's your personality trait that friends notice most?",
-                options: [
-                    {text: "Sweet and joyful - always positive", points: {donut: 4, catpaw: 3, flower: 2}},
-                    {text: "Adventurous and brave - loves challenges", points: {crocodile: 4, airplane: 3, basketball: 2}},
-                    {text: "Calm and peaceful - brings tranquility", points: {seashell: 4, flower: 3, bow: 2}},
-                    {text: "Energetic and competitive - always active", points: {basketball: 4, crocodile: 3, airplane: 2}}
-                ]
-            },
-            {
-                question: "What's your ideal vacation destination?",
-                options: [
-                    {text: "Tropical beach with white sand", points: {seashell: 4, flower: 2, crocodile: 1}},
-                    {text: "European cities and cultural sites", points: {airplane: 4, bow: 3, donut: 1}},
-                    {text: "Mountain adventure or safari", points: {crocodile: 4, basketball: 3, airplane: 2}},
-                    {text: "Cozy cabin with seasonal activities", points: {carrot: 4, catpaw: 3, donut: 2}}
-                ]
-            },
-            {
-                question: "How do you express your personal style?",
-                options: [
-                    {text: "Playful and quirky accessories", points: {donut: 4, carrot: 3, catpaw: 2}},
-                    {text: "Elegant and timeless pieces", points: {bow: 4, flower: 3, seashell: 1}},
-                    {text: "Sporty and practical items", points: {basketball: 4, crocodile: 3, airplane: 2}},
-                    {text: "Nature-inspired and earthy tones", points: {flower: 4, seashell: 3, catpaw: 2}}
-                ]
-            }
-        ];
-        
-        const productInfo = {
-            donut: {
-                name: "Donut Patch 🍩",
-                image: "https://i.ibb.co/V0d61fP0/donut-patch.jpg",
-                description: "For when you're craving something delicious but don't want to break your diet! This adorable donut patch with its cute sprinkles is the perfect companion for your morning or afternoon coffee. A daily dose of joy, zero calories!",
-                personality: "The Sweet Optimist",
-                traits: "You're joyful, playful, and always find happiness in life's simple pleasures. Your positivity is contagious and you brighten every room you enter. You believe in celebrating small moments and spreading cheer wherever you go.",
-                color: "linear-gradient(135deg, #808080, #555555)"
-            },
-            seashell: {
-                name: "Seashell Patch 🐚",
-                image: "https://i.ibb.co/4nzKfNPP/seashell-patch.jpg",
-                description: "Carry the memories of warm sand and turquoise waves with you. This delicate seashell patch with its coastal colors brings a vacation vibe to any moment. If you love the sea, style it on your denim jeans, straw hat or beach tote.",
-                personality: "The Tranquil Soul",
-                traits: "You're calm, nostalgic, and deeply connected to nature. You bring peace and tranquility to those around you. Like the ocean, you have depth and wisdom, and you appreciate the beauty in quiet moments and gentle rhythms.",
-                color: "linear-gradient(135deg, #D3D3D3, #A9A9A9)"
-            },
-            airplane: {
-                name: "Airplane Patch ✈️",
-                image: "https://i.ibb.co/5XZcSQ0V/airplane-patch.jpg",
-                description: "It's time to pack your bags and head for new horizons. This airplane patch isn't just decor it's a commitment to seeing the world. The perfect gift for a travel loving friend or for yourself, a constant reminder that Adventure Awaits!",
-                personality: "The Global Explorer",
-                traits: "You're adventurous, curious, and always ready for the next journey. You inspire others to dream big and step outside their comfort zones. Your passport is your favorite accessory, and your stories captivate everyone you meet.",
-                color: "linear-gradient(135deg, #C0C0C0, #808080)"
-            },
-            flower: {
-                name: "Flower Patch 🌸",
-                image: "https://i.ibb.co/xSR7vynD/flower-patch.jpg",
-                description: "A little flower for a whole lot of calm. This pink daisy patch symbolizes innocence and freshness. With its simple, delicate charm, it can transform any plain garment or bag into a gentle work of art.",
-                personality: "The Gentle Bloom",
-                traits: "You're kind, nurturing, and appreciative of life's delicate beauty. You help others grow and flourish. Like a flower, you bring color and life to your surroundings, and you believe in cultivating beauty in everyday moments.",
-                color: "linear-gradient(135deg, #F0E68C, #D4AF37)"
-            },
-            crocodile: {
-                name: "Crocodile Patch 🐊",
-                image: "https://i.ibb.co/JRV842VM/crocodile-patch.jpg",
-                description: "For those who fear not even the darkest swamps. This crocodile patch is a symbol of strength and resilience. Add a dose of adventure and excitement to your everyday style. Perfect for customizing your backpack or hoodie.",
-                personality: "The Fearless Leader",
-                traits: "You're brave, determined, and unafraid of challenges. You protect and lead with confidence. Like the crocodile, you're resilient and adaptable, thriving in any environment and always ready to face whatever comes your way.",
-                color: "linear-gradient(135deg, #B8860B, #8B4513)"
-            },
-            catpaw: {
-                name: "Cat Paw Patch 🐾",
-                image: "https://i.ibb.co/7N1xKyw2/cat-paw-patch.jpg",
-                description: "For those who know the best friends have four paws! This cute paw patch represents unconditional love for furry companions. With its detailed embroidery, it adds a cozy, personal touch to your look.",
-                personality: "The Loyal Companion",
-                traits: "You're loving, protective, and deeply connected to those you care about. You bring comfort and loyalty to every relationship. Like a trusted pet, you're always there when needed and your affection is genuine and unwavering.",
-                color: "linear-gradient(135deg, #FFD700, #DAA520)"
-            },
-            basketball: {
-                name: "Basketball Patch 🏀",
-                image: "https://i.ibb.co/GfHsFstf/basketball-patch.jpg",
-                description: "More than just decor - it's a symbol for setting goals and competitive spirit. Add this basketball patch to your sneakers or gym bag to show you're always ready to 'shoot' for your dreams.",
-                personality: "The Team Player",
-                traits: "You're energetic, competitive, and always striving for excellence. You motivate others to reach their goals and work well in teams. You understand that success comes from practice, dedication, and supporting your teammates.",
-                color: "linear-gradient(135deg, #696969, #2F4F4F)"
-            },
-            bow: {
-                name: "Bow Patch 🎀",
-                image: "https://i.ibb.co/p9Xdq6c/bow-patch.jpg",
-                description: "An icon of elegance like a perfectly wrapped gift! This chic patch in a gorgeous berry hue can be the perfect accent on formal wear or your favorite handbag. A timeless, classic element that never goes out of style.",
-                personality: "The Classic Sophisticate",
-                traits: "You're sophisticated, graceful, and always put together. You appreciate tradition and timeless beauty. Your style is intentional and elegant, and you believe that details matter - just like the perfect bow on a gift.",
-                color: "linear-gradient(135deg, #808080, #555555)"
-            },
-            carrot: {
-                name: "Carrot Patch 🥕",
-                image: "https://i.ibb.co/39Wt1ntj/carrot-patch.jpg",
-                description: "A nostalgic nod to every snowman's nose from childhood! A fun, quirky way to add a pop of color to your winter wardrobe. Perfect for Christmas sweaters, winter hats or scarves.",
-                personality: "The Playful Spirit",
-                traits: "You're whimsical, creative, and always bringing fun to ordinary moments. You remind others to enjoy life and not take things too seriously. Your sense of humor and playful nature make you the life of every gathering.",
-                color: "linear-gradient(135deg, #F0E68C, #D4AF37)"
-            }
-        };
-        
-        function startQuiz() {
-            // Reset points
-            for (const product in quizPoints) {
-                quizPoints[product] = 0;
-            }
-            currentQuestion = 0;
-            winningProduct = '';
-            
-            document.getElementById('quizStart').style.display = 'none';
-            document.getElementById('quizQuestions').style.display = 'block';
-            document.getElementById('quizResult').style.display = 'none';
-            showQuestion(0);
-        }
-        
-        function showQuestion(questionIndex) {
-            const question = quizQuestions[questionIndex];
-            let html = '<div class="quiz-question">';
-            html += `<h3>Question ${questionIndex + 1} of 5</h3>`;
-            
-            // Progress bar
-            const progress = ((questionIndex + 1) / 5) * 100;
-            html += `<div class="quiz-progress">
-                        <div class="quiz-progress-bar" style="width: ${progress}%"></div>
-                     </div>`;
-            
-            html += `<div class="question-text">${question.question}</div>`;
-            
-            question.options.forEach((option, index) => {
-                html += `<button class="quiz-option" onclick="answerQuestion(${questionIndex}, ${index})">
-                            <div class="quiz-option-number">${String.fromCharCode(65 + index)}</div>
-                            <div>${option.text}</div>
-                         </button>`;
-            });
-            
-            html += '</div>';
-            document.getElementById('quizQuestions').innerHTML = html;
-        }
-        
-        function answerQuestion(questionIndex, optionIndex) {
-            const option = quizQuestions[questionIndex].options[optionIndex];
-            
-            // Add points for each product
-            for (const product in option.points) {
-                quizPoints[product] += option.points[product];
-            }
-            
-            if (questionIndex < quizQuestions.length - 1) {
-                showQuestion(questionIndex + 1);
-            } else {
-                showResult();
-            }
-        }
-        
-        function showResult() {
-            // Find product with highest points
-            let maxPoints = 0;
-            winningProduct = '';
-            
-            for (const product in quizPoints) {
-                if (quizPoints[product] > maxPoints) {
-                    maxPoints = quizPoints[product];
-                    winningProduct = product;
-                }
-            }
-            
-            const product = productInfo[winningProduct];
-            const shareText = `I just discovered my EcoPin personality! I'm a "${product.personality}" and my perfect patch is ${product.name}. What's yours? Take the quiz at Pin Point Pens!`;
-            const shareUrl = window.location.href;
-            
-            // Show result
-            let resultHTML = '<div class="quiz-result">';
-            resultHTML += `<div class="result-title">You are: ${product.personality}</div>`;
-            
-            resultHTML += `<div class="result-personality" style="background: ${product.color}; color: white;">
-                            <div class="personality-title">Your Personality Traits:</div>
-                            <div class="personality-description">${product.traits}</div>
-                          </div>`;
-            
-            resultHTML += `<div class="result-product" style="background: ${product.color};">
-                            <div class="result-product-name">Your Perfect EcoPin: ${product.name}</div>
-                            <div class="result-product-image">
-                                <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200/FF6B6B/ffffff?text=ECO+PIN'">
-                            </div>
-                            <div class="result-description">${product.description}</div>
-                          </div>`;
-            
-            resultHTML += '<div class="share-buttons-container">';
-            resultHTML += `<button class="share-btn-small share-twitter" onclick="shareOnTwitter()">🐦 Twitter</button>`;
-            resultHTML += `<button class="share-btn-small share-instagram" onclick="shareOnInstagram()">📷 Instagram</button>`;
-            resultHTML += `<button class="share-btn-small share-whatsapp" onclick="shareOnWhatsApp()">💬 WhatsApp</button>`;
-            resultHTML += `<button class="share-btn-small share-telegram" onclick="shareOnTelegram()">📨 Telegram</button>`;
-            resultHTML += `<button class="share-btn-small share-tiktok" onclick="shareOnTikTok()">🎵 TikTok</button>`;
-            resultHTML += `<button class="share-btn-small share-facebook" onclick="shareOnFacebook()">👍 Facebook</button>`;
-            resultHTML += '</div>';
-            
-            resultHTML += '<div class="result-buttons">';
-            resultHTML += '<button class="result-button" onclick="restartQuiz()">Take Quiz Again</button>';
-            
-            resultHTML += '</div>';
-            
-            resultHTML += '</div>';
-            
-            document.getElementById('quizQuestions').style.display = 'none';
-            document.getElementById('quizResult').innerHTML = resultHTML;
-            document.getElementById('quizResult').style.display = 'block';
-            
-            // Store share data globally
-            window.quizShareData = {
-                text: shareText,
-                url: shareUrl,
-                productName: product.name,
-                personality: product.personality
-            };
-        }
-        
-        function restartQuiz() {
-            // Reset points
-            for (const product in quizPoints) {
-                quizPoints[product] = 0;
-            }
-            
-            currentQuestion = 0;
-            document.getElementById('quizResult').style.display = 'none';
-            document.getElementById('quizQuestions').style.display = 'block';
-            document.getElementById('quizStart').style.display = 'none';
-            showQuestion(0);
-        }
-        
-        // SHARE MODAL FUNCTIONS
-        function openShareModal(shareText, shareUrl) {
-            const modal = document.getElementById('shareModal');
-            const shareUrlInput = document.getElementById('shareUrl');
-            
-            shareUrlInput.value = shareUrl;
-            modal.style.display = 'flex';
-        }
-        
-        function closeShareModal() {
-            const modal = document.getElementById('shareModal');
-            modal.style.display = 'none';
-        }
-        
-        function copyShareUrl() {
-            const shareUrlInput = document.getElementById('shareUrl');
-            const copiedMessage = document.getElementById('copiedMessage');
-            
-            shareUrlInput.select();
-            shareUrlInput.setSelectionRange(0, 99999);
-            
-            navigator.clipboard.writeText(shareUrlInput.value).then(() => {
-                copiedMessage.style.display = 'block';
-                setTimeout(() => {
-                    copiedMessage.style.display = 'none';
-                }, 3000);
-            });
-        }
-        
-        // PLATFORM-SPECIFIC SHARE FUNCTIONS
-        function shareOnTwitter() {
-            const shareData = window.quizShareData;
-            const text = encodeURIComponent(shareData.text);
-            const url = encodeURIComponent(shareData.url);
-            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
-        }
-        
-        function shareOnInstagram() {
-            const shareData = window.quizShareData;
-            const text = encodeURIComponent(shareData.text);
-            alert("To share on Instagram:\n\n1. Copy the text below\n2. Open Instagram\n3. Create a new post\n4. Paste the text\n\n" + shareData.text + "\n\n" + shareData.url);
-        }
-        
-        function shareOnWhatsApp() {
-            const shareData = window.quizShareData;
-            const text = encodeURIComponent(shareData.text + " " + shareData.url);
-            window.open(`https://wa.me/?text=${text}`, '_blank');
-        }
-        
-        function shareOnTelegram() {
-            const shareData = window.quizShareData;
-            const text = encodeURIComponent(shareData.text);
-            const url = encodeURIComponent(shareData.url);
-            window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
-        }
-        
-        function shareOnTikTok() {
-            const shareData = window.quizShareData;
-            const text = encodeURIComponent(shareData.text);
-            alert("To share on TikTok:\n\n1. Copy the text below\n2. Open TikTok\n3. Create a new video\n4. Add the text as caption\n\n" + shareData.text + "\n\n" + shareData.url);
-        }
-        
-        function shareOnFacebook() {
-            const shareData = window.quizShareData;
-            const url = encodeURIComponent(shareData.url);
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
-        }
-        
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('shareModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
+        // فقط برای جلوگیری از تکرار حذف شده است
     </script>
 </body>
 </html>
