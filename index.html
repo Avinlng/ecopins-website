@@ -931,7 +931,6 @@
             transition: all 0.4s ease;
         }
 
-        /* اضافه کردن استایل‌های سوییچ حالت روز/شب */
         .theme-switch-wrapper {
             position: fixed;
             top: 20px;
@@ -1003,85 +1002,84 @@
             transition: all 0.4s ease;
         }
 
-        /* استایل‌های حالت روز */
         body.day-mode {
-            background: linear-gradient(135deg, #FFEAA7 0%, #FDCB6E 100%);
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
             color: #121212;
         }
 
         body.day-mode .header {
-            background: linear-gradient(135deg, #FDCB6E 0%, #FF9F1C 100%);
-            border-image: linear-gradient(45deg, #FF9F1C, #FDCB6E, #FFEAA7) 1;
-            box-shadow: 0 8px 32px rgba(255, 159, 28, 0.2);
+            background: linear-gradient(135deg, #FFECB3 0%, #FFD54F 100%);
+            border-image: linear-gradient(45deg, #FFD54F, #FFECB3, #FFF8E1) 1;
+            box-shadow: 0 8px 32px rgba(255, 213, 79, 0.3);
         }
 
         body.day-mode .main-title {
             color: #121212;
-            text-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
         }
 
         body.day-mode .main-title::after {
-            background: linear-gradient(90deg, #FF9F1C, #FDCB6E, #FFEAA7);
+            background: linear-gradient(90deg, #FFD54F, #FFECB3, #FFF8E1);
         }
 
         body.day-mode .subtitle {
-            color: #2D3436;
+            color: #5D4037;
         }
 
         body.day-mode .card {
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-left: 6px solid #FF9F1C;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 30px rgba(255, 213, 79, 0.15);
+            border-left: 6px solid #FFD54F;
         }
 
         body.day-mode .card::before {
-            background: linear-gradient(90deg, #FF9F1C, #FDCB6E, #FFEAA7);
+            background: linear-gradient(90deg, #FFD54F, #FFECB3, #FFF8E1);
         }
 
         body.day-mode .card:hover {
-            box-shadow: 0 15px 40px rgba(255, 159, 28, 0.2);
-            border-left-color: #FF9F1C;
+            box-shadow: 0 15px 40px rgba(255, 213, 79, 0.25);
+            border-left-color: #FFD54F;
         }
 
         body.day-mode h2 {
             color: #121212;
-            border-bottom: 2px solid rgba(255, 159, 28, 0.3);
+            border-bottom: 2px solid rgba(255, 213, 79, 0.4);
         }
 
         body.day-mode h2::after {
-            background: #FF9F1C;
+            background: #FFD54F;
         }
 
         body.day-mode .feature-list li {
-            background: rgba(255, 159, 28, 0.1);
+            background: rgba(255, 213, 79, 0.15);
             color: #121212;
-            border-left: 4px solid #FF9F1C;
+            border-left: 4px solid #FFD54F;
         }
 
         body.day-mode .feature-list li:hover {
-            background: rgba(255, 159, 28, 0.2);
+            background: rgba(255, 213, 79, 0.25);
         }
 
         body.day-mode .feature-list li::before {
-            color: #FF9F1C;
+            color: #FFD54F;
         }
 
         body.day-mode .future-feature {
             color: #121212;
-            background: rgba(255, 159, 28, 0.15);
-            border: 2px dashed #FF9F1C;
+            background: rgba(255, 213, 79, 0.2);
+            border: 2px dashed #FFD54F;
         }
 
         body.day-mode .student-note {
-            background: rgba(255, 159, 28, 0.1);
-            color: #2D3436;
-            border: 1px solid rgba(255, 159, 28, 0.3);
+            background: rgba(255, 213, 79, 0.15);
+            color: #5D4037;
+            border: 1px solid rgba(255, 213, 79, 0.4);
         }
 
         body.day-mode .signature {
-            background: linear-gradient(135deg, #FDCB6E 0%, #FF9F1C 100%);
+            background: linear-gradient(135deg, #FFECB3 0%, #FFD54F 100%);
             color: #121212;
-            border-top: 4px solid #FF9F1C;
+            border-top: 4px solid #FFD54F;
         }
 
         body.day-mode .creator-name {
@@ -1089,57 +1087,59 @@
         }
 
         body.day-mode .contact-info {
-            background: rgba(255, 159, 28, 0.1);
-            border: 1px solid rgba(255, 159, 28, 0.3);
+            background: rgba(255, 213, 79, 0.15);
+            border: 1px solid rgba(255, 213, 79, 0.4);
         }
 
         body.day-mode .contact-link,
         body.day-mode .email-link {
             color: #121212;
-            background: rgba(255, 159, 28, 0.15);
-            border: 2px solid #FF9F1C;
+            background: rgba(255, 213, 79, 0.2);
+            border: 2px solid #FFD54F;
         }
 
         body.day-mode .contact-link:hover,
         body.day-mode .email-link:hover {
-            background: rgba(255, 159, 28, 0.3);
+            background: rgba(255, 213, 79, 0.35);
         }
 
         body.day-mode .company-email-link {
             color: #121212;
-            background: linear-gradient(135deg, #FFEAA7 0%, #FDCB6E 100%);
+            background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
+            box-shadow: 0 4px 12px rgba(255, 213, 79, 0.4);
         }
 
         body.day-mode .company-email-link:hover {
-            background: linear-gradient(135deg, #FDCB6E 0%, #FFEAA7 100%);
+            background: linear-gradient(135deg, #FFECB3 0%, #FFD54F 100%);
+            box-shadow: 0 6px 18px rgba(255, 213, 79, 0.5);
         }
 
         body.day-mode .team-button,
         body.day-mode .result-button {
-            background: linear-gradient(135deg, #FF9F1C 0%, #FDCB6E 100%);
+            background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
             color: #121212;
-            box-shadow: 0 6px 20px rgba(255, 159, 28, 0.3);
+            box-shadow: 0 6px 20px rgba(255, 213, 79, 0.3);
         }
 
         body.day-mode .team-button:hover,
         body.day-mode .result-button:hover {
-            background: linear-gradient(135deg, #FDCB6E 0%, #FF9F1C 100%);
-            box-shadow: 0 8px 25px rgba(255, 159, 28, 0.4);
+            background: linear-gradient(135deg, #FFECB3 0%, #FFD54F 100%);
+            box-shadow: 0 8px 25px rgba(255, 213, 79, 0.4);
         }
 
         body.day-mode .members-container {
-            background: rgba(255, 159, 28, 0.05);
-            border: 2px dashed #FF9F1C;
+            background: rgba(255, 213, 79, 0.1);
+            border: 2px dashed #FFD54F;
         }
 
         body.day-mode .member-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             color: #121212;
-            border-left: 4px solid #FF9F1C;
+            border-left: 4px solid #FFD54F;
         }
 
         body.day-mode .member-card:hover {
-            border-left-color: #FF9F1C;
+            border-left-color: #FFD54F;
         }
 
         body.day-mode .team-title {
@@ -1147,56 +1147,56 @@
         }
 
         body.day-mode p {
-            color: #2D3436;
+            color: #424242;
         }
 
         body.day-mode .gallery-item {
-            background: rgba(255, 255, 255, 0.9);
-            border-top: 4px solid #FF9F1C;
+            background: rgba(255, 255, 255, 0.95);
+            border-top: 4px solid #FFD54F;
         }
 
         body.day-mode .gallery-item::before {
-            background: linear-gradient(90deg, #FF9F1C, #FDCB6E, #FFEAA7);
+            background: linear-gradient(90deg, #FFD54F, #FFECB3, #FFF8E1);
         }
 
         body.day-mode .gallery-title {
             color: #121212;
-            border-bottom: 2px solid rgba(255, 159, 28, 0.2);
+            border-bottom: 2px solid rgba(255, 213, 79, 0.3);
         }
 
         body.day-mode .gallery-description {
-            color: #2D3436;
+            color: #424242;
         }
 
         body.day-mode .product-image {
-            border: 3px solid #FF9F1C;
-            background: #FDCB6E;
+            border: 3px solid #FFD54F;
+            background: #FFECB3;
         }
 
         body.day-mode .quiz-option {
-            background: rgba(255, 159, 28, 0.1);
+            background: rgba(255, 213, 79, 0.15);
             color: #121212;
-            border-left: 4px solid #FF9F1C;
+            border-left: 4px solid #FFD54F;
         }
 
         body.day-mode .quiz-option:hover {
-            background: rgba(255, 159, 28, 0.2);
-            border-left-color: #FF9F1C;
+            background: rgba(255, 213, 79, 0.25);
+            border-left-color: #FFD54F;
         }
 
         body.day-mode .quiz-option-number {
-            background: linear-gradient(135deg, #FF9F1C 0%, #FDCB6E 100%);
+            background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
             color: #121212;
         }
 
         body.day-mode .question-text {
             color: #121212;
-            background: rgba(255, 159, 28, 0.1);
+            background: rgba(255, 213, 79, 0.15);
         }
 
         body.day-mode .quiz-result {
-            background: rgba(255, 255, 255, 0.9);
-            border-top: 4px solid #FF9F1C;
+            background: rgba(255, 255, 255, 0.95);
+            border-top: 4px solid #FFD54F;
         }
 
         body.day-mode .result-title {
@@ -1204,8 +1204,8 @@
         }
 
         body.day-mode .result-product {
-            border: 3px solid #FF9F1C;
-            background: #FDCB6E;
+            border: 3px solid #FFD54F;
+            background: #FFECB3;
         }
 
         body.day-mode .result-product-name {
@@ -1213,12 +1213,12 @@
         }
 
         body.day-mode .result-description {
-            color: #2D3436;
+            color: #424242;
         }
 
         body.day-mode .result-personality {
-            border: 2px solid #FF9F1C;
-            background: rgba(255, 159, 28, 0.1);
+            border: 2px solid #FFD54F;
+            background: rgba(255, 213, 79, 0.15);
             color: #121212;
         }
 
@@ -1227,17 +1227,17 @@
         }
 
         body.day-mode .personality-description {
-            color: #2D3436;
+            color: #424242;
         }
 
         body.day-mode .theme-label {
             color: #121212;
-            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
         }
 
         body.day-mode .share-modal-content {
-            background: rgba(255, 255, 255, 0.95);
-            border: 3px solid #FF9F1C;
+            background: linear-gradient(135deg, #FFECB3 0%, #FFD54F 100%);
+            border: 3px solid #FFD54F;
         }
 
         body.day-mode .share-modal-title {
@@ -1245,14 +1245,14 @@
         }
 
         body.day-mode .share-platform {
-            background: rgba(255, 159, 28, 0.1);
+            background: rgba(255, 213, 79, 0.2);
             color: #121212;
-            border: 2px solid rgba(255, 159, 28, 0.3);
+            border: 2px solid rgba(255, 213, 79, 0.4);
         }
 
         body.day-mode .share-platform:hover {
-            background: rgba(255, 159, 28, 0.2);
-            border-color: #FF9F1C;
+            background: rgba(255, 213, 79, 0.3);
+            border-color: #FFD54F;
         }
 
         body.day-mode .share-platform-name {
@@ -1260,30 +1260,104 @@
         }
 
         body.day-mode .share-url {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             color: #121212;
-            border: 2px solid #FF9F1C;
+            border: 2px solid #FFD54F;
         }
 
         body.day-mode .instagram-link,
         body.day-mode .tiktok-link {
-            background: linear-gradient(135deg, #FF9F1C 0%, #FDCB6E 100%);
+            background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
             color: #121212;
         }
 
         body.day-mode .instagram-link:hover,
         body.day-mode .tiktok-link:hover {
-            background: linear-gradient(135deg, #FDCB6E 0%, #FF9F1C 100%);
+            background: linear-gradient(135deg, #FFECB3 0%, #FFD54F 100%);
         }
 
         body.day-mode .role-badge {
-            background: linear-gradient(135deg, #FF9F1C 0%, #FDCB6E 100%);
+            background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
             color: #121212;
+        }
+
+        .contact-box {
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border: 3px solid var(--gold);
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .contact-box h3 {
+            color: var(--gold-light);
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            transition: all 0.4s ease;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        body.day-mode .contact-box {
+            background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
+            border: 3px solid #FFD54F;
+            box-shadow: 0 8px 25px rgba(255, 213, 79, 0.25);
+        }
+
+        body.day-mode .contact-box h3 {
+            color: #121212;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+        }
+
+        .contact-box .contact-link,
+        .contact-box .email-link,
+        .contact-box .company-email-link {
+            margin: 5px;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        body.day-mode .contact-box .contact-link,
+        body.day-mode .contact-box .email-link {
+            background: rgba(255, 255, 255, 0.9);
+            color: #121212;
+            border: 2px solid #121212;
+        }
+
+        body.day-mode .contact-box .contact-link:hover,
+        body.day-mode .contact-box .email-link:hover {
+            background: #121212;
+            color: #FFD54F;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        body.day-mode .contact-box .company-email-link {
+            background: #121212;
+            color: #FFD54F;
+            border: 2px solid #121212;
+        }
+
+        body.day-mode .contact-box .company-email-link:hover {
+            background: #FFD54F;
+            color: #121212;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
-    <!-- دکمه تغییر حالت شب/روز -->
     <div class="theme-switch-wrapper">
         <label class="theme-switch" for="checkbox">
             <input type="checkbox" id="checkbox" />
@@ -1510,14 +1584,22 @@
         <div class="signature">
             <h3 style="color: var(--gold-light);">Website Developer:</h3>
             <div class="creator-name">Avin P. Langroodi</div>
-            <div class="contact-info">
-                <a href="https://www.linkedin.com/in/avin-langroodi-85ab50287" class="contact-link" target="_blank">LinkedIn Profile</a>
-                <a href="mailto:avinlangroodi4@gmail.com" class="email-link">avinlangroodi4@gmail.com</a>
+            
+            <div class="contact-box">
+                <h3>Contact Information</h3>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/avin-langroodi-85ab50287" class="contact-link" target="_blank">LinkedIn Profile</a>
+                    <a href="mailto:avinlangroodi4@gmail.com" class="email-link">Personal Email</a>
+                </div>
             </div>
-            <div class="contact-info">
-                <h3 style="color: var(--gold-light);">Company Email:</h3>
-                <a href="mailto:pinpointpatches1@gmail.com" class="company-email-link">pinpointpatches1@gmail.com</a>
+            
+            <div class="contact-box">
+                <h3>Company Contact</h3>
+                <div class="contact-links">
+                    <a href="mailto:pinpointpatches1@gmail.com" class="company-email-link">Company Email</a>
+                </div>
             </div>
+            
             <p>JA Company Program Participant</p>
             <p>Web Development Project - HTML, CSS, JavaScript</p>
         </div>
@@ -1613,12 +1695,10 @@
         };
         let winningProduct = '';
         
-        // کد کنترل سوییچ حالت روز/شب
         document.addEventListener('DOMContentLoaded', function() {
             const themeSwitch = document.getElementById('checkbox');
             const themeLabel = document.getElementById('themeLabel');
             
-            // بررسی ذخیره‌سازی قبلی
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'day') {
                 document.body.classList.add('day-mode');
@@ -1626,7 +1706,6 @@
                 themeLabel.textContent = 'Day Mode';
             }
             
-            // اضافه کردن ایونت‌لیسنر برای سوییچ
             themeSwitch.addEventListener('change', function() {
                 if (this.checked) {
                     document.body.classList.add('day-mode');
