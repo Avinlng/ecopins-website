@@ -984,14 +984,14 @@
         }
 
         input:checked + .theme-slider {
-            background: linear-gradient(135deg, #FFEAA7 0%, #FDCB6E 100%);
-            border-color: #FF9F1C;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+            border-color: #FFD700;
         }
 
         input:checked + .theme-slider:before {
             content: "☀️";
             transform: translateX(30px);
-            background: linear-gradient(135deg, #FF9F1C 0%, #FFEAA7 100%);
+            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
         }
 
         .theme-label {
@@ -1003,83 +1003,85 @@
         }
 
         body.day-mode {
-            background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+            background: linear-gradient(135deg, #FFEAA7 0%, #FFD700 100%);
             color: #121212;
         }
 
         body.day-mode .header {
-            background: linear-gradient(135deg, #FFECB3 0%, #FFD54F 100%);
-            border-image: linear-gradient(45deg, #FFD54F, #FFECB3, #FFF8E1) 1;
-            box-shadow: 0 8px 32px rgba(255, 213, 79, 0.3);
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+            border-image: linear-gradient(45deg, #D4AF37, #FFD700, #FFEAA7) 1;
+            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.4);
         }
 
         body.day-mode .main-title {
             color: #121212;
-            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+            text-shadow: 0 2px 8px rgba(212, 175, 55, 0.5);
         }
 
         body.day-mode .main-title::after {
-            background: linear-gradient(90deg, #FFD54F, #FFECB3, #FFF8E1);
+            background: linear-gradient(90deg, #D4AF37, #FFD700, #FFEAA7);
         }
 
         body.day-mode .subtitle {
-            color: #5D4037;
+            color: #121212;
+            opacity: 0.8;
         }
 
         body.day-mode .card {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 10px 30px rgba(255, 213, 79, 0.15);
-            border-left: 6px solid #FFD54F;
+            background: linear-gradient(135deg, #FFEAA7 0%, #FFD700 50%, #D4AF37 100%);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            border-left: 6px solid #121212;
         }
 
         body.day-mode .card::before {
-            background: linear-gradient(90deg, #FFD54F, #FFECB3, #FFF8E1);
+            background: linear-gradient(90deg, #D4AF37, #FFD700, #FFEAA7);
         }
 
         body.day-mode .card:hover {
-            box-shadow: 0 15px 40px rgba(255, 213, 79, 0.25);
-            border-left-color: #FFD54F;
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+            border-left-color: #121212;
         }
 
         body.day-mode h2 {
             color: #121212;
-            border-bottom: 2px solid rgba(255, 213, 79, 0.4);
+            border-bottom: 2px solid rgba(18, 18, 18, 0.3);
         }
 
         body.day-mode h2::after {
-            background: #FFD54F;
+            background: #121212;
         }
 
         body.day-mode .feature-list li {
-            background: rgba(255, 213, 79, 0.15);
+            background: rgba(18, 18, 18, 0.1);
             color: #121212;
-            border-left: 4px solid #FFD54F;
+            border-left: 4px solid #121212;
         }
 
         body.day-mode .feature-list li:hover {
-            background: rgba(255, 213, 79, 0.25);
+            background: rgba(18, 18, 18, 0.2);
         }
 
         body.day-mode .feature-list li::before {
-            color: #FFD54F;
+            color: #121212;
         }
 
         body.day-mode .future-feature {
             color: #121212;
-            background: rgba(255, 213, 79, 0.2);
-            border: 2px dashed #FFD54F;
+            background: rgba(18, 18, 18, 0.15);
+            border: 2px dashed #121212;
+            backdrop-filter: blur(5px);
         }
 
         body.day-mode .student-note {
-            background: rgba(255, 213, 79, 0.15);
-            color: #5D4037;
-            border: 1px solid rgba(255, 213, 79, 0.4);
+            background: rgba(18, 18, 18, 0.1);
+            color: #121212;
+            border: 1px solid rgba(18, 18, 18, 0.3);
         }
 
         body.day-mode .signature {
-            background: linear-gradient(135deg, #FFECB3 0%, #FFD54F 100%);
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
             color: #121212;
-            border-top: 4px solid #FFD54F;
+            border-top: 4px solid #121212;
         }
 
         body.day-mode .creator-name {
@@ -1087,59 +1089,58 @@
         }
 
         body.day-mode .contact-info {
-            background: rgba(255, 213, 79, 0.15);
-            border: 1px solid rgba(255, 213, 79, 0.4);
+            background: rgba(18, 18, 18, 0.1);
+            border: 1px solid rgba(18, 18, 18, 0.3);
         }
 
         body.day-mode .contact-link,
         body.day-mode .email-link {
             color: #121212;
-            background: rgba(255, 213, 79, 0.2);
-            border: 2px solid #FFD54F;
+            background: rgba(18, 18, 18, 0.1);
+            border: 2px solid #121212;
         }
 
         body.day-mode .contact-link:hover,
         body.day-mode .email-link:hover {
-            background: rgba(255, 213, 79, 0.35);
+            background: rgba(18, 18, 18, 0.25);
         }
 
         body.day-mode .company-email-link {
-            color: #121212;
-            background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
-            box-shadow: 0 4px 12px rgba(255, 213, 79, 0.4);
+            color: #FFD700;
+            background: #121212;
         }
 
         body.day-mode .company-email-link:hover {
-            background: linear-gradient(135deg, #FFECB3 0%, #FFD54F 100%);
-            box-shadow: 0 6px 18px rgba(255, 213, 79, 0.5);
+            background: #2A2A2A;
+            color: #FFD700;
         }
 
         body.day-mode .team-button,
         body.day-mode .result-button {
-            background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
-            color: #121212;
-            box-shadow: 0 6px 20px rgba(255, 213, 79, 0.3);
+            background: linear-gradient(135deg, #121212 0%, #2A2A2A 100%);
+            color: #FFD700;
+            box-shadow: 0 6px 20px rgba(18, 18, 18, 0.4);
         }
 
         body.day-mode .team-button:hover,
         body.day-mode .result-button:hover {
-            background: linear-gradient(135deg, #FFECB3 0%, #FFD54F 100%);
-            box-shadow: 0 8px 25px rgba(255, 213, 79, 0.4);
+            background: linear-gradient(135deg, #2A2A2A 0%, #121212 100%);
+            box-shadow: 0 8px 25px rgba(18, 18, 18, 0.5);
         }
 
         body.day-mode .members-container {
-            background: rgba(255, 213, 79, 0.1);
-            border: 2px dashed #FFD54F;
+            background: rgba(18, 18, 18, 0.1);
+            border: 2px dashed #121212;
         }
 
         body.day-mode .member-card {
-            background: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, #FFEAA7 0%, #FFD700 100%);
             color: #121212;
-            border-left: 4px solid #FFD54F;
+            border-left: 4px solid #121212;
         }
 
         body.day-mode .member-card:hover {
-            border-left-color: #FFD54F;
+            border-left-color: #121212;
         }
 
         body.day-mode .team-title {
@@ -1147,56 +1148,58 @@
         }
 
         body.day-mode p {
-            color: #424242;
+            color: #121212;
+            opacity: 0.9;
         }
 
         body.day-mode .gallery-item {
-            background: rgba(255, 255, 255, 0.95);
-            border-top: 4px solid #FFD54F;
+            background: linear-gradient(135deg, #FFEAA7 0%, #FFD700 100%);
+            border-top: 4px solid #121212;
         }
 
         body.day-mode .gallery-item::before {
-            background: linear-gradient(90deg, #FFD54F, #FFECB3, #FFF8E1);
+            background: linear-gradient(90deg, #D4AF37, #FFD700, #FFEAA7);
         }
 
         body.day-mode .gallery-title {
             color: #121212;
-            border-bottom: 2px solid rgba(255, 213, 79, 0.3);
+            border-bottom: 2px solid rgba(18, 18, 18, 0.3);
         }
 
         body.day-mode .gallery-description {
-            color: #424242;
+            color: #121212;
+            opacity: 0.8;
         }
 
         body.day-mode .product-image {
-            border: 3px solid #FFD54F;
-            background: #FFECB3;
+            border: 3px solid #121212;
+            background: #FFD700;
         }
 
         body.day-mode .quiz-option {
-            background: rgba(255, 213, 79, 0.15);
+            background: rgba(18, 18, 18, 0.1);
             color: #121212;
-            border-left: 4px solid #FFD54F;
+            border-left: 4px solid #121212;
         }
 
         body.day-mode .quiz-option:hover {
-            background: rgba(255, 213, 79, 0.25);
-            border-left-color: #FFD54F;
+            background: rgba(18, 18, 18, 0.2);
+            border-left-color: #121212;
         }
 
         body.day-mode .quiz-option-number {
-            background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
-            color: #121212;
+            background: linear-gradient(135deg, #121212 0%, #2A2A2A 100%);
+            color: #FFD700;
         }
 
         body.day-mode .question-text {
             color: #121212;
-            background: rgba(255, 213, 79, 0.15);
+            background: rgba(18, 18, 18, 0.1);
         }
 
         body.day-mode .quiz-result {
-            background: rgba(255, 255, 255, 0.95);
-            border-top: 4px solid #FFD54F;
+            background: linear-gradient(135deg, #FFEAA7 0%, #FFD700 100%);
+            border-top: 4px solid #121212;
         }
 
         body.day-mode .result-title {
@@ -1204,8 +1207,8 @@
         }
 
         body.day-mode .result-product {
-            border: 3px solid #FFD54F;
-            background: #FFECB3;
+            border: 3px solid #121212;
+            background: linear-gradient(135deg, #FFEAA7 0%, #FFD700 100%);
         }
 
         body.day-mode .result-product-name {
@@ -1213,12 +1216,13 @@
         }
 
         body.day-mode .result-description {
-            color: #424242;
+            color: #121212;
+            opacity: 0.9;
         }
 
         body.day-mode .result-personality {
-            border: 2px solid #FFD54F;
-            background: rgba(255, 213, 79, 0.15);
+            border: 2px solid #121212;
+            background: rgba(18, 18, 18, 0.1);
             color: #121212;
         }
 
@@ -1227,17 +1231,18 @@
         }
 
         body.day-mode .personality-description {
-            color: #424242;
+            color: #121212;
+            opacity: 0.9;
         }
 
         body.day-mode .theme-label {
             color: #121212;
-            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+            text-shadow: 0 2px 4px rgba(255, 215, 0, 0.5);
         }
 
         body.day-mode .share-modal-content {
-            background: linear-gradient(135deg, #FFECB3 0%, #FFD54F 100%);
-            border: 3px solid #FFD54F;
+            background: linear-gradient(135deg, #FFEAA7 0%, #FFD700 100%);
+            border: 3px solid #121212;
         }
 
         body.day-mode .share-modal-title {
@@ -1245,14 +1250,14 @@
         }
 
         body.day-mode .share-platform {
-            background: rgba(255, 213, 79, 0.2);
+            background: rgba(18, 18, 18, 0.1);
             color: #121212;
-            border: 2px solid rgba(255, 213, 79, 0.4);
+            border: 2px solid rgba(18, 18, 18, 0.3);
         }
 
         body.day-mode .share-platform:hover {
-            background: rgba(255, 213, 79, 0.3);
-            border-color: #FFD54F;
+            background: rgba(18, 18, 18, 0.2);
+            border-color: #121212;
         }
 
         body.day-mode .share-platform-name {
@@ -1260,25 +1265,25 @@
         }
 
         body.day-mode .share-url {
-            background: rgba(255, 255, 255, 0.95);
+            background: #FFD700;
             color: #121212;
-            border: 2px solid #FFD54F;
+            border: 2px solid #121212;
         }
 
         body.day-mode .instagram-link,
         body.day-mode .tiktok-link {
-            background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
-            color: #121212;
+            background: linear-gradient(135deg, #121212 0%, #2A2A2A 100%);
+            color: #FFD700;
         }
 
         body.day-mode .instagram-link:hover,
         body.day-mode .tiktok-link:hover {
-            background: linear-gradient(135deg, #FFECB3 0%, #FFD54F 100%);
+            background: linear-gradient(135deg, #2A2A2A 0%, #121212 100%);
         }
 
         body.day-mode .role-badge {
-            background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
-            color: #121212;
+            background: linear-gradient(135deg, #121212 0%, #2A2A2A 100%);
+            color: #FFD700;
         }
 
         .contact-box {
@@ -1309,14 +1314,14 @@
         }
 
         body.day-mode .contact-box {
-            background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
-            border: 3px solid #FFD54F;
-            box-shadow: 0 8px 25px rgba(255, 213, 79, 0.25);
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+            border: 3px solid #121212;
+            box-shadow: 0 8px 25px rgba(18, 18, 18, 0.3);
         }
 
         body.day-mode .contact-box h3 {
             color: #121212;
-            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
         }
 
         .contact-box .contact-link,
@@ -1330,7 +1335,7 @@
 
         body.day-mode .contact-box .contact-link,
         body.day-mode .contact-box .email-link {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(18, 18, 18, 0.1);
             color: #121212;
             border: 2px solid #121212;
         }
@@ -1338,22 +1343,22 @@
         body.day-mode .contact-box .contact-link:hover,
         body.day-mode .contact-box .email-link:hover {
             background: #121212;
-            color: #FFD54F;
+            color: #FFD700;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(18, 18, 18, 0.4);
         }
 
         body.day-mode .contact-box .company-email-link {
             background: #121212;
-            color: #FFD54F;
+            color: #FFD700;
             border: 2px solid #121212;
         }
 
         body.day-mode .contact-box .company-email-link:hover {
-            background: #FFD54F;
-            color: #121212;
+            background: #2A2A2A;
+            color: #FFD700;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(18, 18, 18, 0.4);
         }
     </style>
 </head>
