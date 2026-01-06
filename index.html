@@ -1135,12 +1135,16 @@
 
         body.day-mode .member-card {
             background: linear-gradient(135deg, #FFEAA7 0%, #FFD700 100%);
-            color: #B8860B;
+            color: #121212;
             border-left: 4px solid #B8860B;
         }
 
         body.day-mode .member-card:hover {
             border-left-color: #B8860B;
+        }
+
+        body.day-mode .member-card div[style*="color: var(--gold-light)"] {
+            color: #8B6508 !important;
         }
 
         body.day-mode .team-title {
@@ -1995,18 +1999,18 @@
             let resultHTML = '<div class="quiz-result">';
             resultHTML += `<div class="result-title">You are: ${product.personality}</div>`;
             
-            resultHTML += `<div class="result-personality" style="background: ${product.color};">
-                            <div class="personality-title">Your Personality Traits:</div>
-                            <div class="personality-description">${product.traits}</div>
-                          </div>`;
+            resultHTML += `<div class="result-personality" style="background: ${product.color};">` +
+                         `<div class="personality-title">Your Personality Traits:</div>` +
+                         `<div class="personality-description">${product.traits}</div>` +
+                         `</div>`;
             
-            resultHTML += `<div class="result-product" style="background: ${product.color};">
-                            <div class="result-product-name">Your Perfect EcoPin: ${product.name}</div>
-                            <div class="result-product-image">
-                                <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200/FFD700/121212?text=ECO+PIN'">
-                            </div>
-                            <div class="result-description">${product.description}</div>
-                          </div>`;
+            resultHTML += `<div class="result-product" style="background: ${product.color};">` +
+                         `<div class="result-product-name">Your Perfect EcoPin: ${product.name}</div>` +
+                         `<div class="result-product-image">` +
+                         `<img src="${product.image}" alt="${product.name}" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200/FFD700/121212?text=ECO+PIN'">` +
+                         `</div>` +
+                         `<div class="result-description">${product.description}</div>` +
+                         `</div>`;
             
             resultHTML += '<div class="share-buttons-container">';
             resultHTML += `<button class="share-btn-small" onclick="shareOnTwitter()">🐦 Twitter</button>`;
