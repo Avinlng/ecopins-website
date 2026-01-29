@@ -253,7 +253,7 @@
             transition: all 0.4s ease;
         }
         
-        /* تغییر در این بخش: رنگ طلایی تیره‌تر با گرادیانت جذاب */
+        /* تغییر در این بخش: رنگ طلایی تیره‌تر با گرادیانت جذاب برای نام توسعه‌دهنده */
         .creator-name {
             font-size: 26px;
             margin: 15px 0;
@@ -268,6 +268,23 @@
             padding: 5px 15px;
             border-radius: 10px;
             border: 2px solid rgba(184, 134, 11, 0.3);
+        }
+        
+        /* تغییر در این بخش: عنوان Website Developer با گرادیانت طلایی تیره */
+        .developer-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            background: linear-gradient(135deg, #B8860B 0%, #8B6508 25%, #5D4505 50%, #8B6508 75%, #B8860B 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 4px rgba(139, 101, 8, 0.5);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 8px;
+            border: 2px solid rgba(139, 101, 8, 0.4);
         }
         
         .contact-info {
@@ -1103,6 +1120,16 @@
             border: 2px solid rgba(139, 101, 8, 0.3);
         }
 
+        /* تغییر در این بخش برای حالت روز */
+        body.day-mode .developer-title {
+            background: linear-gradient(135deg, #5D4505 0%, #8B6508 25%, #B8860B 50%, #8B6508 75%, #5D4505 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 4px rgba(93, 69, 5, 0.5);
+            border: 2px solid rgba(93, 69, 5, 0.4);
+        }
+
         body.day-mode .contact-info {
             background: rgba(18, 18, 18, 0.1);
             border: 1px solid rgba(18, 18, 18, 0.3);
@@ -1704,8 +1731,8 @@
         </div>
 
         <div class="signature">
-            <h3 style="color: var(--gold-light);">Website Developer:</h3>
-            <!-- تغییر در این خط: استفاده از کلاس creator-name با استایل جدید -->
+            <!-- تغییر در این خط: استفاده از کلاس developer-title با استایل جدید -->
+            <h3 class="developer-title">Website Developer:</h3>
             <div class="creator-name">Avin P. Langroodi</div>
             
             <div class="contact-box">
