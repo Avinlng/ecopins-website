@@ -1526,7 +1526,23 @@
         }
 
         body.day-mode .student-image-container {
+            display: block;
+        }
+
+        .student-image-night {
+            display: block;
+        }
+
+        .student-image-day {
             display: none;
+        }
+
+        body.day-mode .student-image-night {
+            display: none;
+        }
+
+        body.day-mode .student-image-day {
+            display: block;
         }
 
         @media (max-width: 768px) {
@@ -1767,9 +1783,14 @@
             
             <div class="student-image-container">
                 <img src="https://image2url.com/r2/default/images/1769706315651-a22a53e6-566d-4d6e-98e9-5d5255d4a79b.jpg" 
-                     alt="Student Project Image" 
-                     class="student-image"
-                     onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/D4AF37/121212?text=Student+Project'">
+                     alt="Student Project Image - Night Mode" 
+                     class="student-image student-image-night"
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/D4AF37/121212?text=Student+Project+Night'">
+                
+                <img src="https://image2url.com/r2/default/images/1769707949476-4cb4e3a8-ed5b-46f9-bff8-a50d490743ec.jpg" 
+                     alt="Student Project Image - Day Mode" 
+                     class="student-image student-image-day"
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/121212/FFD700?text=Student+Project+Day'">
             </div>
             
             <div class="student-note">
