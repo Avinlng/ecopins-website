@@ -253,12 +253,21 @@
             transition: all 0.4s ease;
         }
         
+        /* تغییر در این بخش: رنگ طلایی تیره‌تر با گرادیانت جذاب */
         .creator-name {
             font-size: 26px;
-            color: var(--gold-light);
             margin: 15px 0;
             font-weight: 700;
             transition: all 0.4s ease;
+            background: linear-gradient(135deg, #FFD166 0%, #B8860B 25%, #8B6508 50%, #B8860B 75%, #FFD166 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 4px rgba(184, 134, 11, 0.3);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 10px;
+            border: 2px solid rgba(184, 134, 11, 0.3);
         }
         
         .contact-info {
@@ -1084,8 +1093,14 @@
             border-top: 4px solid #121212;
         }
 
+        /* تغییر در این بخش برای حالت روز */
         body.day-mode .creator-name {
-            color: #121212;
+            background: linear-gradient(135deg, #8B6508 0%, #B8860B 25%, #DAA520 50%, #B8860B 75%, #8B6508 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 4px rgba(139, 101, 8, 0.3);
+            border: 2px solid rgba(139, 101, 8, 0.3);
         }
 
         body.day-mode .contact-info {
@@ -1690,6 +1705,7 @@
 
         <div class="signature">
             <h3 style="color: var(--gold-light);">Website Developer:</h3>
+            <!-- تغییر در این خط: استفاده از کلاس creator-name با استایل جدید -->
             <div class="creator-name">Avin P. Langroodi</div>
             
             <div class="contact-box">
