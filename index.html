@@ -157,8 +157,6 @@
             border-left-color: var(--ja-gold);
             background: linear-gradient(135deg, var(--ja-blue) 0%, #1E78C0 50%, var(--ja-orange) 100%);
             border-left: 6px solid var(--ja-gold);
-            cursor: pointer;
-            perspective: 1000px;
         }
         
         .team-card {
@@ -1506,82 +1504,6 @@
             border-left: 6px solid var(--ja-gold);
         }
 
-        /* استایل‌های جدید برای کارت چرخان */
-        .student-card-container {
-            position: relative;
-            width: 100%;
-            height: auto;
-            perspective: 1000px;
-            margin: 20px 0;
-        }
-
-        .flip-card {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-            cursor: pointer;
-        }
-
-        .student-card-container.flipped .flip-card {
-            transform: rotateY(180deg);
-        }
-
-        .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        .flip-card-back {
-            transform: rotateY(180deg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--ja-blue) 0%, #1E78C0 50%, var(--ja-orange) 100%);
-            padding: 20px;
-        }
-
-        .back-image {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 12px;
-            border: 3px solid var(--ja-gold);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-        }
-
-        .flip-indicator {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            background: rgba(0, 0, 0, 0.7);
-            color: var(--ja-gold);
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .flip-indicator:hover {
-            background: rgba(0, 0, 0, 0.9);
-        }
-
-        .flip-icon {
-            font-size: 14px;
-        }
-
         .student-image-container {
             display: flex;
             justify-content: center;
@@ -1631,17 +1553,6 @@
             
             .student-image-container {
                 margin: 15px 0;
-            }
-            
-            .back-image {
-                max-width: 100%;
-            }
-            
-            .flip-indicator {
-                bottom: 10px;
-                right: 10px;
-                font-size: 11px;
-                padding: 6px 10px;
             }
         }
     </style>
@@ -1870,48 +1781,23 @@
         <div class="card student-card">
             <h2>Student Project</h2>
             
-            <div class="student-card-container" id="studentCardContainer">
-                <div class="flip-card">
-                    <div class="flip-card-front">
-                        <div class="student-image-container">
-                            <img src="https://image2url.com/r2/default/images/1769706315651-a22a53e6-566d-4d6e-98e9-5d5255d4a79b.jpg" 
-                                 alt="Student Project Image - Night Mode" 
-                                 class="student-image student-image-night"
-                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/D4AF37/121212?text=Student+Project+Night'">
-                            
-                            <img src="https://image2url.com/r2/default/images/1769935147133-bd093cac-01d6-42cd-8f05-7ade4dc9763c.png" 
-                                 alt="Student Project Image - Day Mode" 
-                                 class="student-image student-image-day"
-                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/121212/FFD700?text=Student+Project+Day'">
-                        </div>
-                        
-                        <div class="student-note">
-                            <p>This is our student project's digital showcase.</p>
-                            <p>We sincerely thank JA Nova Scotia for this invaluable experience.</p>
-                        </div>
-                        
-                        <div class="flip-indicator">
-                            <span class="flip-icon">🔄</span>
-                            Click to flip card
-                        </div>
-                    </div>
-                    
-                    <div class="flip-card-back">
-                        <img src="https://image2url.com/r2/default/images/1769938515013-eaa63dd7-55a1-45cd-84ab-2546f5deffe5.jpg" 
-                             alt="Back of Student Project Card" 
-                             class="back-image"
-                             onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/0055A5/FFC72C?text=Student+Project+Back'">
-                        
-                        <div class="flip-indicator" style="background: rgba(255, 255, 255, 0.8); color: #0055A5;">
-                            <span class="flip-icon">🔄</span>
-                            Click to flip back
-                        </div>
-                    </div>
-                </div>
+            <div class="student-image-container">
+                <img src="https://image2url.com/r2/default/images/1769706315651-a22a53e6-566d-4d6e-98e9-5d5255d4a79b.jpg" 
+                     alt="Student Project Image - Night Mode" 
+                     class="student-image student-image-night"
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/D4AF37/121212?text=Student+Project+Night'">
+                
+                <img src="https://image2url.com/r2/default/images/1769935147133-bd093cac-01d6-42cd-8f05-7ade4dc9763c.png" 
+                     alt="Student Project Image - Day Mode" 
+                     class="student-image student-image-day"
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/121212/FFD700?text=Student+Project+Day'">
             </div>
             
+            <div class="student-note">
+                <p>This is our student project's digital showcase.</p>
+                <p>We sincerely thank JA Nova Scotia for this invaluable experience.</p>
+            </div>
             <p><strong>Thank you for visiting our student project website.</strong></p>
-            <p style="font-style: italic; color: var(--ja-gold); margin-top: 10px;">💡 Tip: Click on the image above to see the back of the card!</p>
         </div>
 
         <div class="signature">
@@ -2050,13 +1936,6 @@
                     themeLabel.textContent = 'Night Mode';
                 }
             });
-            
-            const studentCardContainer = document.getElementById('studentCardContainer');
-            if (studentCardContainer) {
-                studentCardContainer.addEventListener('click', function() {
-                    this.classList.toggle('flipped');
-                });
-            }
         });
 
         function showTeamMembers() {
