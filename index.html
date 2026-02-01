@@ -157,6 +157,8 @@
             border-left-color: var(--ja-gold);
             background: linear-gradient(135deg, var(--ja-blue) 0%, #1E78C0 50%, var(--ja-orange) 100%);
             border-left: 6px solid var(--ja-gold);
+            perspective: 1000px;
+            cursor: pointer;
         }
         
         .team-card {
@@ -1508,6 +1510,7 @@
             display: flex;
             justify-content: center;
             margin: 20px 0;
+            perspective: 1000px;
         }
 
         .student-image {
@@ -1545,6 +1548,60 @@
             display: block;
         }
 
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+
+        .student-card .flip-card-inner {
+            height: 300px;
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flip-card-front {
+            background: transparent;
+        }
+
+        .flip-card-back {
+            background: var(--gold-dark);
+            color: var(--black);
+            transform: rotateY(180deg);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flip-card-back img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .flip-card-inner.flipped {
+            transform: rotateY(180deg);
+        }
+
         @media (max-width: 768px) {
             .student-image {
                 max-width: 100%;
@@ -1553,6 +1610,15 @@
             
             .student-image-container {
                 margin: 15px 0;
+            }
+            
+            .flip-card-inner {
+                height: 250px;
+                max-width: 100%;
+            }
+            
+            .student-card .flip-card-inner {
+                height: 250px;
             }
         }
     </style>
@@ -1778,19 +1844,30 @@
             <p style="color: var(--gold-dark);">We are developing our online store where you can view our velcro pin designs and place orders.</p>
         </div>
 
-        <div class="card student-card">
+        <div class="card student-card" onclick="flipCard(this)">
             <h2>Student Project</h2>
             
             <div class="student-image-container">
-                <img src="https://image2url.com/r2/default/images/1769706315651-a22a53e6-566d-4d6e-98e9-5d5255d4a79b.jpg" 
-                     alt="Student Project Image - Night Mode" 
-                     class="student-image student-image-night"
-                     onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/D4AF37/121212?text=Student+Project+Night'">
-                
-                <img src="https://image2url.com/r2/default/images/1769935147133-bd093cac-01d6-42cd-8f05-7ade4dc9763c.png" 
-                     alt="Student Project Image - Day Mode" 
-                     class="student-image student-image-day"
-                     onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/121212/FFD700?text=Student+Project+Day'">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div style="width: 100%; max-width: 500px; margin: 0 auto;">
+                            <img src="https://image2url.com/r2/default/images/1769706315651-a22a53e6-566d-4d6e-98e9-5d5255d4a79b.jpg" 
+                                 alt="Student Project Image - Night Mode" 
+                                 class="student-image student-image-night"
+                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/D4AF37/121212?text=Student+Project+Night'">
+                            
+                            <img src="https://image2url.com/r2/default/images/1769935147133-bd093cac-01d6-42cd-8f05-7ade4dc9763c.png" 
+                                 alt="Student Project Image - Day Mode" 
+                                 class="student-image student-image-day"
+                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/121212/FFD700?text=Student+Project+Day'">
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="https://image2url.com/r2/default/images/1769938515013-eaa63dd7-55a1-45cd-84ab-2546f5deffe5.jpg" 
+                             alt="Student Project Back Image" 
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/D4AF37/121212?text=Back+of+Card'">
+                    </div>
+                </div>
             </div>
             
             <div class="student-note">
@@ -1937,6 +2014,11 @@
                 }
             });
         });
+
+        function flipCard(card) {
+            const flipInner = card.querySelector('.flip-card-inner');
+            flipInner.classList.toggle('flipped');
+        }
 
         function showTeamMembers() {
             const container = document.getElementById('membersContainer');
