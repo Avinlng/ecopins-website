@@ -1622,25 +1622,6 @@
                 height: 250px;
             }
         }
-
-        .flip-instruction {
-            text-align: center;
-            margin: 15px 0;
-            color: var(--gold-light);
-            font-weight: 600;
-            font-size: 16px;
-            padding: 10px;
-            background: rgba(212, 175, 55, 0.1);
-            border-radius: 10px;
-            border: 2px dashed var(--gold);
-            transition: all 0.4s ease;
-        }
-
-        body.day-mode .flip-instruction {
-            color: #121212;
-            background: rgba(18, 18, 18, 0.1);
-            border: 2px dashed #121212;
-        }
     </style>
 </head>
 <body>
@@ -1867,9 +1848,7 @@
         <div class="card student-card" onclick="flipCard(this)">
             <h2>Student Project</h2>
             
-            <div class="flip-instruction">
-                🔄 Tap/Click on the image to flip and see the back side!
-            </div>
+            <p style="text-align: center; margin-bottom: 20px; color: var(--gold); font-weight: bold;">Please click on the image.</p>
             
             <div class="student-image-container">
                 <div class="flip-card-inner">
