@@ -1476,6 +1476,32 @@
             text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
 
+        .canada-image-container {
+            margin: 25px auto;
+            max-width: 600px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            border: 3px solid #FFFFFF;
+            transition: all 0.4s ease;
+        }
+
+        .canada-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .canada-image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 0, 0, 0.5);
+        }
+
+        .canada-image-container:hover .canada-image {
+            transform: scale(1.03);
+        }
+
         .canada-banner:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4);
@@ -1621,6 +1647,19 @@
             .student-card .flip-card-inner {
                 height: 250px;
             }
+
+            .canada-image-container {
+                margin: 20px auto;
+                border-radius: 12px;
+            }
+
+            .canada-banner h2 {
+                font-size: 28px;
+            }
+
+            .canada-banner p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -1653,6 +1692,13 @@
                 <div class="maple-leaf">🍁</div>
                 <p>Our premium collection of Canadian-inspired patches is now available for purchase!</p>
                 <p>Show your Canadian pride with our exclusive designs made with love in Canada.</p>
+                
+                <div class="canada-image-container">
+                    <img src="https://cdn.phototourl.com/uploads/2026-02-03-24157f89-c4de-4fea-973c-4000e5f05f07.png" 
+                         alt="Pin Point Patches Products" 
+                         class="canada-image"
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400/FF0000/FFFFFF?text=Pin+Point+Patches+Products'">
+                </div>
             </div>
         </div>
 
