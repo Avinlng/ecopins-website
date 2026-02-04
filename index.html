@@ -105,6 +105,33 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://cdn.phototourl.com/uploads/2026-02-04-64415d48-55a2-4540-8537-6fb908fb5a48.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            z-index: 1000;
+        }
+        
+        .team-background.active {
+            opacity: 0.8;
+            visibility: visible;
+        }
+        
+        .container.menu-open {
+            transform: translateY(40vh);
         }
         
         .card {
@@ -379,13 +406,24 @@
         }
 
         .members-container {
-            display: none;
-            margin-top: 25px;
-            padding: 25px;
-            background: rgba(212, 175, 55, 0.05);
-            border-radius: 15px;
-            border: 2px dashed var(--gold);
-            transition: all 0.4s ease;
+            position: fixed;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: top 0.5s ease;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .members-container.active {
+            top: 0;
         }
         
         .member-card {
@@ -400,6 +438,8 @@
             border-left: 4px solid var(--gold);
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
         }
         
         .member-card:hover {
@@ -410,8 +450,8 @@
         
         .team-title {
             color: var(--gold-light);
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 32px;
+            margin-bottom: 30px;
             text-align: center;
             font-weight: 700;
             transition: all 0.4s ease;
@@ -1672,6 +1712,8 @@
         <div class="theme-label" id="themeLabel">Night Mode</div>
     </div>
 
+    <div class="team-background" id="teamBackground"></div>
+
     <div class="header">
         <img src="https://i.ibb.co/XrGg1fzz/1002245789.png" alt="Pin Point Patches Logo" class="header-logo">
         <div class="header-content">
@@ -1680,7 +1722,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="mainContainer">
         <div class="card about-card">
             <h2>About Our Product</h2>
             <p>Pinpoint Patches are handcrafted products that we designed. You can attach them to anything you want and change their design in just one second!</p>
@@ -2070,11 +2112,20 @@
         }
 
         function showTeamMembers() {
+            const background = document.getElementById('teamBackground');
             const container = document.getElementById('membersContainer');
-            const membersList = document.getElementById('membersList');
+            const mainContainer = document.getElementById('mainContainer');
             
-            if (container.style.display === 'none' || container.style.display === '') {
-                container.style.display = 'block';
+            if (container.classList.contains('active')) {
+                container.classList.remove('active');
+                background.classList.remove('active');
+                mainContainer.classList.remove('menu-open');
+            } else {
+                container.classList.add('active');
+                background.classList.add('active');
+                mainContainer.classList.add('menu-open');
+                
+                const membersList = document.getElementById('membersList');
                 membersList.innerHTML = '';
                 
                 teamMembers.forEach((member, index) => {
@@ -2103,8 +2154,6 @@
                         membersList.appendChild(memberCard);
                     }, index * 150);
                 });
-            } else {
-                container.style.display = 'none';
             }
         }
 
